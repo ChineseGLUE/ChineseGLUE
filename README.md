@@ -109,6 +109,42 @@ each task will be evaluated and scored, a final score will also be available.
 TODO
 此处将会被指向到一个排行榜的网站地址
 
+语料库：语言建模、预训练或生成型任务
+---------------------------------------------------------------------
+可用于语言建模、预训练或生成型任务等，数据量超过10G，主要部分来自于<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus项目</a>
+
+当前语料库按照【预训练格式】处理，内含有多个文件夹；每个文件夹有许多不超过4M大小的小文件，文件格式符合预训练格式：每句话一行，文档间空行隔开。
+
+包含如下子语料库（总共14G语料）：
+
+1、新闻语料: 8G语料，分成两个上下两部分，总共有2000个小文件。
+
+2、社区互动语料：3G语料，包含3G文本，总共有900多个小文件。
+
+3、维基百科：1.1G左右文本，包含300左右小文件。
+
+4、评论数据：2.3G左右文本，含有811个小文件，合并<a href="https://github.com/InsaneLife/ChineseNLPCorpus">ChineseNLPCorpus</>的多个评论数据，清洗、格式转换、拆分成小文件。
+
+这些语料，你可以通过上面这两个项目，清洗数据并做格式转换获得；
+
+你也可以通过邮件申请（chineseGLUE#163.com）获得单个项目的语料，告知单位或学校、姓名、语料用途；
+
+如需获得ChineseGLUE项目下的所有语料，需成为ChineseGLUE组织成员，并完成一个（小）任务。
+
+任务清单
+---------------------------------------------------------------------
+1、成功推荐或贡献数据集，数据集需有代表性，一般为分类或句子对任务，阅读理解任务可以简化过来（如线索与问题或答案），数据应拆分成训练、验证和测试集。
+
+2、编写特定任务模型的训练、预测的方法(TensorFlow, PyTorch, Keras)；
+
+3、对当前主流模型（如bert/bert_wwm_ext/roberta/albert/ernie/ernie2.0等），结合ChineseGLUE的数据集，做准确率测试。
+
+4、排行榜landing页
+
+5、介绍中文语言理解测评基准(ChineseGLUE)
+
+6、测评系统主要功能开发
+
 Timeline 时间计划:
 ---------------------------------------------------------------------
 2019-10-20 to 2019-12-31: beta version of ChineseGLUE
@@ -120,7 +156,7 @@ Timeline 时间计划:
 Contribution 贡献你的力量，从今天开始
 ---------------------------------------------------------------------
 
-Share your data set with community or make a contribution today! Just send email to chineseGLUE@163.com, 
+Share your data set with community or make a contribution today! Just send email to chineseGLUE#163.com, 
 
 or join QQ group: 836811304
 
@@ -134,4 +170,8 @@ Reference:
 
 4、<a href="https://arxiv.org/pdf/1809.05053.pdf">XNLI: Evaluating Cross-lingual Sentence Representations</a>
 
-5、<a href="https://github.com/fate233/toutiao-text-classfication-dataset">toutiao-text-classfication-dataset</a>
+5、<a href="https://github.com/fate233/toutiao-text-classfication-dataset">TNES: toutiao-text-classfication-dataset</a>
+
+6、<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus: 大规模中文自然语言处理语料 Large Scale Chinese Corpus for NLP</>
+
+7、<a href="https://github.com/InsaneLife/ChineseNLPCorpus">ChineseNLPCorpus</>
