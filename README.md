@@ -123,7 +123,7 @@ TODO
 
 3、维基百科：1.1G左右文本，包含300左右小文件。
 
-4、评论数据：2.3G左右文本，含有811个小文件，合并<a href="https://github.com/InsaneLife/ChineseNLPCorpus">ChineseNLPCorpus</>的多个评论数据，清洗、格式转换、拆分成小文件。
+4、评论数据：2.3G左右文本，含有811个小文件，合并<a href="https://github.com/InsaneLife/ChineseNLPCorpus">ChineseNLPCorpus</a>的多个评论数据，清洗、格式转换、拆分成小文件。
 
 这些语料，你可以通过上面这两个项目，清洗数据并做格式转换获得；
 
