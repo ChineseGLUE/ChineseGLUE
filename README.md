@@ -35,7 +35,7 @@ Why do we need a benchmark for Chinese lanague understand evaluation?
 --------------------------------------------------------------------
 Language Understanding Evaluation benchmark for Chinese(ChineseGLUE) got ideas from GLUE, which is a collection of 
 
-resources for training, evaluating, and analyzing natural language understanding systems. SuperGLUE consists of: 
+resources for training, evaluating, and analyzing natural language understanding systems. ChineseGLUE consists of: 
 
 ##### 1）中文任务的基准测试，覆盖多个不同程度的语言任务 
   
@@ -139,7 +139,7 @@ TODO
 
 2、能与其他专业人士共同贡献力量，促进中文自然语言处理事业的发展
 
-3、参与部分工作后，获得已经清洗、预训练的后的、与英文wiki & bookCorpus同等规模的预训练语料，用于研究目的。
+3、参与部分工作后，获得已经清洗并预训练的后的、与英文wiki & bookCorpus同等量级、大规模的预训练语料，用于研究目的。
 
 4、优先使用state of the art的中文预训练模型，包括各种体验版或未公开版本
 
@@ -188,6 +188,6 @@ Reference:
 
 5、<a href="https://github.com/fate233/toutiao-text-classfication-dataset">TNES: toutiao-text-classfication-dataset</a>
 
-6、<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus: 大规模中文自然语言处理语料 Large Scale Chinese Corpus for NLP</>
+6、<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus: 大规模中文自然语言处理语料 Large Scale Chinese Corpus for NLP</a>
 
-7、<a href="https://github.com/InsaneLife/ChineseNLPCorpus">ChineseNLPCorpus</>
+7、<a href="https://github.com/InsaneLife/ChineseNLPCorpus">ChineseNLPCorpus</a>
