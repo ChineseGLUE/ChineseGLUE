@@ -23,6 +23,7 @@
 3. 测试效果
 
     1. TNEWS
+    
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
     | ALBERT-xlarge |	 |	|batch_size=32, length=128, epoch=3 |
@@ -33,6 +34,7 @@
     | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
     2. XNLI
+    
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
     | ALBERT-xlarge |	 |	|batch_size=64, length=128, epoch=2 |
