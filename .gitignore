@@ -1,0 +1,16 @@
+*.pkl
+*.npy
+*.log
+*.bin
+*.gz
+temp
+glue
+data
+prev_trained_model
+model_files
+data
+logs
+.DS_Store
+.ipynb_checkpoints
+.idea
+__pycache__

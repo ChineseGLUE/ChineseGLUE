@@ -1,10 +1,10 @@
 CURRENT_DIR=`pwd`
-export CUDA_VISIBLE_DEVICES="3"
-export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/tensorflow
+export CUDA_VISIBLE_DEVICES="0"
+export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/chinese_L-12_H-768_A-12
 export GLUE_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
 
 python run_classifier.py \
-  --task_name=TNEWS \
+  --task_name=tnews \
   --do_train=true \
   --do_eval=true \
   --data_dir=$GLUE_DIR/tnews \

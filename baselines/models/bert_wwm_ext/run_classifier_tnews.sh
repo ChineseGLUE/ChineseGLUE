@@ -1,16 +1,16 @@
 CURRENT_DIR=`pwd`
-export CUDA_VISIBLE_DEVICES="2"
-export ALBERT_XLARGE_DIR=$CURRENT_DIR/prev_trained_model/albert_xlarge_zh
+export CUDA_VISIBLE_DEVICES="0"
+export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/chinese_wwm_ext_L-12_H-768_A-12
 export GLUE_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
 
 python run_classifier.py \
-  --task_name=TNEWS \
+  --task_name=tnews \
   --do_train=true \
   --do_eval=true \
   --data_dir=$GLUE_DIR/tnews \
-  --vocab_file=$ALBERT_XLARGE_DIR/vocab.txt \
-  --bert_config_file=$ALBERT_XLARGE_DIR/albert_config_xlarge.json \
-  --init_checkpoint=$ALBERT_XLARGE_DIR/albert_model.ckpt \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
   --max_seq_length=128 \
   --train_batch_size=32 \
   --learning_rate=2e-5 \
