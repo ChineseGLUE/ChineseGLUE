@@ -29,9 +29,9 @@
 | ALBERT-xlarge |	 |	|batch_size=32, length=128, epoch=3 |
 | BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
 | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
-| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
 | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
+| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
 
 
