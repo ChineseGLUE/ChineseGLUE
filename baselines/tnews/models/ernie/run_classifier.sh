@@ -1,5 +1,5 @@
 CURRENT_DIR=`pwd`
-export CUDA_VISIBLE_DEVICES=""
+export CUDA_VISIBLE_DEVICES="3"
 export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/tensorflow
 export GLUE_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
 

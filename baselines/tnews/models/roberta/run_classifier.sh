@@ -1,5 +1,5 @@
 CURRENT_DIR=`pwd`
-export CUDA_VISIBLE_DEVICES="3"
+export CUDA_VISIBLE_DEVICES="0"
 export BERT_LARGE_DIR=$CURRENT_DIR/prev_trained_model/roberta_zh_L-24_H-1024_A-16
 export GLUE_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
 

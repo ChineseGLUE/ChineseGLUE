@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES="2"
+export CUDA_VISIBLE_DEVICES="1"
 CURRENT_DIR=`pwd`
 
 XLNET_DIR=$CURRENT_DIR/prev_trained_model/chinese_xlnet_mid_L-24_H-768_A-12
