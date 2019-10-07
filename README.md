@@ -106,7 +106,7 @@ each task will be evaluated and scored, a final score will also be available.
 
 中文任务基准测评(chineseGLUE)-排行榜
 ---------------------------------------------------------------------
-#####  
+#####  排行榜会定期更新
 
 | 模型 | TNEWS | LCQMC | XLNI | AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |
@@ -131,6 +131,30 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
 | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
+
+基线模型-代码 start codes for baselines 
+---------------------------------------------------------------------
+
+1. 数据集整体下载，解压到glue文件夹里  
+  ```cd glue ```  
+  ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
+  
+2. 训练模型  
+  
+  1）将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。
+      
+          以bert和albert为例子：  
+          a. albert  
+          https://github.com/brightmart/albert_zh  
+          b. bert  
+          https://github.com/google-research/bert   
+  
+  2）修改run_classifier.sh指定模型路径  
+  
+  3）运行各个模型文件夹下的run_classifier.sh即可  
+  ```sh run_classifier.sh```
+
+详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines/tnews">基准模型-模型训练</a>
 
 #### 开放测评提交入口（建设中）：<a href="https://chineseglue.github.io">我要提交</a>
 
