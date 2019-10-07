@@ -11,12 +11,11 @@
   c. bert-wwm-ext  
   https://github.com/ymcui/Chinese-BERT-wwm  
   d. ernie
-  https://github.com/ArthurRizar/tensorflow_ernie
-  e. roberta
-  https://github.com/brightmart/roberta_zh
-  f. xlnet
-  https://github.com/ymcui/Chinese-PreTrained-XLNet
-  
-  修改run_classifier.sh指定模型路径
+  https://github.com/ArthurRizar/tensorflow_ernie  
+  e. roberta  
+  https://github.com/brightmart/roberta_zh  
+  f. xlnet  
+  https://github.com/ymcui/Chinese-PreTrained-XLNet  
+  修改run_classifier.sh指定模型路径  
   运行各个模型文件夹下的run_classifier.sh即可
  
