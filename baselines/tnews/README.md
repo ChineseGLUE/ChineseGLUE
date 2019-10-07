@@ -3,7 +3,7 @@
   wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip
   
 2. 训练模型
-  将预训练模型下载解压到对应的模型中prev_trained_model文件夹里
+  将预训练模型下载解压到对应的模型中prev_trained_model文件夹里  
   a. albert  
   https://github.com/brightmart/albert_zh  
   b. bert  
