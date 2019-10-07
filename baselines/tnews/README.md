@@ -17,5 +17,20 @@
   f. xlnet  
   https://github.com/ymcui/Chinese-PreTrained-XLNet  
   修改run_classifier.sh指定模型路径  
-  运行各个模型文件夹下的run_classifier.sh即可
- 
+  运行各个模型文件夹下的run_classifier.sh即可  
+
+  
+  
+3. 测试效果 
+
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-xlarge |	 |	|batch_size=32, length=128, epoch=3 |
+| BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
+| BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
+| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
+| ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
+| RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
+
+
+
