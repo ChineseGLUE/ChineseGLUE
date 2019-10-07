@@ -1,5 +1,5 @@
 # ChineseGLUE
-Language Understanding Evaluation benchmark for Chinese: datasets, baselines, corpus and leaderboard
+Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pre-trained models, corpus and leaderboard
 
 中文语言理解测评基准，包括代表性的数据集、基准(预训练)模型、语料库、排行榜。  
 
@@ -104,9 +104,34 @@ each task will be evaluated and scored, a final score will also be available.
 
     wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip
 
-基准测评-排行榜
+中文任务基准测评(chineseGLUE)-排行榜
 ---------------------------------------------------------------------
-TODO
+#####  
+
+| 模型 | TNEWS | LCQMC | XLNI | AVG | 参数量
+| :----:| :----: | :----: | :----: |:----: |:----: |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8  | | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   |   |78.7	 | |108M |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| | ~= 108M|
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  |***79.9***	 | | 334M |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 |   |78.7 | | 209M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	 |	***87.7*** | | | 59M |
+
+Notice: ERNIE2.0 is not evaluated as it is not available to the public
+
+##### ---各任务对比---
+
+##### TNEWS数据集上的效果：
+
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-xlarge |	 |	|batch_size=32, length=128, epoch=3 |
+| BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
+| BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
+| ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
+| RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
+| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
+
 此处将会被指向到一个排行榜的网站地址
 
 语料库：语言建模、预训练或生成型任务
