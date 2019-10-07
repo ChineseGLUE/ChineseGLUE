@@ -21,8 +21,7 @@ from __future__ import print_function
 import collections
 import csv
 import os
-#import modeling
-import modeling_preln
+import modeling
 import optimization_finetuning as optimization
 import tokenization
 import tensorflow as tf
@@ -456,7 +455,7 @@ def _truncate_seq_pair(tokens_a, tokens_b, max_length):
 def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
                  labels, num_labels, use_one_hot_embeddings):
   """Creates a classification model."""
-  model = modeling_preln.BertModel(
+  model = modeling.BertModel(
       config=bert_config,
       is_training=is_training,
       input_ids=input_ids,
@@ -481,6 +480,13 @@ def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
       "output_bias", [num_labels], initializer=tf.zeros_initializer())
 
   with tf.variable_scope("loss"):
+    ln_type = bert_config.ln_type
+    if ln_type == 'preln': # add by brightmart, 10-06. if it is preln, we need to an additonal layer: layer normalization as suggested in paper "ON LAYER NORMALIZATION IN THE TRANSFORMER ARCHITECTURE"
+        print("ln_type is preln. add LN layer.")
+        output_layer=layer_norm(output_layer)
+    else:
+        print("ln_type is postln or other,do nothing.")
+
     if is_training:
       # I.e., 0.1 dropout
       output_layer = tf.nn.dropout(output_layer, keep_prob=0.9)
@@ -505,6 +511,10 @@ def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
 
     return (loss, per_example_loss, logits, probabilities)
 
+def layer_norm(input_tensor, name=None):
+  """Run layer normalization on the last dimension of the tensor."""
+  return tf.contrib.layers.layer_norm(
+      inputs=input_tensor, begin_norm_axis=-1, begin_params_axis=-1, scope=name)
 
 def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
                      num_train_steps, num_warmup_steps, use_tpu,
@@ -539,7 +549,7 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
     scaffold_fn = None
     if init_checkpoint:
       (assignment_map, initialized_variable_names
-      ) = modeling_preln.get_assignment_map_from_checkpoint(tvars, init_checkpoint)
+      ) = modeling.get_assignment_map_from_checkpoint(tvars, init_checkpoint)
       if use_tpu:
 
         def tpu_scaffold():
@@ -775,7 +785,7 @@ def main(_):
     raise ValueError(
         "At least one of `do_train`, `do_eval` or `do_predict' must be True.")
 
-  bert_config = modeling_preln.BertConfig.from_json_file(FLAGS.bert_config_file)
+  bert_config = modeling.BertConfig.from_json_file(FLAGS.bert_config_file)
 
   if FLAGS.max_seq_length > bert_config.max_position_embeddings:
     raise ValueError(
