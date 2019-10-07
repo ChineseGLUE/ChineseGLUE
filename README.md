@@ -142,8 +142,9 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 2. 训练模型  
     
     ```a.将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。``` 
-         ```以bert和albert为例子：```   
-         ```a1. albert  ``` 
+         ```以bert和albert为例子：```
+            
+         ``` a1. albert  ``` 
          ```https://github.com/brightmart/albert_zh ```  
          ```a1. bert  ``` 
          ```https://github.com/google-research/bert ```    
