@@ -119,9 +119,9 @@ each task will be evaluated and scored, a final score will also be available.
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
-##### ---各任务对比---
+#### ---各任务对比---
 
-##### TNEWS数据集上的效果：
+#### TNEWS数据集上的效果：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -132,8 +132,8 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
-##### 开放测评提交入口（建设中）：
-<a href="https://chineseglue.github.io">我要提交</a>
+#### 开放测评提交入口（建设中）：<a href="https://chineseglue.github.io">我要提交</a>
+
 <img src="https://github.com/chineseGLUE/chineseGLUE/blob/master/resources/img/chineseGLUE_landing.jpeg"  width="80%" height="40%" />
 
 
