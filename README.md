@@ -106,7 +106,7 @@ each task will be evaluated and scored, a final score will also be available.
 
 中文任务基准测评(chineseGLUE)-排行榜
 ---------------------------------------------------------------------
-#####  排行榜会定期更新
+#####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量
 
 | 模型 | TNEWS | LCQMC | XLNI | AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |
@@ -132,6 +132,17 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
+#### XLNI数据集上的效果：
+    
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-xlarge |	 |	|batch_size=64, length=128, epoch=2 |
+| BERT-base	| 77.80	| 77.8	| batch_size=64, length=128, epoch=2 |
+| BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
+| ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
+| RoBERTa-large	|80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
+| XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
+    
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
 
