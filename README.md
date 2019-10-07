@@ -110,10 +110,10 @@ each task will be evaluated and scored, a final score will also be available.
 
 | 模型 | TNEWS | LCQMC | XLNI | AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8  | | 108M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   |   |78.7	 | |108M |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| | ~= 108M|
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  |***79.9***	 | | 334M |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8  | 84.83 | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | 87.3  |78.7	 | 85.27 |108M |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| 85.21 | ~108M|
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  |***79.9***	 | 85.67 | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 |   |78.7 | | 209M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	 |	***87.7*** | | | 59M |
 
@@ -142,6 +142,17 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
 | RoBERTa-large	|80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
+
+#### LCQMC数据集上的效果：
+    
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-xlarge |	 |	|batch_size=64, length=128, epoch=3 |
+| BERT-base	| 89.4 	| 86.9 	| batch_size=64, length=128, epoch=3 |
+| BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
+| ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
+| RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
+| XLNet-mid	| |  |	batch_size=64, length=128, epoch=3 | 
     
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------

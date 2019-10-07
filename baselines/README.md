@@ -43,5 +43,16 @@
     | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
     | RoBERTa-large	|80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
     | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
+    
+    3. LCQMC
+    
+    | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+    | :----:| :----: | :----: | :----: |
+    | ALBERT-xlarge |	 |	|batch_size=64, length=128, epoch=3 |
+    | BERT-base	| 89.4 	| 86.9 	| batch_size=64, length=128, epoch=3 |
+    | BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
+    | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
+    | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
+    | XLNet-mid	| |  |	batch_size=64, length=128, epoch=3 | 
 
 
