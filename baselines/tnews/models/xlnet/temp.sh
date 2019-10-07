@@ -1,2 +1,0 @@
-a=`pwd`
-echo $a
