@@ -140,21 +140,20 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
   ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
   
 2. 训练模型  
-  
-  1）将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。
-      
-          以bert和albert为例子：  
-          a. albert  
-          https://github.com/brightmart/albert_zh  
-          b. bert  
-          https://github.com/google-research/bert   
-  
-  2）修改run_classifier.sh指定模型路径  
-  
-  3）运行各个模型文件夹下的run_classifier.sh即可  
-  ```sh run_classifier.sh```
+    
+    ```a.将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。``` 
+         ```以bert和albert为例子：```   
+         ```a1. albert  ``` 
+         ```https://github.com/brightmart/albert_zh ```  
+         ```a1. bert  ``` 
+         ```https://github.com/google-research/bert ```    
+        
+     ```b.修改run_classifier.sh指定模型路径  ``` 
+    
+     ```c.运行各个模型文件夹下的run_classifier.sh即可 ```  
+       ```sh run_classifier.sh```
 
-详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines/tnews">基准模型-模型训练</a>
+3. 详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines/tnews">基准模型-模型训练</a>
 
 #### 开放测评提交入口（建设中）：<a href="https://chineseglue.github.io">我要提交</a>
 
