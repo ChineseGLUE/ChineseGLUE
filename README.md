@@ -132,7 +132,10 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
-此处将会被指向到一个排行榜的网站地址
+##### 开放测评提交入口（建设中）：
+<a href="https://chineseglue.github.io">我要提交</a>
+<img src="https://github.com/chineseGLUE/chineseGLUE/blob/master/resources/img/chineseGLUE_landing.jpeg"  width="80%" height="40%" />
+
 
 语料库：语言建模、预训练或生成型任务
 ---------------------------------------------------------------------
