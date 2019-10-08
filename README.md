@@ -156,6 +156,18 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
 | XLNet-mid	| |  |	batch_size=64, length=128, epoch=3 | 
     
+    
+#### INEWS 数据集上的效果：
+    
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-xlarge |	 | 	|batch_size=8, length=512, epoch=3 |
+| BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
+| BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
+| ERNIE-base	| 84.50	|85.14 | batch_size=16, length=512, epoch=3 |
+| RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
+| XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
+    
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
 
