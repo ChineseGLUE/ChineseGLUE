@@ -1,4 +1,4 @@
-1. 数据集整体下载，解压到glue文件夹里
+1. 数据集整体下载，解压到glue文件夹里  
   ```cd glue ```  
   ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
   
