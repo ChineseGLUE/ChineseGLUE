@@ -22,7 +22,7 @@
 
 3. 测试效果
 
-    1. TNEWS
+    1. TNEWS 文本分类
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -33,7 +33,7 @@
     | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
     | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
-    2. XNLI
+    2. XNLI 自然语言推理
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -44,7 +44,7 @@
     | RoBERTa-large	|80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
     | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
     
-    3. LCQMC
+    3. LCQMC  语义相似度匹配
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -55,7 +55,7 @@
     | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
     | XLNet-mid	| |  |	batch_size=64, length=128, epoch=3 | 
 
-    4. INEWS
+    4. INEWS 互联网情感分析
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |

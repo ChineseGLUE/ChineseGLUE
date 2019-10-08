@@ -157,7 +157,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | XLNet-mid	| TODO | TODO |	batch_size=64, length=128, epoch=3 | 
     
     
-#### INEWS 文本分类：
+#### INEWS 互联网情感分析：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
