@@ -26,7 +26,7 @@
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
-    | ALBERT-xlarge |	 |	|batch_size=32, length=128, epoch=3 |
+    | ALBERT-xlarge |	88.1 | 88.2	|batch_size=32, length=128, epoch=3 |
     | BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
     | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
     | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
@@ -37,7 +37,7 @@
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
-    | ALBERT-xlarge |	 |	|batch_size=64, length=128, epoch=2 |
+    | ALBERT-xlarge | |	|batch_size=64, length=128, epoch=2 |
     | BERT-base	| 77.80	| 77.8	| batch_size=64, length=128, epoch=2 |
     | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
     | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
