@@ -190,7 +190,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
      ```c.运行各个模型文件夹下的run_classifier.sh即可 ```  
        ```sh run_classifier.sh```
 
-3. 详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines/tnews">基准模型-模型训练</a>
+3. 详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines">基准模型-模型训练</a>
 
 #### 开放测评提交入口（建设中）：<a href="https://chineseglue.github.io">我要提交</a>
 
