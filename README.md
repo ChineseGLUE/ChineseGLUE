@@ -108,7 +108,7 @@ each task will be evaluated and scored, a final score will also be available.
 ---------------------------------------------------------------------
 #####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量
 
-| 模型 | TNEWS | LCQMC | XLNI | INEWS |AVG | 参数量
+| 模型 | TNEWS | LCQMC | XNLI | INEWS |AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | 84.30 | 108M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46|84.82  |108M |
@@ -132,7 +132,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
-#### XLNI 自然语言推理：
+#### XNLI 自然语言推理：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -143,7 +143,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
 
-注：ALBERT-xlarge，在XLNI任务上训练暂时还存在有问题
+注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
 #### LCQMC 口语化描述的语义相似度匹配：
     
