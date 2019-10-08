@@ -121,7 +121,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
 #### ---各任务对比---
 
-#### TNEWS数据集上的效果：
+#### TNEWS 短文本分类：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -132,7 +132,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
-#### XLNI数据集上的效果：
+#### XLNI 自然语言推理：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -145,7 +145,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
 注：ALBERT-xlarge，在XLNI任务上训练暂时还存在有问题
 
-#### LCQMC数据集上的效果：
+#### LCQMC 口语化描述的语义相似度匹配：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -157,7 +157,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | XLNet-mid	| TODO | TODO |	batch_size=64, length=128, epoch=3 | 
     
     
-#### INEWS 数据集上的效果：
+#### INEWS 文本分类：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
