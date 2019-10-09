@@ -38,6 +38,8 @@
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
     | ALBERT-xlarge | |	|batch_size=64, length=128, epoch=2 |
+    | ALBERT-base | 77.0 |	77.1 |batch_size=64, length=128, epoch=2 |
+    | ALBERT-large | 78.0 | 77.5	|batch_size=64, length=128, epoch=2 |
     | BERT-base	| 77.80	| 77.8	| batch_size=64, length=128, epoch=2 |
     | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
     | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
