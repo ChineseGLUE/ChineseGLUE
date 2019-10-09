@@ -154,7 +154,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-wwm-ext-base |89.1   | 87.3 |	batch_size=64, length=128, epoch=3 |
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
-| XLNet-mid	| TODO | TODO |	batch_size=64, length=128, epoch=3 | 
+| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
     
     
 #### INEWS 互联网情感分析：
