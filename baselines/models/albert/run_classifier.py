@@ -212,7 +212,7 @@ class DataProcessor(object):
             return lines
 
 
-class LCQMCPairClassificationProcessor(DataProcessor):  # TODO NEED CHANGE2
+class LCQMCProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
 
     def __init__(self):
@@ -377,7 +377,7 @@ class XnliProcessor(DataProcessor):
 
     def get_dev_examples(self, data_dir):
         """See base class."""
-        lines = self._read_tsv(os.path.join(data_dir, "dev.tsv"))
+        lines = self._read_tsv(os.path.join(data_dir, "test.tsv"))
         examples = []
         for (i, line) in enumerate(lines):
             if i == 0:
@@ -848,7 +848,7 @@ def main(_):
 
     processors = {
         "sentence_pair": SentencePairClassificationProcessor,
-        "lcqmc_pair": LCQMCPairClassificationProcessor,
+        "lcqmc_pair": LCQMCProcessor,
         "tnews": TnewsProcessor,
         "xnli": XnliProcessor,
     }

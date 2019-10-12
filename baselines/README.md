@@ -17,7 +17,7 @@
   f. xlnet  
   https://github.com/ymcui/Chinese-PreTrained-XLNet  
   修改run_classifier.sh指定模型路径  
-  运行各个模型文件夹下不同任务对应的run_classifier_*.sh即可  
+  运行各个模型文件夹下不同任务对应的run_classifier_*.sh即可。如跑xnl运行： 
   ```sh run_classifier_xnli.sh```
 
 3. 测试效果

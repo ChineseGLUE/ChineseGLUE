@@ -257,7 +257,7 @@ class TnewsProcessor(DataProcessor):
         return examples
 
 
-class LCQMCPairClassificationProcessor(DataProcessor):  # TODO NEED CHANGE2
+class LCQMCProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
 
     def __init__(self):
@@ -272,7 +272,7 @@ class LCQMCPairClassificationProcessor(DataProcessor):  # TODO NEED CHANGE2
     def get_dev_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_tsv(os.path.join(data_dir, "test.txt")), "dev")  # todo change temp for test purpose
+            self._read_tsv(os.path.join(data_dir, "dev.txt")), "dev")
 
     def get_test_examples(self, data_dir):
         """See base class."""
@@ -835,7 +835,7 @@ def main(_):
 
     processors = {
         "sentence_pair": SentencePairClassificationProcessor,
-        "lcqmc_pair": LCQMCPairClassificationProcessor,
+        "lcqmc_pair": LCQMCProcessor,
         "tnews": TnewsProcessor,
         "xnli": XnliProcessor,
     }
