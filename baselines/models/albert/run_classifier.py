@@ -1304,7 +1304,7 @@ def main(_):
 
         predict_file = os.path.join(FLAGS.output_dir, "predict.tf_record")
         if task_name == "inews":
-            file_based_convert_examples_to_features(predict_examples, label_list,
+            file_based_convert_examples_to_features_for_inews(predict_examples, label_list,
                                                 FLAGS.max_seq_length, tokenizer,
                                                 predict_file)
         else:

@@ -1200,7 +1200,7 @@ def main(_):
             spm_basename, FLAGS.max_seq_length, FLAGS.eval_split)
         eval_file = os.path.join(FLAGS.output_dir, eval_file_base)
         if task_name == "inews":
-            file_based_convert_examples_to_features(
+            file_based_convert_examples_to_features_for_inews(
             eval_examples, label_list, FLAGS.max_seq_length, tokenize_fn,
             eval_file)
         else:
