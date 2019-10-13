@@ -11,7 +11,7 @@ ChineseGLUE的定位
 
 Why do we need a benchmark for Chinese lanague understand evaluation?
 
-*** 2019-10-13: 新增评测官网入口； inews基线模型 ***
+*** 2019-10-13: 新增评测官网入口; INEWS基线模型 ***
 
   <a href="http://106.13.187.75:8003"> 评测入口</a>
 
