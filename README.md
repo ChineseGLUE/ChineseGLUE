@@ -11,6 +11,10 @@ ChineseGLUE的定位
 
 Why do we need a benchmark for Chinese lanague understand evaluation?
 
+*** 2019-10-13: 新增评测官网入口 ***
+
+  <a href="http://106.13.187.75:8003"> 评测入口</a>
+
 为什么我们需要一个中文任务的基准测试？ 
 ---------------------------------------------------------------------
 首先，中文是一个大语种，有其自身的特定、大量的应用。
@@ -194,7 +198,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
 3. 详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines">基准模型-模型训练</a>
 
-#### 开放测评提交入口（建设中）：<a href="https://chineseglue.github.io">我要提交</a>
+#### 开放测评提交入口（建设中）：<a href="http://106.13.187.75:8003">我要提交</a>
 
 <img src="https://github.com/chineseGLUE/chineseGLUE/blob/master/resources/img/chineseGLUE_landing.jpeg"  width="80%" height="40%" />
 
