@@ -1,4 +1,4 @@
-CURRENT_DIR=`pwd`
+CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="0"
 export ALBERT_CONFIG_DIR=$CURRENT_DIR/albert_config
 export ALBERT_XLARGE_DIR=$CURRENT_DIR/prev_trained_model/albert_xlarge_zh

@@ -1,9 +1,7 @@
+CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="1"
-CURRENT_DIR=`pwd`
-
 XLNET_DIR=$CURRENT_DIR/prev_trained_model/chinese_xlnet_mid_L-24_H-768_A-12
 RAW_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
-
 TASK_NAME="inews"
 OUTPUT_DIR=$CURRENT_DIR/${TASK_NAME}_output
 python run_classifier.py \
@@ -15,7 +13,7 @@ python run_classifier.py \
     --do_eval=True \
     --eval_all_ckpt=False \
     --uncased=False \
-    --data_dir=${RAW_DIR}/tnews \
+    --data_dir=${RAW_DIR}/$TASK_NAME \
     --output_dir=${OUTPUT_DIR} \
     --model_dir=${OUTPUT_DIR} \
     --train_batch_size=32 \
