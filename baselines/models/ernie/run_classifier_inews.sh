@@ -1,4 +1,4 @@
-CURRENT_DIR=`pwd`
+CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="3"
 export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/tensorflow
 export GLUE_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
