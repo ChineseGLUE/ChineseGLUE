@@ -382,7 +382,7 @@ def file_based_convert_examples_to_features_for_inews(
     if ex_index % 1000 == 0:
       tf.logging.info("Writing example %d of %d" % (ex_index, len(examples)))
 
-    feature_list = convert_example_list_inews(ex_index, example, label_list,
+    feature_list = convert_example_list_for_inews(ex_index, example, label_list,
                                      max_seq_length, tokenizer)
     num_example += len(feature_list)
     def create_int_feature(values):

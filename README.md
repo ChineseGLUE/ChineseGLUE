@@ -120,6 +120,7 @@ each task will be evaluated and scored, a final score will also be available.
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  |***79.9***	 | 84.0| ***85.25*** | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| 83.74 | 209M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	***87.7*** | 74.0? |82.40 |  83.10 | 59M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 |  84.04 | 108M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
@@ -135,6 +136,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
 | RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
+| RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 | 
 
 #### XNLI 自然语言推理：
     
@@ -146,6 +148,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
 | RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
+| RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 | 
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
@@ -159,6 +162,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
+| RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 | 
     
     
 #### INEWS 互联网情感分析：
@@ -171,6 +175,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
 | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
 | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
+| RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
     
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
