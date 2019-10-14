@@ -97,8 +97,15 @@ each task will be evaluated and scored, a final score will also be available.
         例子：
         6552431613437805063_!_102_!_news_entertainment_!_谢娜为李浩菲澄清网络谣言，之后她的两个行为给自己加分_!_佟丽娅,网络谣言,快乐大本营,李浩菲,谢娜,观众们
         每行为一条数据，以_!_分割的个字段，从前往后分别是 新闻ID，分类code，分类名称，新闻字符串（仅含标题），新闻关键词
+       
+##### 4.INEWS 互联网情感分析任务
+        
+        数据量：训练集(5,356)，验证集(1,000)，测试集(1,000)     
+        例子：
+        1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
+        每行为一条数据，以_!_分割的个字段，从前往后分别是情感类别，数据id，新闻标题，新闻内容
 
-##### 4. 更多数据集添加中，Comming soon!
+##### 5. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，目标是8个覆盖不同任务的有代表性的数据集；如果你有定义良好的数据集，请与我们取得联系。
 
@@ -119,7 +126,7 @@ each task will be evaluated and scored, a final score will also be available.
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | 85.19  | 108M|
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  |***79.9***	 | 84.0| ***85.25*** | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| 83.74 | 209M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	***87.7*** | 74.0? |82.40 |  83.10 | 59M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |82.40 |  82.87 | 59M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 |  84.04 | 108M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
@@ -156,9 +163,9 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
-| ALBERT-xlarge | 87.3	 | ***87.7***	|batch_size=64, length=128, epoch=3 |
+| ALBERT-xlarge | 89.00	 | 86.76	|batch_size=64, length=128, epoch=3 |
 | BERT-base	| 89.4 	| 86.9 	| batch_size=64, length=128, epoch=3 |
-| BERT-wwm-ext-base |89.1   | 87.3 |	batch_size=64, length=128, epoch=3 |
+| BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
