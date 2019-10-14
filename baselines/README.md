@@ -32,7 +32,7 @@
     | BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
     | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
     | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
-    | RoBERTa-large	|90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
+    | RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
     | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 
     2. XNLI 自然语言推理
@@ -45,7 +45,7 @@
     | BERT-base	| 77.80	| 77.8	| batch_size=64, length=128, epoch=2 |
     | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
     | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
-    | RoBERTa-large	|80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
+    | RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
     | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
     
     3. LCQMC  语义相似度匹配
@@ -66,6 +66,6 @@
     | ALBERT-xlarge |81.80	 | 82.40	|batch_size=32, length=512, epoch=8 |
     | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
     | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
-    | ERNIE-base	| 84.50	|85.14 | batch_size=16, length=512, epoch=3 |
+    | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
     | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
     | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
