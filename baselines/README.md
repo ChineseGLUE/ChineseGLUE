@@ -52,9 +52,9 @@
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
-    | ALBERT-xlarge | 87.3	 | 87.7	|batch_size=64, length=128, epoch=3 |
+    | ALBERT-xlarge | 87.3	 | ***87.7***	|batch_size=64, length=128, epoch=3 |
     | BERT-base	| 89.4 	| 86.9 	| batch_size=64, length=128, epoch=3 |
-    | BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
+    | BERT-wwm-ext-base |89.1   | 87.3 |	batch_size=64, length=128, epoch=3 |
     | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
     | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
     | XLNet-mid	| 86.14 | 85.98 |	batch_size=32, length=128, epoch=3 | 
