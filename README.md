@@ -165,7 +165,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
-| ALBERT-xlarge |	- | -	|batch_size=8, length=512, epoch=3 |
+| ALBERT-xlarge |	81.80 | 82.40	|batch_size=8, length=512, epoch=3 |
 | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| 84.50	|85.14 | batch_size=16, length=512, epoch=3 |
