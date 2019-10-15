@@ -126,7 +126,7 @@ each task will be evaluated and scored, a final score will also be available.
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | 85.19  | 108M|
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  |***79.9***	 | 84.0| ***85.25*** | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| 83.74 | 209M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |82.40 |  82.87 | 59M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 |  82.74 | 59M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 |  84.04 | 108M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
@@ -176,7 +176,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
-| ALBERT-xlarge |	81.80 | 82.40	|batch_size=8, length=512, epoch=3 |
+| ALBERT-xlarge |	81.80 | 82.40	|batch_size=32, length=512, epoch=8 |
 | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
