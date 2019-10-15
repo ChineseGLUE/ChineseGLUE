@@ -1,6 +1,6 @@
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 TASK_NAME="inews"
-export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/inews
+export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/$TASK_NAME
 export ALBERT_XLARGE_DIR=gs://models_zxw/prev_trained_models/nlp/albert-xlarge/albert_xlarge_zh_183k
 export OUTPUT_DIR=gs://models_zxw/fine_tuning_models/nlp/albert-xlarge/albert_xlarge_zh_183k/tpu/$TASK_NAME
 
