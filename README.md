@@ -107,8 +107,12 @@ each task will be evaluated and scored, a final score will also be available.
         
 ##### 5.DRCD 繁体阅读理解任务
 台達閱讀理解資料集 Delta Reading Comprehension Dataset (DRCD)(https://github.com/DRCKnowledgeTeam/DRCD) 屬於通用領域繁體中文機器閱讀理解資料集。 本資料集期望成為適用於遷移學習之標準中文閱讀理解資料集。  
-数据量：训练集(8,016个段落，26,936个问题)，验证集(1,000个段落，3,524个问题)，测试集(1,000个段落，3,493个问题)     
-例子：  
+
+```
+数据量：训练集(8,016个段落，26,936个问题)，验证集(1,000个段落，3,524个问题)，测试集(1,000个段落，3,493个问题)  
+例子：
+```
+ 
 ```json
 {
   "version": "1.3",
