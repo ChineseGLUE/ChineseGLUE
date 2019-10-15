@@ -1231,7 +1231,11 @@ def main(_):
                 eval_examples.append(PaddingInputExample())
 
         eval_file = os.path.join(FLAGS.output_dir, "test.tf_record")
-        file_based_convert_examples_to_features(
+        if task_name == "inews":
+            file_based_convert_examples_to_features_for_inews(
+            eval_examples, label_list, FLAGS.max_seq_length, tokenizer, eval_file)
+        else:
+            file_based_convert_examples_to_features(
             eval_examples, label_list, FLAGS.max_seq_length, tokenizer, eval_file)
 
         tf.logging.info("***** Running evaluation *****")
