@@ -529,10 +529,7 @@ class TnewsProcessor(DataProcessor):
             guid = "%s-%s" % (set_type, i)
             text_a = tokenization.convert_to_unicode(line[3])
             text_b = None
-            if set_type == "test":
-                label = "0"
-            else:
-                label = tokenization.convert_to_unicode(line[1])
+            label = tokenization.convert_to_unicode(line[1])
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
@@ -1036,6 +1033,7 @@ def main(_):
     processors = {
         "sentence_pair": SentencePairClassificationProcessor,
         "lcqmc_pair": LCQMCProcessor,
+        "lcqmc": LCQMCProcessor,
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
         "xnli": XnliProcessor,
