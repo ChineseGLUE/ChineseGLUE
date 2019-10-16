@@ -86,7 +86,7 @@
     6. CMRC2018 阅读理解
     
     | 模型 | 开发集（dev) | 训练参数 |
-    | :----:| :----: | :----: | :----: |
+    | :----:| :----: | :----: |
     | ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, lr=2e-5, warmup=0.05 |
     | ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, lr=2e-5, warmup=0.1 |
     | RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, lr=3e-5, warmup=0.1 |
