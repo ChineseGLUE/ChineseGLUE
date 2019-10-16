@@ -104,8 +104,112 @@ each task will be evaluated and scored, a final score will also be available.
         例子：
         1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
         每行为一条数据，以_!_分割的个字段，从前往后分别是情感类别，数据id，新闻标题，新闻内容
+        
+##### 5.DRCD 繁体阅读理解任务
+台達閱讀理解資料集 Delta Reading Comprehension Dataset (DRCD)(https://github.com/DRCKnowledgeTeam/DRCD) 屬於通用領域繁體中文機器閱讀理解資料集。 本資料集期望成為適用於遷移學習之標準中文閱讀理解資料集。  
 
-##### 5. 更多数据集添加中，Comming soon!
+```
+数据量：训练集(8,016个段落，26,936个问题)，验证集(1,000个段落，3,524个问题)，测试集(1,000个段落，3,493个问题)  
+例子：
+```
+ 
+```json
+{
+  "version": "1.3",
+  "data": [
+    {
+      "title": "基督新教",
+      "id": "2128",
+      "paragraphs": [
+        {
+          "context": "基督新教與天主教均繼承普世教會歷史上許多傳統教義，如三位一體、聖經作為上帝的啟示、原罪、認罪、最後審判等等，但有別於天主教和東正教，新教在行政上沒有單一組織架構或領導，而且在教義上強調因信稱義、信徒皆祭司， 以聖經作為最高權威，亦因此否定以教宗為首的聖統制、拒絕天主教教條中關於聖傳與聖經具同等地位的教導。新教各宗派間教義不盡相同，但一致認同五個唯獨：唯獨恩典：人的靈魂得拯救唯獨是神的恩典，是上帝送給人的禮物。唯獨信心：人唯獨藉信心接受神的赦罪、拯救。唯獨基督：作為人類的代罪羔羊，耶穌基督是人與上帝之間唯一的調解者。唯獨聖經：唯有聖經是信仰的終極權威。唯獨上帝的榮耀：唯獨上帝配得讚美、榮耀",
+          "id": "2128-2",
+          "qas": [
+            {
+              "id": "2128-2-1",
+              "question": "新教在教義上強調信徒皆祭司以及什麼樣的理念?",
+              "answers": [
+                {
+                  "id": "1",
+                  "text": "因信稱義",
+                  "answer_start": 92
+                }
+              ]
+            },
+            {
+              "id": "2128-2-2",
+              "question": "哪本經典為新教的最高權威?",
+              "answers": [
+                {
+                  "id": "1",
+                  "text": "聖經",
+                  "answer_start": 105
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+        数据格式和squad相同
+        
+##### 6.CMRC2018 简体中文阅读理解任务
+
+https://hfl-rc.github.io/cmrc2018/
+
+```
+数据量：训练集(短文数2,403，问题数10,142)，试验集(短文数256，问题数1,002)，开发集(短文数848，问题数3,219)  
+例子：
+```
+ 
+```json
+{
+  "version": "1.0",
+  "data": [
+    {
+        "title": "傻钱策略",
+        "context_id": "TRIAL_0",
+        "context_text": "工商协进会报告，12月消费者信心上升到78.1，明显高于11月的72。另据《华尔街日报》报道，2013年是1995年以来美国股市表现最好的一年。这一年里，投资美国股市的明智做法是追着“傻钱”跑。所谓的“傻钱”策略，其实就是买入并持有美国股票这样的普通组合。这个策略要比对冲基金和其它专业投资者使用的更为复杂的投资方法效果好得多。",
+        "qas":[
+                {
+                "query_id": "TRIAL_0_QUERY_0",
+                "query_text": "什么是傻钱策略？",
+                "answers": [
+                     "所谓的“傻钱”策略，其实就是买入并持有美国股票这样的普通组合",
+                     "其实就是买入并持有美国股票这样的普通组合",
+                     "买入并持有美国股票这样的普通组合"
+                    ]
+                },
+                {
+                "query_id": "TRIAL_0_QUERY_1",
+                "query_text": "12月的消费者信心指数是多少？",
+                "answers": [
+                    "78.1",
+                    "78.1",
+                    "78.1"
+                    ]
+                },
+                {
+                "query_id": "TRIAL_0_QUERY_2",
+                "query_text": "消费者信心指数由什么机构发布？",
+                "answers": [
+                    "工商协进会",
+                    "工商协进会",
+                    "工商协进会"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+        数据格式和squad相同，如果使用简体中文模型进行评测的时候可以将其繁转简(本项目已提供)
+
+
+##### 7. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，目标是8个覆盖不同任务的有代表性的数据集；如果你有定义良好的数据集，请与我们取得联系。
 
@@ -119,6 +223,16 @@ each task will be evaluated and scored, a final score will also be available.
 ---------------------------------------------------------------------
 #####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量
 
+| 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | AVG | 参数量
+| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | 84.30 | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46 | - | 84.82  |108M |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | - | 85.19  | 108M|
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  | ***79.9*** | 84.0 | ***89.35/94.25*** | ***85.25*** | 334M |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| - | 83.74 | 209M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |82.40 | - |  82.87 | 59M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 | 88.12/93.53 |  84.04 | 108M |
+=======
 | 模型 | TNEWS | LCQMC | XNLI | INEWS |AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | 84.30 | 108M |
@@ -183,6 +297,25 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
 | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
 | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
+
+#### DRCD 繁体阅读理解：
+    
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch_size=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
+| ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | ***F1:94.697 EM:89.780*** |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+| RoBERTa-large	|***F1:94.93(95.06) EM:90.11(90.24)*** | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
+| RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1| 
+
+#### CMRC2018 阅读理解(暂时只有开发集结果)：
+    
+| 模型 | 开发集（dev) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, lr=2e-5, warmup=0.05 |
+| ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, lr=2e-5, warmup=0.1 |
+| RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, lr=3e-5, warmup=0.1 |
+| RoBERTa-large	| ***F1:88.608(89.431) EM:69.935(72.538)*** | epoch2, batch=32, lr=3e-5, warmup=0.1 |
+| RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, lr=3e-5, warmup=0.1 | 
     
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------

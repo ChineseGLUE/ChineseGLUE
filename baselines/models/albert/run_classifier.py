@@ -244,7 +244,10 @@ class InewsProcessor(DataProcessor):
       guid = "%s-%s" % (set_type, i)
       text_a = tokenization.convert_to_unicode(line[2])
       text_b = tokenization.convert_to_unicode(line[3])
-      label = tokenization.convert_to_unicode(line[0])
+      if set_type == "test":
+        label = "0"
+      else:
+        label = tokenization.convert_to_unicode(line[0])
       examples.append(
           InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
     return examples
@@ -1228,11 +1231,7 @@ def main(_):
                 eval_examples.append(PaddingInputExample())
 
         eval_file = os.path.join(FLAGS.output_dir, "test.tf_record")
-        if task_name == "inews":
-            file_based_convert_examples_to_features_for_inews(
-            eval_examples, label_list, FLAGS.max_seq_length, tokenizer, eval_file)
-        else:
-            file_based_convert_examples_to_features(
+        file_based_convert_examples_to_features(
             eval_examples, label_list, FLAGS.max_seq_length, tokenizer, eval_file)
 
         tf.logging.info("***** Running evaluation *****")

@@ -12,7 +12,7 @@ python run_classifier.py \
   --vocab_file=$ALBERT_CONFIG_DIR/vocab.txt \
   --bert_config_file=$ALBERT_CONFIG_DIR/albert_config_xlarge.json \
   --init_checkpoint=$ALBERT_XLARGE_DIR/albert_model.ckpt \
-  --max_seq_length=512 \
+  --max_seq_length=128 \
   --train_batch_size=32 \
   --learning_rate=2e-5 \
   --num_train_epochs=3.0 \
