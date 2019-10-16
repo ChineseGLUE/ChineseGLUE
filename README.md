@@ -153,8 +153,8 @@ each task will be evaluated and scored, a final score will also be available.
     }
   ]
 }
-```
-        数据格式和squad相同
+```  
+数据格式和squad相同，如果使用简体中文模型进行评测的时候可以将其繁转简(本项目已提供)
         
 ##### 6.CMRC2018 简体中文阅读理解任务
 
@@ -205,8 +205,8 @@ https://hfl-rc.github.io/cmrc2018/
         }
     ]
 }
-```
-        数据格式和squad相同，如果使用简体中文模型进行评测的时候可以将其繁转简(本项目已提供)
+```  
+数据格式和squad相同
 
 
 ##### 7. 更多数据集添加中，Comming soon!
