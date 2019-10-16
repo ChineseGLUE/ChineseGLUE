@@ -66,7 +66,7 @@
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
-    | ALBERT-xlarge |81.80	 | 82.40	|batch_size=32, length=512, epoch=8 |
+    | ALBERT-xlarge |83.70	 | 81.90	|batch_size=32, length=512, epoch=8 |
     | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
     | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
     | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
@@ -79,5 +79,16 @@
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
     | ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch_size=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
-    | RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
+    | ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | ***F1:94.697 EM:89.780*** |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+    | RoBERTa-large	|***F1:94.93(95.06) EM:90.11(90.24)*** | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
     | RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1| 
+    
+    6. CMRC2018 阅读理解
+    
+    | 模型 | 开发集（dev) | 训练参数 |
+    | :----:| :----: | :----: | :----: |
+    | ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, lr=2e-5, warmup=0.05 |
+    | ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, lr=2e-5, warmup=0.1 |
+    | RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, lr=3e-5, warmup=0.1 |
+    | RoBERTa-large	| ***F1:88.608(89.431) EM:69.935(72.538)*** | epoch2, batch=32, lr=3e-5, warmup=0.1 |
+    | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, lr=3e-5, warmup=0.1 | 

@@ -154,10 +154,62 @@ each task will be evaluated and scored, a final score will also be available.
   ]
 }
 ```
+        数据格式和squad相同
+        
+##### 6.CMRC2018 简体中文阅读理解任务
+
+https://hfl-rc.github.io/cmrc2018/
+
+```
+数据量：训练集(短文数2,403，问题数10,142)，试验集(短文数256，问题数1,002)，开发集(短文数848，问题数3,219)  
+例子：
+```
+ 
+```json
+{
+  "version": "1.0",
+  "data": [
+    {
+        "title": "傻钱策略",
+        "context_id": "TRIAL_0",
+        "context_text": "工商协进会报告，12月消费者信心上升到78.1，明显高于11月的72。另据《华尔街日报》报道，2013年是1995年以来美国股市表现最好的一年。这一年里，投资美国股市的明智做法是追着“傻钱”跑。所谓的“傻钱”策略，其实就是买入并持有美国股票这样的普通组合。这个策略要比对冲基金和其它专业投资者使用的更为复杂的投资方法效果好得多。",
+        "qas":[
+                {
+                "query_id": "TRIAL_0_QUERY_0",
+                "query_text": "什么是傻钱策略？",
+                "answers": [
+                     "所谓的“傻钱”策略，其实就是买入并持有美国股票这样的普通组合",
+                     "其实就是买入并持有美国股票这样的普通组合",
+                     "买入并持有美国股票这样的普通组合"
+                    ]
+                },
+                {
+                "query_id": "TRIAL_0_QUERY_1",
+                "query_text": "12月的消费者信心指数是多少？",
+                "answers": [
+                    "78.1",
+                    "78.1",
+                    "78.1"
+                    ]
+                },
+                {
+                "query_id": "TRIAL_0_QUERY_2",
+                "query_text": "消费者信心指数由什么机构发布？",
+                "answers": [
+                    "工商协进会",
+                    "工商协进会",
+                    "工商协进会"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
         数据格式和squad相同，如果使用简体中文模型进行评测的时候可以将其繁转简(本项目已提供)
 
 
-##### 6. 更多数据集添加中，Comming soon!
+##### 7. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，目标是8个覆盖不同任务的有代表性的数据集；如果你有定义良好的数据集，请与我们取得联系。
 
@@ -171,7 +223,6 @@ each task will be evaluated and scored, a final score will also be available.
 ---------------------------------------------------------------------
 #####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量
 
-<<<<<<< HEAD
 | 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | 84.30 | 108M |
@@ -191,7 +242,6 @@ each task will be evaluated and scored, a final score will also be available.
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| 83.74 | 209M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 |  82.74 | 59M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 |  84.04 | 108M |
->>>>>>> 7f1e1040777381ad683d0687a30d50e6d350dd70
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
@@ -253,8 +303,19 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch_size=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
-| RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
+| ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | ***F1:94.697 EM:89.780*** |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+| RoBERTa-large	|***F1:94.93(95.06) EM:90.11(90.24)*** | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
 | RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1| 
+
+#### CMRC2018 阅读理解(暂时只有开发集结果)：
+    
+| 模型 | 开发集（dev) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, lr=2e-5, warmup=0.05 |
+| ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, lr=2e-5, warmup=0.1 |
+| RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, lr=3e-5, warmup=0.1 |
+| RoBERTa-large	| ***F1:88.608(89.431) EM:69.935(72.538)*** | epoch2, batch=32, lr=3e-5, warmup=0.1 |
+| RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, lr=3e-5, warmup=0.1 | 
     
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
