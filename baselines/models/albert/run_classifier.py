@@ -1033,6 +1033,7 @@ def main(_):
     processors = {
         "sentence_pair": SentencePairClassificationProcessor,
         "lcqmc_pair": LCQMCProcessor,
+        "lcqmc": LCQMCProcessor,
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
         "xnli": XnliProcessor,
