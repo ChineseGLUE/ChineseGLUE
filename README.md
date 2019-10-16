@@ -230,7 +230,7 @@ https://hfl-rc.github.io/cmrc2018/
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | - | 85.19  | 108M|
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  | ***79.9*** | 84.0 | 89.35/94.25 | ***85.25*** | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| - | 83.74 | 209M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |82.40 | ***89.78/94.70*** |  82.87 | 59M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 | ***89.78/94.70*** |  82.74 | 59M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 | 88.12/93.53 |  84.04 | 108M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
