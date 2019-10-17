@@ -14,7 +14,7 @@ python $CURRENT_DIR/../run_classifier.py \
   --bert_config_file=$ALBERT_XLARGE_DIR/albert_config_xlarge.json \
   --init_checkpoint=$ALBERT_XLARGE_DIR/albert_model.ckpt \
   --max_seq_length=128 \
-  --train_batch_size=32 \
+  --train_batch_size=64 \
   --learning_rate=2e-5 \
   --num_train_epochs=8.0 \
   --output_dir=$OUTPUT_DIR \

@@ -3,7 +3,7 @@ CURRENT_TIME=$(date "+%Y%m%d-%H%M%S")
 TASK_NAME="lcqmc"
 export ALBERT_XLARGE_DIR=gs://models_zxw/prev_trained_models/nlp/albert_tiny
 export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/$TASK_NAME
-export OUTPUT_DIR=gs://models_zxw/fine_tuning_models/nlp/albert_tiny/tpu/${TASK_NAME}_$CURRENT_TIME
+export OUTPUT_DIR=gs://models_zxw/fine_tuning_models/nlp/albert_tiny/tpu/${TASK_NAME}/$CURRENT_TIME
 
 python $CURRENT_DIR/../run_classifier.py \
   --task_name=$TASK_NAME \
