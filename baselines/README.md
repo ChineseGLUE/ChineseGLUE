@@ -100,3 +100,16 @@
     | RoBERTa-large	| F1:88.608(89.431) EM:69.935(72.538) | epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
     | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |  
     | RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+
+    7. CCKS2018 task3 语义相似度匹配
+
+    | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
+    | :----:| :----: | :----: | :----: |
+    | BERT-base | 92.69 | 92.53 | batch_size=64, length=128, epoch=3 |
+    | BERT-wwm-ext-base | 93.00 | 92.79 |batch_size=64, length=128, epoch=3 |
+    | ERNIE-base | 90.78 | 90.48 | batch_size=64, length=128, epoch=3 |
+    | RoBERTa-large	| 93.34 | 92.81 | batch_size=8, length=128, epoch=3 |
+    | XLNet-mid	| - | - | - |
+    | ALBERT-xlarge |	92.49 | 92.59 | batch_size=16, length=128, epoch=3 |
+    | ALBERT-tiny | 88.22 | 87.62 | batch_size=64, length=128, epoch=5 |
+    | RoBERTa-wwm-large-ext | **93.62** | **93.61** | batch_size=8, length=128, epoch=3 |

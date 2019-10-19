@@ -224,8 +224,16 @@ https://hfl-rc.github.io/cmrc2018/
 ```  
 数据格式和squad相同
 
+##### 7. CCKS2018 Task3 智能客服问句匹配
+该数据集是自动问答系统语料，共有100,000对句子对，并标注了句子对相似度值，取值为0或1（0表示不相似，1表示相似），并按70:20:10比例分割成训练集、开发集和测试集。数据中存在错别字、语法不规范等问题，但更加贴近工业场景。
 
-##### 7. 更多数据集添加中，Comming soon!
+        数据量：训练集(70,000)，验证集(20,000)，测试集(10,000)
+        例子： 
+         1.我存钱还不扣的 [分隔符] 借了每天都要还利息吗 [分隔符] 0
+         2.为什么我的还没有额度 [分隔符] 为啥没有额度！！ [分隔符] 1
+
+
+##### 8. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，目标是8个覆盖不同任务的有代表性的数据集；如果你有定义良好的数据集，请与我们取得联系。
 
@@ -315,6 +323,19 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-large	| F1:88.608(89.431) EM:69.935(72.538) | epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
 | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
 | RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+
+#### CCKS2018 Task3 智能客服问句匹配：
+
+| 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| BERT-base | 92.69 | 92.53 | batch_size=64, length=128, epoch=3 |
+| BERT-wwm-ext-base | 93.00 | 92.79 |batch_size=64, length=128, epoch=3 |
+| ERNIE-base | 90.78 | 90.48 | batch_size=64, length=128, epoch=3 |
+| RoBERTa-large	| 93.34 | 92.81 | batch_size=8, length=128, epoch=3 |
+| XLNet-mid	| - | - | - |
+| ALBERT-xlarge |	92.49 | 92.59 | batch_size=16, length=128, epoch=3 |
+| ALBERT-tiny | 88.22 | 87.62 | batch_size=64, length=128, epoch=5 |
+| RoBERTa-wwm-large-ext | **93.62** | **93.61** | batch_size=8, length=128, epoch=3 |
     
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
