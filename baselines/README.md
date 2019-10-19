@@ -35,6 +35,7 @@
     | RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
     | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
     | RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 | 
+    | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
 
     2. XNLI 自然语言推理
     
@@ -49,6 +50,7 @@
     | RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
     | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
     | RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 | 
+    | RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
     
     3. LCQMC  语义相似度匹配
     
@@ -61,6 +63,7 @@
     | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
     | XLNet-mid	| 86.14 | 85.98 |	batch_size=32, length=128, epoch=3 | 
     | RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 | 
+    | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
 
     4. INEWS 互联网情感分析
     
@@ -73,6 +76,7 @@
     | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
     | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
     | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
+    | RoBERTa-wwm-large-ext	|83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
     
     5. DRCD 繁体阅读理解
     
