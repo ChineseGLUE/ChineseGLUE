@@ -14,12 +14,12 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | - | 84.30 | 108M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46 | - | - | 84.82  |108M |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | - | - | 85.19  | 108M|
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|89.91  | 87.2  | 79.9 | 84.0 | 89.35/94.25 | 88.60/69.93 | ***85.25*** | 334M |
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|89.91  | 87.2  | 79.9 | 84.0 | 89.35/94.25 | 69.93/88.60 | ***85.25*** | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| - | - | 83.74 | 209M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 | 89.78/94.70 | 88.66/68.90 | 82.74 | 59M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> |	87.10 |	85.4 | - |81.4 | - | - |  - | 1.8M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.28 |81.58 | 88.12/93.53 | 87.28/67.89 |  84.04 | 108M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***89.42/70.59*** |  84.94 | 330M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 | 89.78/94.70 | 68.90/88.66 | 82.74 | 59M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> |	87.10 |	85.4 | - |81.4 | 70.08/80.67 | 48.31/73.95 | - | 1.8M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.28 |81.58 | 88.12/93.53 | 67.89/87.28 |  84.04 | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** |  84.94 | 330M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
@@ -299,6 +299,7 @@ https://hfl-rc.github.io/cmrc2018/
 | :----:| :----: | :----: | :----: |
 | ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch_size=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
 | ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | F1:94.697 EM:89.780 |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+| ALBERT-tiny	|F1:81.507(81.818) EM:71.606(72.247) | F1:80.672 EM:70.083 |	batch_size=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
 | RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
 | RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1|
 | RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch_size=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |  
@@ -309,6 +310,7 @@ https://hfl-rc.github.io/cmrc2018/
 | :----:| :----: | :----: |
 | ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.05 |
 | ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.1 |
+| ALBERT-tiny	| F1:73.949(74.664) EM:48.307(50.233) | epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
 | RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
 | RoBERTa-large	| F1:88.608(89.431) EM:69.935(72.538) | epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
 | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
