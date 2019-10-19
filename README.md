@@ -22,7 +22,9 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***89.42/70.59*** |  84.94 | 330M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
+
 注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；cmrc2018仅开发集结果
+
 数据来源: https://github.com/chineseGLUE/chineseGLUE
 
 
@@ -64,32 +66,25 @@ resources for training, evaluating, and analyzing natural language understanding
 
 ##### 1）中文任务的基准测试，覆盖多个不同程度的语言任务 
   
-  A benchmark of several sentence or sentence pair language understanding tasks. 
+A benchmark of several sentence or sentence pair language understanding tasks. 
 
- Currently the datasets used in these tasks are come from public. We will include datasets with private test set before
- 
- the end of 2019.
+Currently the datasets used in these tasks are come from public. We will include datasets with private test set before the end of 2019.
 
 ##### 2）公开的排行榜 
   
-  A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks,
-
-each task will be evaluated and scored, a final score will also be available.
+A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks, each task will be evaluated and scored, a final score will also be available.
 
 ##### 3）基线模型，包含开始的代码、预训练模型 
   
-  baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
+baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
 
 ##### 4）语料库，用于语言建模、预训练或生成型任务 
 
-   A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
+A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
    
-   In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough
-   
-   raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
+In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
 
-   You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, 
-   you will able to select corpus you are interested in.
+You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
 数据集介绍与下载
 --------------------------------------------------------------------
