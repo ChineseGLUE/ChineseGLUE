@@ -1,20 +1,20 @@
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
-pip install sentencepiece --user
-export CUDA_VISIBLE_DEVICES="1"
-XLNET_DIR=$CURRENT_DIR/prev_trained_model/chinese_xlnet_mid_L-24_H-768_A-12
-RAW_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
+CURRENT_TIME=$(date "+%Y%m%d-%H%M%S")
 TASK_NAME="inews"
-OUTPUT_DIR=$CURRENT_DIR/${TASK_NAME}_output
-python run_classifier.py \
-    --spiece_model_file=${XLNET_DIR}/spiece.model \
+export XLNET_DIR=gs://models_zxw/prev_trained_models/nlp/xlnet-base/chinese_xlnet_base_L-12_H-768_A-12
+export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/$TASK_NAME
+export OUTPUT_DIR=gs://models_zxw/fine_tuning_models/nlp/xlnet-base/chinese_xlnet_base_L-12_H-768_A-12/tpu/$TASK_NAME/$CURRENT_TIME
+
+python $CURRENT_DIR/../run_classifier.py \
+    --spiece_model_file=${CURRENT_DIR}/../spiece.model \
     --model_config_path=${XLNET_DIR}/xlnet_config.json \
     --init_checkpoint=${XLNET_DIR}/xlnet_model.ckpt \
     --task_name=$TASK_NAME \
-    --do_train=False \
+    --do_train=True \
     --do_eval=True \
     --eval_all_ckpt=False \
     --uncased=False \
-    --data_dir=${RAW_DIR}/$TASK_NAME \
+    --data_dir=$DATA_DIR \
     --output_dir=${OUTPUT_DIR} \
     --model_dir=${OUTPUT_DIR} \
     --train_batch_size=32 \
@@ -25,4 +25,4 @@ python run_classifier.py \
     --max_seq_length=128 \
     --learning_rate=2e-5 \
     --save_steps=1000 \
-    --use_tpu=False 
+    --use_tpu=True
