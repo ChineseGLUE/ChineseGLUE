@@ -22,10 +22,9 @@ import collections
 import csv
 import os
 import modeling
-import optimization_finetuning as optimization
+import optimization
 import tokenization
 import tensorflow as tf
-# from loss import bi_tempered_logistic_loss
 
 flags = tf.flags
 
@@ -130,6 +129,7 @@ class InputExample(object):
 
     def __init__(self, guid, text_a, text_b=None, label=None):
         """Constructs a InputExample.
+
         Args:
           guid: Unique id for the example.
           text_a: string. The untokenized text of the first sequence. For single
@@ -147,10 +147,12 @@ class InputExample(object):
 
 class PaddingInputExample(object):
     """Fake example so the num input examples is a multiple of the batch size.
+
     When running eval/predict on the TPU, we need to pad the number of examples
     to be a multiple of the batch size, because the TPU requires a fixed batch
     size. The alternative is to drop the last batch, which is bad because it means
     the entire output data won't be generated.
+
     We use this class instead of `None` because treating `None` as padding
     battches could cause silent errors.
     """
@@ -211,7 +213,6 @@ class DataProcessor(object):
                 lines.append(line.strip().split("_!_"))
             return lines
 
-
 class InewsProcessor(DataProcessor):
   """Processor for the MRPC data set (GLUE version)."""
 
@@ -244,6 +245,10 @@ class InewsProcessor(DataProcessor):
       guid = "%s-%s" % (set_type, i)
       text_a = tokenization.convert_to_unicode(line[2])
       text_b = tokenization.convert_to_unicode(line[3])
+      #if set_type == "test":
+      #  label = "0"
+      #else:
+      #  label = tokenization.convert_to_unicode(line[0])
       label = tokenization.convert_to_unicode(line[0])
       examples.append(
           InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
@@ -399,6 +404,116 @@ def file_based_convert_examples_to_features_for_inews(
   tf.logging.info("feature num: %s", num_example)
   writer.close()
 
+class TnewsProcessor(DataProcessor):
+    """Processor for the MRPC data set (GLUE version)."""
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "toutiao_category_train.txt")), "train")
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "toutiao_category_dev.txt")), "dev")
+
+    def get_test_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "toutiao_category_test.txt")), "test")
+
+    def get_labels(self):
+        """See base class."""
+        labels = []
+        for i in range(17):
+            if i == 5 or i == 11:
+                continue
+            labels.append(str(100 + i))
+        return labels
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            text_a = tokenization.convert_to_unicode(line[3])
+            text_b = None
+            #if set_type == "test":
+            #    label = "0"
+            #else:
+            #    label = tokenization.convert_to_unicode(line[1])
+            label = tokenization.convert_to_unicode(line[1])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples
+
+
+class XnliProcessor(DataProcessor):
+    """Processor for the XNLI data set."""
+
+    def __init__(self):
+        self.language = "zh"
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        lines = self._read_tsv(
+            os.path.join(data_dir, "train.tsv"))
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0:
+                continue
+            guid = "train-%d" % (i)
+            text_a = tokenization.convert_to_unicode(line[0])
+            text_b = tokenization.convert_to_unicode(line[1])
+            label = tokenization.convert_to_unicode(line[2])
+            if label == tokenization.convert_to_unicode("contradictory"):
+                label = tokenization.convert_to_unicode("contradiction")
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        lines = self._read_tsv(os.path.join(data_dir, "dev.tsv"))
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0:
+                continue
+            guid = "dev-%d" % (i)
+            language = tokenization.convert_to_unicode(line[0])
+            if language != tokenization.convert_to_unicode(self.language):
+                continue
+            text_a = tokenization.convert_to_unicode(line[6])
+            text_b = tokenization.convert_to_unicode(line[7])
+            label = tokenization.convert_to_unicode(line[1])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples
+
+    def get_test_examples(self, data_dir):
+        """See base class."""
+        lines = self._read_tsv(os.path.join(data_dir, "test.tsv"))
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0:
+                continue
+            guid = "dev-%d" % (i)
+            language = tokenization.convert_to_unicode(line[0])
+            if language != tokenization.convert_to_unicode(self.language):
+                continue
+            text_a = tokenization.convert_to_unicode(line[6])
+            text_b = tokenization.convert_to_unicode(line[7])
+            label = tokenization.convert_to_unicode(line[1])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples
+
+    def get_labels(self):
+        """See base class."""
+        return ["contradiction", "entailment", "neutral"]
+
 class LCQMCProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
 
@@ -492,80 +607,68 @@ class CCKSProcessor(DataProcessor):
                 print('###error.i:', i, line)
         return examples
 
-
-class SentencePairClassificationProcessor(DataProcessor):
-    """Processor for the internal data set. sentence pair classification"""
-
-    def __init__(self):
-        self.language = "zh"
+class MnliProcessor(DataProcessor):
+    """Processor for the MultiNLI data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_tsv(os.path.join(data_dir, "train_0827.tsv")), "train")
-        # dev_0827.tsv
+            self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
 
     def get_dev_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_tsv(os.path.join(data_dir, "dev_0827.tsv")), "dev")
+            self._read_tsv(os.path.join(data_dir, "dev_matched.tsv")),
+            "dev_matched")
 
     def get_test_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_tsv(os.path.join(data_dir, "test_0827.tsv")), "test")
+            self._read_tsv(os.path.join(data_dir, "test_matched.tsv")), "test")
 
     def get_labels(self):
         """See base class."""
-        return ["0", "1"]
-        # return ["-1","0", "1"]
+        return ["contradiction", "entailment", "neutral"]
 
     def _create_examples(self, lines, set_type):
         """Creates examples for the training and dev sets."""
         examples = []
-        print("length of lines:", len(lines))
         for (i, line) in enumerate(lines):
-            # print('#i:',i,line)
             if i == 0:
                 continue
-            guid = "%s-%s" % (set_type, i)
-            try:
-                label = tokenization.convert_to_unicode(line[0])
-                text_a = tokenization.convert_to_unicode(line[1])
-                text_b = tokenization.convert_to_unicode(line[2])
-                examples.append(
-                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
-            except Exception:
-                print('###error.i:', i, line)
+            guid = "%s-%s" % (set_type, tokenization.convert_to_unicode(line[0]))
+            text_a = tokenization.convert_to_unicode(line[8])
+            text_b = tokenization.convert_to_unicode(line[9])
+            if set_type == "test":
+                label = "contradiction"
+            else:
+                label = tokenization.convert_to_unicode(line[-1])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
 
-class TnewsProcessor(DataProcessor):
+class MrpcProcessor(DataProcessor):
     """Processor for the MRPC data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_train.txt")), "train")
+            self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
 
     def get_dev_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_dev.txt")), "dev")
+            self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
 
     def get_test_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_test.txt")), "test")
+            self._read_tsv(os.path.join(data_dir, "test.tsv")), "test")
 
     def get_labels(self):
         """See base class."""
-        labels = []
-        for i in range(17):
-            if i == 5 or i == 11:
-                continue
-            labels.append(str(100 + i))
-        return labels
+        return ["0", "1"]
 
     def _create_examples(self, lines, set_type):
         """Creates examples for the training and dev sets."""
@@ -575,76 +678,55 @@ class TnewsProcessor(DataProcessor):
                 continue
             guid = "%s-%s" % (set_type, i)
             text_a = tokenization.convert_to_unicode(line[3])
-            text_b = None
-            label = tokenization.convert_to_unicode(line[1])
+            text_b = tokenization.convert_to_unicode(line[4])
+            if set_type == "test":
+                label = "0"
+            else:
+                label = tokenization.convert_to_unicode(line[0])
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
 
-class XnliProcessor(DataProcessor):
-    """Processor for the XNLI data set."""
-
-    def __init__(self):
-        self.language = "zh"
+class ColaProcessor(DataProcessor):
+    """Processor for the CoLA data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
-        lines = self._read_tsv(
-            os.path.join(data_dir, "train.tsv"))
-        examples = []
-        for (i, line) in enumerate(lines):
-            if i == 0:
-                continue
-            guid = "train-%d" % (i)
-            text_a = tokenization.convert_to_unicode(line[0])
-            text_b = tokenization.convert_to_unicode(line[1])
-            label = tokenization.convert_to_unicode(line[2])
-            if label == tokenization.convert_to_unicode("contradictory"):
-                label = tokenization.convert_to_unicode("contradiction")
-            examples.append(
-                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
-        return examples
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
 
     def get_dev_examples(self, data_dir):
         """See base class."""
-        lines = self._read_tsv(os.path.join(data_dir, "test.tsv"))
-        examples = []
-        for (i, line) in enumerate(lines):
-            if i == 0:
-                continue
-            guid = "dev-%d" % (i)
-            language = tokenization.convert_to_unicode(line[0])
-            if language != tokenization.convert_to_unicode(self.language):
-                continue
-            text_a = tokenization.convert_to_unicode(line[6])
-            text_b = tokenization.convert_to_unicode(line[7])
-            label = tokenization.convert_to_unicode(line[1])
-            examples.append(
-                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
-        return examples
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
 
     def get_test_examples(self, data_dir):
         """See base class."""
-        lines = self._read_tsv(os.path.join(data_dir, "test.tsv"))
-        examples = []
-        for (i, line) in enumerate(lines):
-            if i == 0:
-                continue
-            guid = "dev-%d" % (i)
-            language = tokenization.convert_to_unicode(line[0])
-            if language != tokenization.convert_to_unicode(self.language):
-                continue
-            text_a = tokenization.convert_to_unicode(line[6])
-            text_b = tokenization.convert_to_unicode(line[7])
-            label = tokenization.convert_to_unicode(line[1])
-            examples.append(
-                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
-        return examples
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "test.tsv")), "test")
 
     def get_labels(self):
         """See base class."""
-        return ["contradiction", "entailment", "neutral"]
+        return ["0", "1"]
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+            # Only the test set has a header
+            if set_type == "test" and i == 0:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            if set_type == "test":
+                text_a = tokenization.convert_to_unicode(line[1])
+                label = "0"
+            else:
+                text_a = tokenization.convert_to_unicode(line[3])
+                label = tokenization.convert_to_unicode(line[1])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
+        return examples
 
 
 def convert_single_example(ex_index, example, label_list, max_seq_length,
@@ -872,13 +954,6 @@ def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
         "output_bias", [num_labels], initializer=tf.zeros_initializer())
 
     with tf.variable_scope("loss"):
-        ln_type = bert_config.ln_type
-        if ln_type == 'preln':  # add by brightmart, 10-06. if it is preln, we need to an additonal layer: layer normalization as suggested in paper "ON LAYER NORMALIZATION IN THE TRANSFORMER ARCHITECTURE"
-            print("ln_type is preln. add LN layer.")
-            output_layer = layer_norm(output_layer)
-        else:
-            print("ln_type is postln or other,do nothing.")
-
         if is_training:
             # I.e., 0.1 dropout
             output_layer = tf.nn.dropout(output_layer, keep_prob=0.9)
@@ -890,24 +965,10 @@ def create_model(bert_config, is_training, input_ids, input_mask, segment_ids,
 
         one_hot_labels = tf.one_hot(labels, depth=num_labels, dtype=tf.float32)
 
-        per_example_loss = -tf.reduce_sum(one_hot_labels * log_probs, axis=-1)  # todo 08-29 try temp-loss
-        ###############bi_tempered_logistic_loss############################################################################
-        # print("##cross entropy loss is used...."); tf.logging.info("##cross entropy loss is used....")
-        # t1=0.9 #t1=0.90
-        # t2=1.05 #t2=1.05
-        # per_example_loss=bi_tempered_logistic_loss(log_probs,one_hot_labels,t1,t2,label_smoothing=0.1,num_iters=5) # TODO label_smoothing=0.0
-        # tf.logging.info("per_example_loss:"+str(per_example_loss.shape))
-        ##############bi_tempered_logistic_loss#############################################################################
-
+        per_example_loss = -tf.reduce_sum(one_hot_labels * log_probs, axis=-1)
         loss = tf.reduce_mean(per_example_loss)
 
         return (loss, per_example_loss, logits, probabilities)
-
-
-def layer_norm(input_tensor, name=None):
-    """Run layer normalization on the last dimension of the tensor."""
-    return tf.contrib.layers.layer_norm(
-        inputs=input_tensor, begin_norm_axis=-1, begin_params_axis=-1, scope=name)
 
 
 def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
@@ -1078,12 +1139,13 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
-        "sentence_pair": SentencePairClassificationProcessor,
-        "lcqmc_pair": LCQMCProcessor,
-        "lcqmc": LCQMCProcessor,
+        "cola": ColaProcessor,
+        "mnli": MnliProcessor,
+        "mrpc": MrpcProcessor,
+        "xnli": XnliProcessor,
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
-        "xnli": XnliProcessor,
+        "lcqmc": LCQMCProcessor,
         "ccks2018_task3": CCKSProcessor
     }
 
@@ -1122,8 +1184,6 @@ def main(_):
             FLAGS.tpu_name, zone=FLAGS.tpu_zone, project=FLAGS.gcp_project)
 
     is_per_host = tf.contrib.tpu.InputPipelineConfig.PER_HOST_V2
-    # Cloud TPU: Invalid TPU configuration, ensure ClusterResolver is passed to tpu.
-    print("###tpu_cluster_resolver:", tpu_cluster_resolver)
     run_config = tf.contrib.tpu.RunConfig(
         cluster=tpu_cluster_resolver,
         master=FLAGS.master,
@@ -1138,9 +1198,9 @@ def main(_):
     num_train_steps = None
     num_warmup_steps = None
     if FLAGS.do_train:
-        train_examples = processor.get_train_examples(FLAGS.data_dir)  # TODO
-        print("###length of total train_examples:", len(train_examples))
-        num_train_steps = int(len(train_examples) / FLAGS.train_batch_size * FLAGS.num_train_epochs)
+        train_examples = processor.get_train_examples(FLAGS.data_dir)
+        num_train_steps = int(
+            len(train_examples) / FLAGS.train_batch_size * FLAGS.num_train_epochs)
         num_warmup_steps = int(num_train_steps * FLAGS.warmup_proportion)
 
     model_fn = model_fn_builder(
@@ -1165,13 +1225,13 @@ def main(_):
 
     if FLAGS.do_train:
         train_file = os.path.join(FLAGS.output_dir, "train.tf_record")
-        train_file_exists = os.path.exists(train_file)
-        print("###train_file_exists:", train_file_exists, " ;train_file:", train_file)
-        if not train_file_exists:  # if tf_record file not exist, convert from raw text file. # TODO
-            if task_name == "inews":
-                file_based_convert_examples_to_features_for_inews(train_examples, label_list, FLAGS.max_seq_length, tokenizer, train_file)
-            else:
-                file_based_convert_examples_to_features(train_examples, label_list, FLAGS.max_seq_length, tokenizer, train_file)
+        if task_name == "inews":
+            file_based_convert_examples_to_features_for_inews(
+            train_examples, label_list, FLAGS.max_seq_length, tokenizer, train_file)
+        else:
+            file_based_convert_examples_to_features(
+            train_examples, label_list, FLAGS.max_seq_length, tokenizer, train_file)
+            
         tf.logging.info("***** Running training *****")
         tf.logging.info("  Num examples = %d", len(train_examples))
         tf.logging.info("  Batch size = %d", FLAGS.train_batch_size)
@@ -1238,7 +1298,7 @@ def main(_):
                 steps_and_files.append([global_step, cur_filename])
         steps_and_files = sorted(steps_and_files, key=lambda x: x[0])
 
-        output_eval_file = os.path.join(FLAGS.data_dir, "dev_results_albert_zh.txt")
+        output_eval_file = os.path.join(FLAGS.data_dir, "dev_results_roberta_wwm_large_ext.txt")
         print("output_eval_file:", output_eval_file)
         tf.logging.info("output_eval_file:" + output_eval_file)
         with tf.gfile.GFile(output_eval_file, "w") as writer:
@@ -1254,7 +1314,7 @@ def main(_):
 
         # result = estimator.evaluate(input_fn=eval_input_fn, steps=eval_steps)
         #
-        # output_eval_file = os.path.join(FLAGS.output_dir, "dev_results_albert_zh.txt")
+        # output_eval_file = os.path.join(FLAGS.output_dir, "dev_results_roberta_wwm_large_ext.txt")
         # with tf.gfile.GFile(output_eval_file, "w") as writer:
         #  tf.logging.info("***** Eval results *****")
         #  for key in sorted(result.keys()):
@@ -1311,7 +1371,7 @@ def main(_):
                 steps_and_files.append([global_step, cur_filename])
         steps_and_files = sorted(steps_and_files, key=lambda x: x[0])
 
-        output_eval_file = os.path.join(FLAGS.data_dir, "test_results_albert_zh.txt")
+        output_eval_file = os.path.join(FLAGS.data_dir, "test_results_roberta_wwm_large_ext.txt")
         print("output_eval_file:", output_eval_file)
         tf.logging.info("output_eval_file:" + output_eval_file)
         with tf.gfile.GFile(output_eval_file, "w") as writer:
@@ -1327,7 +1387,7 @@ def main(_):
 
         #result = estimator.evaluate(input_fn=eval_input_fn, steps=eval_steps)
         #
-        #output_eval_file = os.path.join(FLAGS.output_dir, "test_results_albert_zh.txt")
+        #output_eval_file = os.path.join(FLAGS.output_dir, "test_results_roberta_wwm_large_ext.txt")
         # with tf.gfile.GFile(output_eval_file, "w") as writer:
         #  tf.logging.info("***** Eval results *****")
         #  for key in sorted(result.keys()):

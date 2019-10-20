@@ -35,6 +35,7 @@
     | RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
     | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
     | RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 | 
+    | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
 
     2. XNLI 自然语言推理
     
@@ -49,6 +50,7 @@
     | RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
     | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
     | RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 | 
+    | RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
     
     3. LCQMC  语义相似度匹配
     
@@ -61,6 +63,7 @@
     | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
     | XLNet-mid	| 86.14 | 85.98 |	batch_size=32, length=128, epoch=3 | 
     | RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 | 
+    | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
 
     4. INEWS 互联网情感分析
     
@@ -73,22 +76,40 @@
     | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
     | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
     | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
+    | RoBERTa-wwm-large-ext	|83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
     
     5. DRCD 繁体阅读理解
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
     | ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch_size=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
-    | ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | ***F1:94.697 EM:89.780*** |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
-    | RoBERTa-large	|***F1:94.93(95.06) EM:90.11(90.24)*** | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
+    | ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | F1:94.697 EM:89.780 |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+    | ALBERT-tiny	|F1:81.507(81.818) EM:71.606(72.247) | F1:80.672 EM:70.083 |	batch_size=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
+    | RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
     | RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1| 
+    | RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch_size=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |
     
     6. CMRC2018 阅读理解
     
     | 模型 | 开发集（dev) | 训练参数 |
     | :----:| :----: | :----: |
-    | ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, lr=2e-5, warmup=0.05 |
-    | ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, lr=2e-5, warmup=0.1 |
-    | RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, lr=3e-5, warmup=0.1 |
-    | RoBERTa-large	| ***F1:88.608(89.431) EM:69.935(72.538)*** | epoch2, batch=32, lr=3e-5, warmup=0.1 |
-    | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, lr=3e-5, warmup=0.1 | 
+    | ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.05 |
+    | ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.1 |
+    | ALBERT-tiny	| F1:73.949(74.664) EM:48.307(50.233) | epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
+    | RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
+    | RoBERTa-large	| F1:88.608(89.431) EM:69.935(72.538) | epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
+    | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |  
+    | RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+
+    7. CCKS2018 task3 语义相似度匹配
+
+    | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
+    | :----:| :----: | :----: | :----: |
+    | BERT-base | 92.69 | 92.53 | batch_size=64, length=128, epoch=3 |
+    | BERT-wwm-ext-base | 93.00 | 92.79 |batch_size=64, length=128, epoch=3 |
+    | ERNIE-base | 90.78 | 90.48 | batch_size=64, length=128, epoch=3 |
+    | RoBERTa-large	| 93.34 | 92.81 | batch_size=8, length=128, epoch=3 |
+    | XLNet-mid	| - | - | - |
+    | ALBERT-xlarge |	92.49 | 92.59 | batch_size=16, length=128, epoch=3 |
+    | ALBERT-tiny | 88.22 | 87.62 | batch_size=64, length=128, epoch=5 |
+    | RoBERTa-wwm-large-ext | **93.62** | **93.61** | batch_size=8, length=128, epoch=3 |

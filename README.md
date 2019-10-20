@@ -5,20 +5,26 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 我们会选择一系列有一定代表性的任务对应的数据集，做为我们测试基准的数据集。这些数据集会覆盖不同的任务、数据量、任务难度。
 
-#####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量
+中文任务基准测评(chineseGLUE)-排行榜
+---------------------------------------------------------------------
+#####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量(cmrc2018仅开发集结果)
 
 | 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: | :----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | - | 84.30 | 108M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46 | - | - | 84.82  |108M |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | - | - | 85.19  | 108M|
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  | ***79.9*** | 84.0 | 89.35/94.25 | 88.60/69.93 | ***85.25*** | 334M |
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|89.91  | 87.2  | 79.9 | 84.0 | 89.35/94.25 | 69.93/88.60 | ***85.25*** | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| - | - | 83.74 | 209M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 | ***89.78/94.70*** | 88.66/68.90 | 82.74 | 59M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> |	87.10 |	85.4 | - |81.4 | - | - |  - | 1.8M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 | 88.12/93.53 | 87.28/67.89 |  84.04 | 108M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 | 89.78/94.70 | 68.90/88.66 | 82.74 | 59M |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> |	87.10 |	85.4 | - |81.4 | 70.08/80.67 | 48.31/73.95 | - | 1.8M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.28 |81.58 | 88.12/93.53 | 67.89/87.28 |  84.04 | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** |  84.94 | 330M |
+
+Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
 注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；cmrc2018仅开发集结果
+
 数据来源: https://github.com/chineseGLUE/chineseGLUE
 
 
@@ -60,32 +66,25 @@ resources for training, evaluating, and analyzing natural language understanding
 
 ##### 1）中文任务的基准测试，覆盖多个不同程度的语言任务 
   
-  A benchmark of several sentence or sentence pair language understanding tasks. 
+A benchmark of several sentence or sentence pair language understanding tasks. 
 
- Currently the datasets used in these tasks are come from public. We will include datasets with private test set before
- 
- the end of 2019.
+Currently the datasets used in these tasks are come from public. We will include datasets with private test set before the end of 2019.
 
 ##### 2）公开的排行榜 
   
-  A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks,
-
-each task will be evaluated and scored, a final score will also be available.
+A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks, each task will be evaluated and scored, a final score will also be available.
 
 ##### 3）基线模型，包含开始的代码、预训练模型 
   
-  baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
+baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
 
 ##### 4）语料库，用于语言建模、预训练或生成型任务 
 
-   A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
+A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
    
-   In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough
-   
-   raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
+In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
 
-   You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, 
-   you will able to select corpus you are interested in.
+You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
 数据集介绍与下载
 --------------------------------------------------------------------
@@ -225,8 +224,16 @@ https://hfl-rc.github.io/cmrc2018/
 ```  
 数据格式和squad相同
 
+##### 7. CCKS2018 Task3 智能客服问句匹配
+该数据集是自动问答系统语料，共有100,000对句子对，并标注了句子对相似度值，取值为0或1（0表示不相似，1表示相似），并按70:20:10比例分割成训练集、开发集和测试集。数据中存在错别字、语法不规范等问题，但更加贴近工业场景。
 
-##### 7. 更多数据集添加中，Comming soon!
+        数据量：训练集(70,000)，验证集(20,000)，测试集(10,000)
+        例子： 
+         1.我存钱还不扣的 [分隔符] 借了每天都要还利息吗 [分隔符] 0
+         2.为什么我的还没有额度 [分隔符] 为啥没有额度！！ [分隔符] 1
+
+
+##### 8. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，目标是8个覆盖不同任务的有代表性的数据集；如果你有定义良好的数据集，请与我们取得联系。
 
@@ -236,23 +243,8 @@ https://hfl-rc.github.io/cmrc2018/
 
     wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip
 
-中文任务基准测评(chineseGLUE)-排行榜
+中文任务基准测评(chineseGLUE)-排行榜-各任务对比
 ---------------------------------------------------------------------
-#####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量(cmrc2018仅开发集结果)
-
-| 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | AVG | 参数量
-| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: | :----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | - | 84.30 | 108M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46 | - | - | 84.82  |108M |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | - | - | 85.19  | 108M|
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  | ***79.9*** | 84.0 | 89.35/94.25 | 88.60/69.93 | ***85.25*** | 334M |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| - | - | 83.74 | 209M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 | ***89.78/94.70*** | 88.66/68.90 | 82.74 | 59M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 | 88.12/93.53 | 87.28/67.89 |  84.04 | 108M |
-
-Notice: ERNIE2.0 is not evaluated as it is not available to the public
-
-#### ---各任务对比---
 
 #### TNEWS 短文本分类：
 
@@ -262,9 +254,10 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
 | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
-| RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
+| RoBERTa-large	| 90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
-| RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 | 
+| RoBERTa-wwm-ext | 89.75 | 89.64 |	batch_size=32, length=128, epoch=3 | 
+| RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
 
 #### XNLI 自然语言推理：
     
@@ -274,9 +267,10 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-base	| 77.80	| 77.80	| batch_size=64, length=128, epoch=2 |
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
-| RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
+| RoBERTa-large	|***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
-| RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 | 
+| RoBERTa-wwm-ext	|78.87 | 78.28 |	batch_size=64, length=128, epoch=2 | 
+| RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
@@ -291,6 +285,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 | 
+| RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
     
     
 #### INEWS 互联网情感分析：
@@ -304,25 +299,43 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
 | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
 | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
+| RoBERTa-wwm-large-ext	|83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
 
 #### DRCD 繁体阅读理解：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch_size=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
-| ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | ***F1:94.697 EM:89.780*** |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
-| RoBERTa-large	|***F1:94.93(95.06) EM:90.11(90.24)*** | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
-| RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1| 
+| ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | F1:94.697 EM:89.780 |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+| ALBERT-tiny	|F1:81.507(81.818) EM:71.606(72.247) | F1:80.672 EM:70.083 |	batch_size=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
+| RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
+| RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1|
+| RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch_size=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |  
 
 #### CMRC2018 阅读理解(暂时只有开发集结果)：
     
 | 模型 | 开发集（dev) | 训练参数 |
 | :----:| :----: | :----: |
-| ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, lr=2e-5, warmup=0.05 |
-| ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, lr=2e-5, warmup=0.1 |
-| RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, lr=3e-5, warmup=0.1 |
-| RoBERTa-large	| ***F1:88.608(89.431) EM:69.935(72.538)*** | epoch2, batch=32, lr=3e-5, warmup=0.1 |
-| RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, lr=3e-5, warmup=0.1 | 
+| ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.05 |
+| ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.1 |
+| ALBERT-tiny	| F1:73.949(74.664) EM:48.307(50.233) | epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
+| RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
+| RoBERTa-large	| F1:88.608(89.431) EM:69.935(72.538) | epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
+| RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
+| RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+
+#### CCKS2018 Task3 智能客服问句匹配：
+
+| 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| BERT-base | 92.69 | 92.53 | batch_size=64, length=128, epoch=3 |
+| BERT-wwm-ext-base | 93.00 | 92.79 |batch_size=64, length=128, epoch=3 |
+| ERNIE-base | 90.78 | 90.48 | batch_size=64, length=128, epoch=3 |
+| RoBERTa-large	| 93.34 | 92.81 | batch_size=8, length=128, epoch=3 |
+| XLNet-mid	| - | - | - |
+| ALBERT-xlarge |	92.49 | 92.59 | batch_size=16, length=128, epoch=3 |
+| ALBERT-tiny | 88.22 | 87.62 | batch_size=64, length=128, epoch=5 |
+| RoBERTa-wwm-large-ext | **93.62** | **93.61** | batch_size=8, length=128, epoch=3 |
     
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
