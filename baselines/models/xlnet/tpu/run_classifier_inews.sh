@@ -20,7 +20,7 @@ python $CURRENT_DIR/../run_classifier.py \
     --train_batch_size=32 \
     --eval_batch_size=8 \
     --num_hosts=1 \
-    --num_core_per_host=1 \
+    --num_core_per_host=8 \
     --num_train_epochs=3 \
     --max_seq_length=128 \
     --learning_rate=2e-5 \
