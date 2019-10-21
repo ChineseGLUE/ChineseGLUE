@@ -18,7 +18,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| - | - | 83.74 | 209M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |82.4 | 89.78/94.70 | 68.90/88.66 | 82.87 | 59M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> |	87.10 |	85.4 | - |81.4 | 70.08/80.67 | 48.31/73.95 | - | 1.8M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.28 |81.58 | 88.12/93.53 | 67.89/87.28 |  84.04 | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.79 |	86.33 | 79.28 | 82.28 | 88.12/93.53 | 67.89/87.28 |  84.42 | 108M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** |  84.94 | 330M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
@@ -256,7 +256,7 @@ https://hfl-rc.github.io/cmrc2018/
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
 | RoBERTa-large	| 90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
-| RoBERTa-wwm-ext | 89.75 | 89.64 |	batch_size=32, length=128, epoch=3 | 
+| RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
 
 #### XNLI 自然语言推理：
@@ -268,8 +268,8 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
 | RoBERTa-large	|***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
-| XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
-| RoBERTa-wwm-ext	|78.87 | 78.28 |	batch_size=64, length=128, epoch=2 | 
+| XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
+| RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
@@ -284,7 +284,7 @@ https://hfl-rc.github.io/cmrc2018/
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
-| RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 | 
+| RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
     
     
@@ -296,10 +296,10 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
-| RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
-| XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
-| RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
-| RoBERTa-wwm-large-ext	|83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
+| RoBERTa-large	| 81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
+| XLNet-mid	| 82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
+| RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 | 
+| RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
 
 #### DRCD 繁体阅读理解：
     
