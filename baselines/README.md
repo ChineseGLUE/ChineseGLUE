@@ -121,7 +121,7 @@
     | BERT-base	| 95.38	| batch_size=16, length=256, epoch=5, lr=2e-5 |
     | BERT-wwm-ext-base	| 95.26	| batch_size=16, length=256, epoch=5, lr=2e-5 |
     | ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
-    | RoBERTa-large | 96.07	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+    | RoBERTa-large | *** 96.07 ***	| batch_size=8, length=256, epoch=5, lr=2e-5 |
     | XLNet-mid | - | - |
     | ALBERT-xlarge | - | - |
     | ALBERT-tiny | - | - |
