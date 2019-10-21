@@ -113,3 +113,19 @@
     | ALBERT-xlarge |	92.49 | 92.59 | batch_size=16, length=128, epoch=3 |
     | ALBERT-tiny | 88.22 | 87.62 | batch_size=64, length=128, epoch=5 |
     | RoBERTa-wwm-large-ext | **93.62** | **93.61** | batch_size=8, length=128, epoch=3 |
+
+    8. MSRANER 命名实体识别
+
+    | 模型 | 测试集（test） | 训练参数 |
+    | :----: | :----: | :----: |
+    | BERT-base	| 95.38	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+    | BERT-wwm-ext-base	| 95.26	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+    | ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
+    | RoBERTa-large | 96.07	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+    | XLNet-mid | - | - |
+    | ALBERT-xlarge | - | - |
+    | ALBERT-tiny | - | - |
+    | RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+    | RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+
+

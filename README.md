@@ -9,17 +9,17 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 ---------------------------------------------------------------------
 #####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量(cmrc2018仅开发集结果)
 
-| 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | AVG | 参数量
-| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: | :----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | - | 84.30 | 108M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46 | - | - | 84.82  |108M |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | - | - | 85.19  | 108M|
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|89.91  | 87.2  | 79.9 | 84.0 | 89.35/94.25 | 69.93/88.60 | ***85.25*** | 334M |
+| 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | MSRANER | AVG | 参数量
+| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: | :----: |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | - | 95.38 | 84.30 | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46 | - | - | 95.26 | 84.82  |108M |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | - | - | 95.17 | 85.19  | 108M|
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|89.91  | 87.2  | 79.9 | 84.0 | 89.35/94.25 | 69.93/88.60 | ***96.07*** | ***85.25*** | 334M |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| - | - | 83.74 | 209M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |82.4 | 89.78/94.70 | 68.90/88.66 | 82.87 | 59M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> |	87.10 |	85.4 | - |81.4 | 70.08/80.67 | 48.31/73.95 | - | 1.8M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.79 |	86.33 | 79.28 | 82.28 | 88.12/93.53 | 67.89/87.28 |  84.42 | 108M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** |  84.94 | 330M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.79 |	86.33 | 79.28 | 82.28 | 88.12/93.53 | 67.89/87.28 | 95.06 |  84.42 | 108M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** | 95.32 |  84.94 | 330M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
@@ -336,7 +336,22 @@ https://hfl-rc.github.io/cmrc2018/
 | ALBERT-xlarge |	92.49 | 92.59 | batch_size=16, length=128, epoch=3 |
 | ALBERT-tiny | 88.22 | 87.62 | batch_size=64, length=128, epoch=5 |
 | RoBERTa-wwm-large-ext | **93.62** | **93.61** | batch_size=8, length=128, epoch=3 |
-    
+
+#### MSRANER 命名实体识别:
+
+| 模型 | 测试集（test） | 训练参数 |
+| :----: | :----: | :----: |
+| BERT-base	| 95.38	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+| BERT-wwm-ext-base	| 95.26	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+| ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
+| RoBERTa-large | 96.07	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+| XLNet-mid | - | - |
+| ALBERT-xlarge | - | - |
+| ALBERT-tiny | - | - |
+| RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+| RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+
+
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
 
