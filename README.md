@@ -9,7 +9,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 ---------------------------------------------------------------------
 #####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量(cmrc2018仅开发集结果)
 
-| 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 |CCKS2018-3| AVG | 参数量
+| 模型 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 |CCKS18-3| AVG | 参数量
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: | :----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | - | - | 92.53| 84.30 | 108M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46 | - | - | 92.79| 84.82  |108M |
@@ -19,7 +19,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |82.4 | 89.78/94.70 | 68.90/88.66 | 92.59| 82.87 | 59M |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> |	87.10 |	85.4 | - |81.4 | 70.08/80.67 | 48.31/73.95 | 87.62| - | 1.8M |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.79 |	86.33 | 79.28 | 82.28 | 88.12/93.53 | 67.89/87.28 | -|  84.42 | 108M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large-ext</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** | ***93.61*** |  84.94 | 330M |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** | ***93.61*** |  84.94 | 330M |
 
 Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
