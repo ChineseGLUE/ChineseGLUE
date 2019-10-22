@@ -127,9 +127,6 @@ You can use it for general purpose or domain adaption, or even for text generati
 ```
 数据量：训练集(8,016个段落，26,936个问题)，验证集(1,000个段落，3,524个问题)，测试集(1,000个段落，3,493个问题)  
 例子：
-```
- 
-```json
 {
   "version": "1.3",
   "data": [
@@ -179,9 +176,6 @@ https://hfl-rc.github.io/cmrc2018/
 ```
 数据量：训练集(短文数2,403，问题数10,142)，试验集(短文数256，问题数1,002)，开发集(短文数848，问题数3,219)  
 例子：
-```
- 
-```json
 {
   "version": "1.0",
   "data": [
