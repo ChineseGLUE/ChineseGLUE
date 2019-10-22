@@ -1,4 +1,5 @@
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+pip install sentencepiece --user
 export CUDA_VISIBLE_DEVICES="1"
 XLNET_DIR=$CURRENT_DIR/prev_trained_model/chinese_xlnet_mid_L-24_H-768_A-12
 RAW_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
