@@ -211,7 +211,6 @@ class DataProcessor(object):
                 lines.append(line.strip().split("_!_"))
             return lines
 
-# insert this code into run_classifier.py 
 class THUCNewsProcessor(DataProcessor):
     """Processor for the THUCNews data set (GLUE version)."""
 
