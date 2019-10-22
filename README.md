@@ -12,14 +12,14 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | BQ | MSRANER
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 84.30 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 84.82  |108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | 85.21 | 95.26 | 
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 84.82  |108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|85.19  | 108M|89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> |***85.25*** | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	|83.74 | 209M | 86.26 | 85.98  |78.7 |84.0| - | - | - | - | 
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 82.87 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | - | 1.8M |	87.10 |	85.4 | - |81.4 | 80.67 | 73.95 | 80.76 | - | 
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 84.42 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | 84.94 | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | - | 95.32 | 
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | 84.94 | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | 
 
 
 注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；
@@ -336,14 +336,14 @@ https://hfl-rc.github.io/cmrc2018/
 | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | BERT-base | 85.86 | 85.08 | batch_size=64, length=128, epoch=3 |
-| BERT-wwm-ext-base | 86.05 | 85.21 |batch_size=64, length=128, epoch=3 |
+| BERT-wwm-ext-base | 86.05 | ***85.21*** |batch_size=64, length=128, epoch=3 |
 | ERNIE-base | 85.92 | 84.47 | batch_size=64, length=128, epoch=3 |
 | RoBERTa-large	| 85.68 | 85.20 | batch_size=8, length=128, epoch=3 |
 | XLNet-mid	| - | - | - |
 | ALBERT-xlarge |	85.21 | 84.21 | batch_size=16, length=128, epoch=3 |
 | ALBERT-tiny | 82.04 | 80.76 | batch_size=64, length=128, epoch=5 |
 | RoBERTa-wwm-ext | 85.31 | 84.02 | batch_size=64, length=128, epoch=3 |
-| RoBERTa-wwm-large-ext | - | - | - |
+| RoBERTa-wwm-large-ext | ***86.34*** | 84.90 | batch_size=16, length=128, epoch=3 |
 
 #### MSRANER 命名实体识别:
 
