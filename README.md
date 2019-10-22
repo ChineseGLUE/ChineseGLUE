@@ -194,7 +194,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-wwm-ext-base | 95.38 | 95.57 |	batch_size=8, length=128, epoch=3 |
 | ERNIE-base	| 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
 | RoBERTa-large	| |  |	batch_size=4, length=512, epoch=3 |
-| XLNet-mid	| |  |	batch_size=8, length=512, epoch=3 |
+| XLNet-mid	| | 94.52 |	batch_size=16, length=128, epoch=3 |
 | RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
 
 
