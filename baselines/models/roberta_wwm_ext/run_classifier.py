@@ -561,7 +561,7 @@ class LCQMCProcessor(DataProcessor):
         return examples
 
 
-class CCKSProcessor(DataProcessor):
+class BQProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
 
     def __init__(self):
@@ -1146,7 +1146,7 @@ def main(_):
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
         "lcqmc": LCQMCProcessor,
-        "ccks2018_task3": CCKSProcessor
+        "bq": BQProcessor
     }
 
     tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
