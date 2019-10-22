@@ -101,7 +101,7 @@
     | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |  
     | RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
 
-    7. BQ 语义相似度匹配
+    7. BQ 智能客服问句匹配
 
     | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -112,7 +112,7 @@
     | XLNet-mid	| - | - | - |
     | ALBERT-xlarge |	- | - | - |
     | ALBERT-tiny | 82.04 | 80.76 | batch_size=64, length=128, epoch=5 |
-    | RoBERTa-wwm-ext | - | - | - |
+    | RoBERTa-wwm-ext | 85.31 | 84.02 | batch_size=64, length=128, epoch=3 |
     | RoBERTa-wwm-large-ext | - | - | - |
 
     8. MSRANER 命名实体识别
