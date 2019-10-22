@@ -1,13 +1,14 @@
+#!/usr/bin/env bash
 CURRENT_DIR=`pwd`
-export CUDA_VISIBLE_DEVICES="3"
-export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/tensorflow
+export CUDA_VISIBLE_DEVICES="0"
+export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/chinese_wwm_ext_L-12_H-768_A-12
 export GLUE_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
 
 python run_classifier.py \
-  --task_name=ccks2018_task3 \
+  --task_name=bq \
   --do_train=true \
   --do_eval=true \
-  --data_dir=$GLUE_DIR/ccks2018_task3 \
+  --data_dir=$GLUE_DIR/bq \
   --vocab_file=$BERT_BASE_DIR/vocab.txt \
   --bert_config_file=$BERT_BASE_DIR/bert_config.json \
   --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
@@ -15,4 +16,4 @@ python run_classifier.py \
   --train_batch_size=32 \
   --learning_rate=2e-5 \
   --num_train_epochs=3.0 \
-  --output_dir=$CURRENT_DIR/ccks2018_task3_output/
+  --output_dir=$CURRENT_DIR/bq_output/
