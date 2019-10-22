@@ -1182,6 +1182,7 @@ def main(_):
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
         "lcqmc": LCQMCProcessor,
+        "thucnews": THUCNewsProcessor,
         "bq": BQProcessor
     }
 
