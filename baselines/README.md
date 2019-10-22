@@ -73,3 +73,16 @@
     | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
     | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
     | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
+
+    5. THUCNEWS 长文本分类
+
+    | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+    | :----:| :----: | :----: | :----: |
+    | ALBERT-xlarge |    | |batch_size=32, length=512, epoch=8 |
+    | BERT-base | 95.28 | 95.35 | batch_size=16, length=512, epoch=3 |
+    | BERT-wwm-ext-base | 95.38 | 95.57 |       batch_size=16, length=512, epoch=3 |
+    | ERNIE-base        |       | | batch_size=16, length=512, epoch=3 |
+    | RoBERTa-large     | |  |  batch_size=4, length=512, epoch=3 |
+    | XLNet-mid | |  |  batch_size=8, length=512, epoch=3 |
+    | RoBERTa-wwm-ext   | |  |  batch_size=16, length=512, epoch=3 |
+
