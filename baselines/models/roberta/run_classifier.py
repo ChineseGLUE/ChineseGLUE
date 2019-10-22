@@ -1068,6 +1068,7 @@ def main(_):
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
         "xnli": XnliProcessor,
+        "thucnews":THUCNewsProcessor,
     }
 
     tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
