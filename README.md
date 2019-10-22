@@ -22,9 +22,9 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | 84.94 | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***90.70/95.06*** | ***70.59/89.42*** | ***93.61*** | 95.32 | 
 
 
-注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；CCKS2018-3:智能客服问句匹配；
+注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；CCKS-3:智能客服问句匹配；
 
-MSRANER:命名实体识别；cmrc2018仅开发集结果；Score是计算平均值获得； 数据来源: https://github.com/chineseGLUE/chineseGLUE
+MSRANER:命名实体识别；cmrc2018仅开发集结果；Score是计算平均值获得；数据来源: https://github.com/chineseGLUE/chineseGLUE
 
 
 ChineseGLUE的定位
