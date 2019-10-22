@@ -9,7 +9,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 ---------------------------------------------------------------------
 #####  排行榜会定期更新
 
-| 模型 | Score | 参数量 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | CCKS18-3 | MSRANER
+| 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | CCKS-3 | MSRANER
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 84.30 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | - | - | 92.53 | 95.38 |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 84.82  |108M |89.81   | ***87.3***  | 78.7	| 83.46 | - | - | 92.79 | 95.26 | 
