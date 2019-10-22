@@ -1,7 +1,7 @@
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 CURRENT_TIME=$(date "+%Y%m%d-%H%M%S")
 TASK_NAME="inews"
-export ALBERT_DIR=gs://models_zxw/prev_trained_models/nlp/albert_tiny/albert_tiny_207k
+export PREV_TRAINED_MODEL_DIR=gs://models_zxw/prev_trained_models/nlp/albert_tiny/albert_tiny_207k
 export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/$TASK_NAME
 export OUTPUT_DIR=gs://models_zxw/fine_tuning_models/nlp/albert_tiny/tpu/${TASK_NAME}/$CURRENT_TIME
 
@@ -10,9 +10,9 @@ python3 $CURRENT_DIR/../run_classifier.py \
   --do_train=true \
   --do_eval=true \
   --data_dir=$DATA_DIR \
-  --vocab_file=$ALBERT_DIR/vocab.txt \
-  --bert_config_file=$ALBERT_DIR/albert_config_tiny.json \
-  --init_checkpoint=$ALBERT_DIR/albert_model.ckpt \
+  --vocab_file=$PREV_TRAINED_MODEL_DIR/vocab.txt \
+  --bert_config_file=$PREV_TRAINED_MODEL_DIR/albert_config_tiny.json \
+  --init_checkpoint=$PREV_TRAINED_MODEL_DIR/albert_model.ckpt \
   --max_seq_length=512 \
   --train_batch_size=16 \
   --learning_rate=6e-5 \
