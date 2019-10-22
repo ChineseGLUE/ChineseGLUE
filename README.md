@@ -7,7 +7,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 中文任务基准测评(chineseGLUE)-排行榜
 ---------------------------------------------------------------------
-#####  排行榜会定期更新
+#####  排行榜会定期更新                     数据来源: https://github.com/chineseGLUE/chineseGLUE
 
 | 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | CCKS-3 | MSRANER
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
@@ -24,7 +24,8 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；CCKS-3:智能客服问句匹配；
 
-MSRANER:命名实体识别；cmrc2018仅开发集结果；Score是计算平均值获得；数据来源: https://github.com/chineseGLUE/chineseGLUE
+   MSRANER:命名实体识别；cmrc2018仅开发集结果；Score是计算平均值获得；
+
 
 
 ChineseGLUE的定位
