@@ -112,14 +112,14 @@
     | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
     | :----:| :----: | :----: | :----: |
     | BERT-base | 85.86 | 85.08 | batch_size=64, length=128, epoch=3 |
-    | BERT-wwm-ext-base | 86.05 | 85.21 |batch_size=64, length=128, epoch=3 |
+    | BERT-wwm-ext-base | 86.05 | ***85.21*** |batch_size=64, length=128, epoch=3 |
     | ERNIE-base | 85.92 | 84.47 | batch_size=64, length=128, epoch=3 |
     | RoBERTa-large	| 85.68 | 85.20 | batch_size=8, length=128, epoch=3 |
     | XLNet-mid	| - | - | - |
     | ALBERT-xlarge |	85.21 | 84.21 | batch_size=16, length=128, epoch=3 |
     | ALBERT-tiny | 82.04 | 80.76 | batch_size=64, length=128, epoch=5 |
     | RoBERTa-wwm-ext | 85.31 | 84.02 | batch_size=64, length=128, epoch=3 |
-    | RoBERTa-wwm-large-ext | - | - | - |
+    | RoBERTa-wwm-large-ext | ***86.34*** | 84.90 | batch_size=16, length=128, epoch=3 |
 
     8. MSRANER 命名实体识别
 
