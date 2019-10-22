@@ -82,17 +82,23 @@
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
-    | ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch_size=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
-    | ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | F1:94.697 EM:89.780 |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
-    | ALBERT-tiny	|F1:81.507(81.818) EM:71.606(72.247) | F1:80.672 EM:70.083 |	batch_size=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
-    | RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch_size=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
-    | RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch_size=32, length=512, epoch=2 lr=3e-5 warmup=0.1| 
-    | RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch_size=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |
+    | BERT-base	|F1:92.296(92.565) EM:86.600(87.089) | F1:91.46 EM:85.49 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | BERT-wwm-ext-base	|F1:93.265(93.393) EM:88.002(88.28) | F1:92.633 EM:87.145 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | ERNIE-base	|F1:92.779(93.021) EM:86.845(87.259) | F1:92.011 EM:86.029 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
+    | ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | F1:94.697 EM:89.780 |	batch=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+    | ALBERT-tiny	|F1:81.507(81.818) EM:71.606(72.247) | F1:80.672 EM:70.083 |	batch=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
+    | RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
+    | RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1| 
+    | RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |
     
     6. CMRC2018 阅读理解
     
     | 模型 | 开发集（dev) | 训练参数 |
     | :----:| :----: | :----: |
+    | BERT-base	|F1:85.476(85.682) EM:64.765(65.921) |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | BERT-wwm-ext-base	|F1:86.679(87.473) EM:66.959(69.09) |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | ERNIE-base	|F1:87.300(87.733) EM:66.890(68.251) |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
     | ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.05 |
     | ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.1 |
     | ALBERT-tiny	| F1:73.949(74.664) EM:48.307(50.233) | epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
