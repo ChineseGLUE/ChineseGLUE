@@ -189,13 +189,14 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
-| ALBERT-xlarge |	 | 	|batch_size=32, length=512, epoch=8 |
+| ALBERT-xlarge |	 | 95.45 |batch_size=32, length=512, epoch=8 |
 | BERT-base	| 95.28	| 95.35	| batch_size=8, length=128, epoch=3 |
 | BERT-wwm-ext-base | 95.38 | 95.57 |	batch_size=8, length=128, epoch=3 |
 | ERNIE-base	| 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
 | RoBERTa-large	| 94.52 | 94.56 |	batch_size=2, length=256, epoch=3 |
-| XLNet-mid	| | 94.52 |	batch_size=16, length=128, epoch=3 |
+| XLNet-mid	| - | 94.52 |	batch_size=16, length=128, epoch=3 |
 | RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
+| RoBERTa-wwm-ext-large	|  | 95.93 |	batch_size=16, length=256, epoch=3 |
 
 
 基线模型-代码 start codes for baselines 
