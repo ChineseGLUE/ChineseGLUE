@@ -90,24 +90,6 @@ each task will be evaluated and scored, a final score will also be available.
 
    raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
   
-A benchmark of several sentence or sentence pair language understanding tasks. 
-
-Currently the datasets used in these tasks are come from public. We will include datasets with private test set before the end of 2019.
-
-##### 2）公开的排行榜 
-  
-A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks, each task will be evaluated and scored, a final score will also be available.
-
-##### 3）基线模型，包含开始的代码、预训练模型 
-  
-baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
-
-##### 4）语料库，用于语言建模、预训练或生成型任务 
-
-A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
-   
-In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
-
 You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
 数据集介绍与下载
@@ -287,9 +269,6 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
 | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
-| RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
-| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 |
-| RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 |
 | RoBERTa-large	| 90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 | RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 | 
@@ -303,10 +282,7 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 77.80	| 77.80	| batch_size=64, length=128, epoch=2 |
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
-| RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
-| XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 |
-| RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 |
-| RoBERTa-large	|***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
+| RoBERTa-large	| 80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
@@ -324,8 +300,6 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 |
 | RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 |
-| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
-| RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
     
 #### INEWS 互联网情感分析：
@@ -339,6 +313,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
 | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 |
 | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 |
+| RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
 
 
 
