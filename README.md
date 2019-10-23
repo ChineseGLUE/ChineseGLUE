@@ -74,14 +74,14 @@ Currently the datasets used in these tasks are come from public. We will include
 A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks, each task will be evaluated and scored, a final score will also be available.
 
 ##### 3）基线模型，包含开始的代码、预训练模型 
-
-  baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
+  
+baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
 
 ##### 4）语料库，用于语言建模、预训练或生成型任务 
 
-   A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
+A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
 
-   In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
+In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
 You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
 数据集介绍与下载
@@ -106,14 +106,14 @@ You can use it for general purpose or domain adaption, or even for text generati
 
 
 ##### 3.TNEWS 今日头条中文新闻（短文本）分类
-
+	
         数据量：训练集(266,000)，验证集(57,000)，测试集(57,000)
         例子：
         6552431613437805063_!_102_!_news_entertainment_!_谢娜为李浩菲澄清网络谣言，之后她的两个行为给自己加分_!_佟丽娅,网络谣言,快乐大本营,李浩菲,谢娜,观众们
         每行为一条数据，以_!_分割的个字段，从前往后分别是 新闻ID，分类code，分类名称，新闻字符串（仅含标题），新闻关键词
 
 ##### 4.INEWS 互联网情感分析任务
-
+	
         数据量：训练集(5,356)，验证集(1,000)，测试集(1,000)     
         例子：
         1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
@@ -267,14 +267,14 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
 
 #### XNLI 自然语言推理：
-
+    
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge |	74.0? |	74.0? |batch_size=64, length=128, epoch=2 |
 | BERT-base	| 77.80	| 77.80	| batch_size=64, length=128, epoch=2 |
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
-| RoBERTa-large	| ***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
+| RoBERTa-large	|***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
@@ -282,7 +282,7 @@ https://hfl-rc.github.io/cmrc2018/
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
 #### LCQMC 口语化描述的语义相似度匹配：
-
+    
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge | 89.00	 | 86.76	|batch_size=64, length=128, epoch=3 |
@@ -295,7 +295,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
     
 #### INEWS 互联网情感分析：
-
+    
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge |	81.80 | 82.40	|batch_size=32, length=512, epoch=8 |
