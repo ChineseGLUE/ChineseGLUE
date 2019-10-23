@@ -381,8 +381,8 @@ https://hfl-rc.github.io/cmrc2018/
 ---------------------------------------------------------------------
 
 1. 数据集整体下载，解压到glue文件夹里  
-    ```cd glue ```  
-    ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
+  ```cd glue ```  
+  ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
 
    注：lcqmc数据集，请从<a href="http://icrc.hitsz.edu.cn/info/1037/1146.htm">这里</a>申请或搜索网络
 
