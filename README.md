@@ -65,7 +65,6 @@ Language Understanding Evaluation benchmark for Chinese(ChineseGLUE) got ideas f
 resources for training, evaluating, and analyzing natural language understanding systems. ChineseGLUE consists of: 
 
 ##### 1）中文任务的基准测试，覆盖多个不同程度的语言任务 
-<<<<<<< HEAD
 
   A benchmark of several sentence or sentence pair language understanding tasks. 
 
@@ -90,7 +89,6 @@ each task will be evaluated and scored, a final score will also be available.
    In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough
 
    raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
-=======
   
 A benchmark of several sentence or sentence pair language understanding tasks. 
 
@@ -109,7 +107,6 @@ baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTor
 A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
    
 In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
->>>>>>> master
 
 You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
