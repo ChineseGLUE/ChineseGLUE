@@ -211,6 +211,44 @@ class DataProcessor(object):
                 lines.append(line.strip().split("_!_"))
             return lines
 
+class THUCNewsProcessor(DataProcessor):
+    """Processor for the THUCNews data set (GLUE version)."""
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "train.txt")), "train")
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "dev.txt")), "dev")
+
+    def get_test_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "test.txt")), "test")
+
+    def get_labels(self):
+        """See base class."""
+        labels = []
+        for i in range(14):
+            labels.append(str(i))
+        return labels
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0 or len(line) < 3:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            text_a = tokenization.convert_to_unicode(line[3])
+            text_b = None
+            label = tokenization.convert_to_unicode(line[0])
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples
 
 class InewsProcessor(DataProcessor):
   """Processor for the MRPC data set (GLUE version)."""
@@ -446,6 +484,53 @@ class LCQMCProcessor(DataProcessor):
         return examples
 
 
+class BQProcessor(DataProcessor):
+    """Processor for the internal data set. sentence pair classification"""
+
+    def __init__(self):
+        self.language = "zh"
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "train.txt")), "train")
+        # dev_0827.tsv
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "dev.txt")), "dev")
+
+    def get_test_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "test.txt")), "test")
+
+    def get_labels(self):
+        """See base class."""
+        return ["0", "1"]
+        # return ["-1","0", "1"]
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        print("length of lines:", len(lines))
+        for (i, line) in enumerate(lines):
+            # print('#i:',i,line)
+            if i == 0:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            try:
+                label = tokenization.convert_to_unicode(line[2])
+                text_a = tokenization.convert_to_unicode(line[0])
+                text_b = tokenization.convert_to_unicode(line[1])
+                examples.append(
+                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+            except Exception:
+                print('###error.i:', i, line)
+        return examples
+
+
 class SentencePairClassificationProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
 
@@ -529,10 +614,7 @@ class TnewsProcessor(DataProcessor):
             guid = "%s-%s" % (set_type, i)
             text_a = tokenization.convert_to_unicode(line[3])
             text_b = None
-            if set_type == "test":
-                label = "0"
-            else:
-                label = tokenization.convert_to_unicode(line[1])
+            label = tokenization.convert_to_unicode(line[1])
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
@@ -564,7 +646,7 @@ class XnliProcessor(DataProcessor):
 
     def get_dev_examples(self, data_dir):
         """See base class."""
-        lines = self._read_tsv(os.path.join(data_dir, "test.tsv"))
+        lines = self._read_tsv(os.path.join(data_dir, "dev.tsv"))
         examples = []
         for (i, line) in enumerate(lines):
             if i == 0:
@@ -1036,9 +1118,12 @@ def main(_):
     processors = {
         "sentence_pair": SentencePairClassificationProcessor,
         "lcqmc_pair": LCQMCProcessor,
+        "lcqmc": LCQMCProcessor,
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
         "xnli": XnliProcessor,
+	"thucnews":THUCNewsProcessor,
+        "bq": BQProcessor
     }
 
     tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
@@ -1228,11 +1313,7 @@ def main(_):
                 eval_examples.append(PaddingInputExample())
 
         eval_file = os.path.join(FLAGS.output_dir, "test.tf_record")
-        if task_name == "inews":
-            file_based_convert_examples_to_features_for_inews(
-            eval_examples, label_list, FLAGS.max_seq_length, tokenizer, eval_file)
-        else:
-            file_based_convert_examples_to_features(
+        file_based_convert_examples_to_features(
             eval_examples, label_list, FLAGS.max_seq_length, tokenizer, eval_file)
 
         tf.logging.info("***** Running evaluation *****")

@@ -5,6 +5,29 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 我们会选择一系列有一定代表性的任务对应的数据集，做为我们测试基准的数据集。这些数据集会覆盖不同的任务、数据量、任务难度。
 
+中文任务基准测评(chineseGLUE)-排行榜
+---------------------------------------------------------------------
+#####  排行榜会定期更新                     数据来源: https://github.com/chineseGLUE/chineseGLUE
+
+| 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | BQ | MSRANER
+| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 85.60 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 86.26  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|86.36  | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.01 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 82.56 | 209M | 86.26 | 85.98  |78.7 |84.0| - | - | 77.85 | - | 
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 85.58 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 86.07 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***87.02*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | 
+
+
+注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；
+
+BQ:智能客服问句匹配；MSRANER:命名实体识别；cmrc2018仅开发集结果；Score是计算平均值获得；
+
+
+
 ChineseGLUE的定位
 ---------------------------------------------------------------------
 为更好的服务中文语言理解、任务和产业界，做为通用语音模型测评的补充，通过完善中文语言理解基础设施的方式来促进中文语言模型的发展
@@ -13,7 +36,7 @@ Why do we need a benchmark for Chinese lanague understand evaluation?
 
 *** 2019-10-13: 新增评测官网入口; INEWS基线模型 ***
 
-  <a href="http://106.13.187.75:8003"> 评测入口</a>
+  ~~https://chineseglue.github.io~~<a href="http://106.13.187.75:8003/"> 评测入口</a>
 
 为什么我们需要一个中文任务的基准测试？ 
 ---------------------------------------------------------------------
@@ -42,6 +65,7 @@ Language Understanding Evaluation benchmark for Chinese(ChineseGLUE) got ideas f
 resources for training, evaluating, and analyzing natural language understanding systems. ChineseGLUE consists of: 
 
 ##### 1）中文任务的基准测试，覆盖多个不同程度的语言任务 
+<<<<<<< HEAD
 
   A benchmark of several sentence or sentence pair language understanding tasks. 
 
@@ -66,9 +90,28 @@ each task will be evaluated and scored, a final score will also be available.
    In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough
 
    raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
+=======
+  
+A benchmark of several sentence or sentence pair language understanding tasks. 
 
-   You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, 
-   you will able to select corpus you are interested in.
+Currently the datasets used in these tasks are come from public. We will include datasets with private test set before the end of 2019.
+
+##### 2）公开的排行榜 
+  
+A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks, each task will be evaluated and scored, a final score will also be available.
+
+##### 3）基线模型，包含开始的代码、预训练模型 
+  
+baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
+
+##### 4）语料库，用于语言建模、预训练或生成型任务 
+
+A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
+   
+In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
+>>>>>>> master
+
+You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
 数据集介绍与下载
 --------------------------------------------------------------------
@@ -104,10 +147,123 @@ each task will be evaluated and scored, a final score will also be available.
         例子：
         1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
         每行为一条数据，以_!_分割的个字段，从前往后分别是情感类别，数据id，新闻标题，新闻内容
+        
+##### 5.DRCD 繁体阅读理解任务
+台達閱讀理解資料集 Delta Reading Comprehension Dataset (DRCD)(https://github.com/DRCKnowledgeTeam/DRCD) 屬於通用領域繁體中文機器閱讀理解資料集。 本資料集期望成為適用於遷移學習之標準中文閱讀理解資料集。  
 
-##### 5. 更多数据集添加中，Comming soon!
+```
+数据量：训练集(8,016个段落，26,936个问题)，验证集(1,000个段落，3,524个问题)，测试集(1,000个段落，3,493个问题)  
+例子：
+{
+  "version": "1.3",
+  "data": [
+    {
+      "title": "基督新教",
+      "id": "2128",
+      "paragraphs": [
+        {
+          "context": "基督新教與天主教均繼承普世教會歷史上許多傳統教義，如三位一體、聖經作為上帝的啟示、原罪、認罪、最後審判等等，但有別於天主教和東正教，新教在行政上沒有單一組織架構或領導，而且在教義上強調因信稱義、信徒皆祭司， 以聖經作為最高權威，亦因此否定以教宗為首的聖統制、拒絕天主教教條中關於聖傳與聖經具同等地位的教導。新教各宗派間教義不盡相同，但一致認同五個唯獨：唯獨恩典：人的靈魂得拯救唯獨是神的恩典，是上帝送給人的禮物。唯獨信心：人唯獨藉信心接受神的赦罪、拯救。唯獨基督：作為人類的代罪羔羊，耶穌基督是人與上帝之間唯一的調解者。唯獨聖經：唯有聖經是信仰的終極權威。唯獨上帝的榮耀：唯獨上帝配得讚美、榮耀",
+          "id": "2128-2",
+          "qas": [
+            {
+              "id": "2128-2-1",
+              "question": "新教在教義上強調信徒皆祭司以及什麼樣的理念?",
+              "answers": [
+                {
+                  "id": "1",
+                  "text": "因信稱義",
+                  "answer_start": 92
+                }
+              ]
+            },
+            {
+              "id": "2128-2-2",
+              "question": "哪本經典為新教的最高權威?",
+              "answers": [
+                {
+                  "id": "1",
+                  "text": "聖經",
+                  "answer_start": 105
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```  
+数据格式和squad相同，如果使用简体中文模型进行评测的时候可以将其繁转简(本项目已提供)
+        
+##### 6.CMRC2018 简体中文阅读理解任务
 
-更多数据集添加中，目标是8个覆盖不同任务的有代表性的数据集；如果你有定义良好的数据集，请与我们取得联系。
+https://hfl-rc.github.io/cmrc2018/
+
+```
+数据量：训练集(短文数2,403，问题数10,142)，试验集(短文数256，问题数1,002)，开发集(短文数848，问题数3,219)  
+例子：
+{
+  "version": "1.0",
+  "data": [
+    {
+        "title": "傻钱策略",
+        "context_id": "TRIAL_0",
+        "context_text": "工商协进会报告，12月消费者信心上升到78.1，明显高于11月的72。另据《华尔街日报》报道，2013年是1995年以来美国股市表现最好的一年。这一年里，投资美国股市的明智做法是追着“傻钱”跑。所谓的“傻钱”策略，其实就是买入并持有美国股票这样的普通组合。这个策略要比对冲基金和其它专业投资者使用的更为复杂的投资方法效果好得多。",
+        "qas":[
+                {
+                "query_id": "TRIAL_0_QUERY_0",
+                "query_text": "什么是傻钱策略？",
+                "answers": [
+                     "所谓的“傻钱”策略，其实就是买入并持有美国股票这样的普通组合",
+                     "其实就是买入并持有美国股票这样的普通组合",
+                     "买入并持有美国股票这样的普通组合"
+                    ]
+                },
+                {
+                "query_id": "TRIAL_0_QUERY_1",
+                "query_text": "12月的消费者信心指数是多少？",
+                "answers": [
+                    "78.1",
+                    "78.1",
+                    "78.1"
+                    ]
+                },
+                {
+                "query_id": "TRIAL_0_QUERY_2",
+                "query_text": "消费者信心指数由什么机构发布？",
+                "answers": [
+                    "工商协进会",
+                    "工商协进会",
+                    "工商协进会"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```  
+数据格式和squad相同
+
+##### 7. BQ 智能客服问句匹配
+该数据集是自动问答系统语料，共有120,000对句子对，并标注了句子对相似度值，取值为0或1（0表示不相似，1表示相似）。数据中存在错别字、语法不规范等问题，但更加贴近工业场景。
+
+        数据量：训练集(100,000)，验证集(10,000)，测试集(10,000)
+        例子： 
+         1.我存钱还不扣的 [分隔符] 借了每天都要还利息吗 [分隔符] 0
+         2.为什么我的还没有额度 [分隔符] 为啥没有额度！！ [分隔符] 1
+
+##### 8. MSRANER 命名实体识别
+该数据集共有5万多条中文命名实体识别标注数据（包括人名、地名、组织名），分别用nr、ns、nt表示，其他实体用o表示。
+
+        数据量：训练集(46,364)，测试集(4,365)
+        例子： 
+         1.据说/o 应/o 老友/o 之/o 邀/o ，/o 梁实秋/nr 还/o 坐/o 着/o 滑竿/o 来/o 此/o 品/o 过/o 玉峰/ns 茶/o 。/o
+         2.他/o 每年/o 还/o 为/o 河北农业大学/nt 扶助/o 多/o 名/o 贫困/o 学生/o 。/o
+
+##### 9. 更多数据集添加中，Comming soon!
+
+更多数据集添加中，如果你有定义良好的数据集，请与我们取得联系。
 
 ##### 数据集下载 <a href="https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip">整体下载</a>
 
@@ -115,23 +271,8 @@ each task will be evaluated and scored, a final score will also be available.
 
     wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip
 
-中文任务基准测评(chineseGLUE)-排行榜
+中文任务基准测评(chineseGLUE)-排行榜-各任务对比
 ---------------------------------------------------------------------
-#####  排行榜会定期更新，并迅速扩大可公开使用和测评的数据集数量
-
-| 模型 | TNEWS | LCQMC | XNLI | INEWS |AVG | 参数量
-| :----:| :----: | :----: | :----: |:----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.78 	| 86.9 	|77.8 | 82.7 | 84.30 | 108M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext-base</a> |89.81   | ***87.3***  | 78.7	| 83.46|84.82  |108M |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|89.83  	|87.2 | 78.6| ***85.14*** | 85.19  | 108M|
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>	|***89.91***  | 87.2  |***79.9***	 | 84.0| ***85.25*** | 334M |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 86.26 | 85.98  |78.7 |84.0| 83.74 | 209M |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> |	88.3 |	86.76 | 74.0? |81.9 |  82.74 | 59M |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a> |	89.64 |	86.65 | 78.3 |81.58 |  84.04 | 108M |
-
-Notice: ERNIE2.0 is not evaluated as it is not available to the public
-
-#### ---各任务对比---
 
 #### TNEWS 短文本分类：
 
@@ -141,9 +282,16 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
 | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
+<<<<<<< HEAD
 | RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 |
 | RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 |
+=======
+| RoBERTa-large	| 90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
+| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
+| RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 | 
+| RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
+>>>>>>> master
 
 #### XNLI 自然语言推理：
 
@@ -153,9 +301,16 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-base	| 77.80	| 77.80	| batch_size=64, length=128, epoch=2 |
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
+<<<<<<< HEAD
 | RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 |
+=======
+| RoBERTa-large	|***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
+| XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
+| RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 | 
+| RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
+>>>>>>> master
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
@@ -168,10 +323,18 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
+<<<<<<< HEAD
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 |
 | RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 |
 
 
+=======
+| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
+| RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
+| RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
+    
+    
+>>>>>>> master
 #### INEWS 互联网情感分析：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
@@ -180,6 +343,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
+<<<<<<< HEAD
 | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
 | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 |
 | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 |
@@ -197,6 +361,69 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | XLNet-mid	| - | 94.52 |	batch_size=16, length=128, epoch=3 |
 | RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
 | RoBERTa-wwm-ext-large	|  | 95.93 |	batch_size=16, length=256, epoch=3 |
+=======
+| RoBERTa-large	| 81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
+| XLNet-mid	| 82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
+| RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 | 
+| RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
+
+#### DRCD 繁体阅读理解：
+    
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| BERT-base	|F1:92.296(92.565) EM:86.600(87.089) | F1:91.46 EM:85.49 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+| BERT-wwm-ext-base	|F1:93.265(93.393) EM:88.002(88.28) | F1:92.633 EM:87.145 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+| ERNIE-base	|F1:92.779(93.021) EM:86.845(87.259) | F1:92.011 EM:86.029 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+| ALBERT-large	|F1:93.90(94.03) EM:88.88(89.13) | F1:93.06 EM:87.52 |	batch=32, length=512, epoch=3 lr=2e-5 warmup=0.05 |
+| ALBERT-xlarge	|F1:94.626(95.101) EM:89.682(90.125) | F1:94.697 EM:89.780 |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
+| ALBERT-tiny	|F1:81.507(81.818) EM:71.606(72.247) | F1:80.672 EM:70.083 |	batch=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
+| RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
+| RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1|
+| RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |  
+
+#### CMRC2018 阅读理解(暂时只有开发集结果)：
+    
+| 模型 | 开发集（dev) | 训练参数 |
+| :----:| :----: | :----: |
+| BERT-base	|F1:85.476(85.682) EM:64.765(65.921) |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+| BERT-wwm-ext-base	|F1:86.679(87.473) EM:66.959(69.09) |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+| ERNIE-base	|F1:87.300(87.733) EM:66.890(68.251) |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+| ALBERT-large	| F1:87.8596(88.43) EM:67.754(69.028) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.05 |
+| ALBERT-xlarge	| F1:88.657(89.426) EM:68.897(70.643) | epoch3, batch=32, length=512, lr=2e-5, warmup=0.1 |
+| ALBERT-tiny	| F1:73.949(74.664) EM:48.307(50.233) | epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
+| RoBERTa-middle	| F1:86.841(87.242) EM:67.195(68.313) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
+| RoBERTa-large	| F1:88.608(89.431) EM:69.935(72.538) | epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
+| RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
+| RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+
+#### BQ 智能客服问句匹配：
+
+| 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| BERT-base | 85.86 | 85.08 | batch_size=64, length=128, epoch=3 |
+| BERT-wwm-ext-base | 86.05 | ***85.21*** |batch_size=64, length=128, epoch=3 |
+| ERNIE-base | 85.92 | 84.47 | batch_size=64, length=128, epoch=3 |
+| RoBERTa-large	| 85.68 | 85.20 | batch_size=8, length=128, epoch=3 |
+| XLNet-mid	| 79.81 | 77.85 | batch_size=32, length=128, epoch=3 |
+| ALBERT-xlarge |	85.21 | 84.21 | batch_size=16, length=128, epoch=3 |
+| ALBERT-tiny | 82.04 | 80.76 | batch_size=64, length=128, epoch=5 |
+| RoBERTa-wwm-ext | 85.31 | 84.02 | batch_size=64, length=128, epoch=3 |
+| RoBERTa-wwm-large-ext | ***86.34*** | 84.90 | batch_size=16, length=128, epoch=3 |
+
+#### MSRANER 命名实体识别:
+
+| 模型 | 测试集（test） | 训练参数 |
+| :----: | :----: | :----: |
+| BERT-base	| 95.38	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+| BERT-wwm-ext-base	| 95.26	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+| ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
+| RoBERTa-large | ***96.07***	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+| XLNet-mid | - | - |
+| ALBERT-xlarge | - | - |
+| ALBERT-tiny | - | - |
+| RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
+| RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+>>>>>>> master
 
 
 基线模型-代码 start codes for baselines 
@@ -225,7 +452,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 
 3. 详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines">基准模型-模型训练</a>
 
-#### 开放测评提交入口（建设中）：<a href="http://106.13.187.75:8003">我要提交</a>
+#### 开放测评提交入口（建设中~~https://chineseglue.github.io~~）：<a href="http://106.13.187.75:8003/">我要提交</a>
 
 <img src="https://github.com/chineseGLUE/chineseGLUE/blob/master/resources/img/chineseGLUE_landing.jpeg"  width="80%" height="40%" />
 
@@ -303,6 +530,42 @@ Contribution 贡献你的力量，从今天开始
 Share your data set with community or make a contribution today! Just send email to chineseGLUE#163.com, 
 
 or join QQ group: 836811304
+### 中文基准测评成员
+
+#### 顾问：
+张俊林，中国中文信息学会理事，中科院软件所博士，新浪微博机器学习团队AI Lab负责人。技术书籍《这就是搜索引擎：核心技术详解》（该书荣获全国第十二届优秀图书奖）、《大数据日知录：架构与算法》的作者。
+
+#### 创始会员（排名不分先后）：
+徐亮，中文任务基准测评chineseGLUE发起人。杭州实在智能算法专家，多个预训练模型中文版开源项目作者（github.com/brightmart）
+
+Danny Lan，CMU博士、google研究员，SOTA语言理解模型AlBERT第一作者。
+
+徐国强，MIT博士，平安集团上海Gammalab负责人。
+
+张轩玮，毕业于北京大学，目前在爱奇艺从事nlp有关的工作，之前做过热点聚合，文本分类，标签生成，机器翻译方面的工作。
+
+谢炜坚，百度大数据部的算法工程师，NLP工业界经验三年+，包括NLU、检索式问答、语义匹配等。近期主要进行文本分类相关的工作，先前对BERT/BERT-wwm-ext/Roberta/XLNet等预训练模型均有fine-tune经验。
+
+曹辰捷，平安金融壹账通，算法工程师，做阅读理解和预训练相关的，CRMC2019阅读理解冠军团队成员。
+
+喻聪，来自杭州实在智能，主要研究多轮对话，意图识别，实体抽取，知识问答相关任务。
+
+谢恩宁，大搜车，围绕汽车领域语对话机器人，负责NLU部分。
+
+李露，来自华中师范大学计算机学院,曾参与某项目筹备中文自然语言推理的数据集，包括对SNLI、MNLI、STS-B等英文数据集的中文翻译；暑期在平安科技实习，主要负责利用自然语言处理最新模型进行序列标注和情感分类，现已使用过的模型有BERT、BERT-WWM-ext、RoBERTa、XLNet-base及XLNet-mid
+
+董倩倩，来自中科院自动化所，phd第四年在读，研究方向是口语语言处理，做过一段时间的机器翻译和语音翻译，目前致力于中英文口语语言建模，获得过AI Challenger-英中机器同声传译赛道冠军团队成员。目前有一篇AAAI，一篇工作在投，有一年的互联网公司（字节跳动）算法实习经历。熟悉中文自然语言处理技术，掌握主流的深度学习模型和训练框架。
+
+田垠，毕业于浙江大学，杭州实在智能算法工程师，方向主要为基于知识图谱的推理引擎、文字检测。
+
+刘伟棠，大华，albert_pytorch项目作者。
+
+更多创始会员，陆续添加中。。。
+
+#### 志愿者：
+胡锦毅，清华大学计算机系，大三，在清华大学自然语言处理与社会人文计算实验室研究学习，导师是孙茂松教授；“九哥”人工智能诗歌创作系统2.0，获CCL2019最佳系统展示奖。
+
+更多自愿者，陆续添加中。。。
 
 Reference:
 ---------------------------------------------------------------------

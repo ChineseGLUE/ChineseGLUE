@@ -1,6 +1,6 @@
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="0"
-export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/chinese-bert_chinese_wwm_L-12_H-768_A-12
+export BERT_BASE_DIR=$CURRENT_DIR/prev_trained_model/chinese_roberta_wwm_ext_L-12_H-768_A-12
 export GLUE_DIR=$CURRENT_DIR/../../glue/chineseGLUEdatasets/
 TASK_NAME="lcqmc"
 
