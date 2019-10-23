@@ -86,9 +86,7 @@ each task will be evaluated and scored, a final score will also be available.
 
    A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
 
-   In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough
-
-   raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
+   In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
   
 You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
@@ -282,7 +280,7 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 77.80	| 77.80	| batch_size=64, length=128, epoch=2 |
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
-| RoBERTa-large	| 80.2 |79.9 |	batch_size=64, length=128, epoch=2 |
+| RoBERTa-large	| ***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
@@ -298,8 +296,8 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
-| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 |
-| RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 |
+| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
+| RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
     
 #### INEWS 互联网情感分析：
@@ -310,12 +308,10 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
-| RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
-| XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 |
-| RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 |
-| RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
-
-
+| RoBERTa-large	| 81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
+| XLNet-mid	| 82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
+| RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 | 
+| RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
 
 #### DRCD 繁体阅读理解：
     
@@ -513,7 +509,7 @@ Danny Lan，CMU博士、google研究员，SOTA语言理解模型AlBERT第一作�
 
 谢恩宁，大搜车，围绕汽车领域语对话机器人，负责NLU部分。
 
-李露，来自华中师范大学计算机学院，曾参与某项目筹备中文自然语言推理的数据集；暑期在平安科技实习，主要负责利用自然语言处理最新模型进行序列标注和情感分类任务。
+李露，来自华中师范大学计算机学院,曾参与某项目筹备中文自然语言推理的数据集，包括对SNLI、MNLI、STS-B等英文数据集的中文翻译；暑期在平安科技实习，主要负责利用自然语言处理最新模型进行序列标注和情感分类，现已使用过的模型有BERT、BERT-WWM-ext、RoBERTa、XLNet-base及XLNet-mid
 
 董倩倩，来自中科院自动化所，phd第四年在读，研究方向是口语语言处理，做过一段时间的机器翻译和语音翻译，目前致力于中英文口语语言建模，获得过AI Challenger-英中机器同声传译赛道冠军团队成员。目前有一篇AAAI，一篇工作在投，有一年的互联网公司（字节跳动）算法实习经历。熟悉中文自然语言处理技术，掌握主流的深度学习模型和训练框架。
 
