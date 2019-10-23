@@ -282,16 +282,13 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 89.80	| 89.78	| batch_size=32, length=128, epoch=3 |
 | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
-<<<<<<< HEAD
 | RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 |
 | RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 |
-=======
 | RoBERTa-large	| 90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
 | XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
 | RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
->>>>>>> master
 
 #### XNLI 自然语言推理：
 
@@ -301,16 +298,13 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 77.80	| 77.80	| batch_size=64, length=128, epoch=2 |
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
-<<<<<<< HEAD
 | RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 |
-=======
 | RoBERTa-large	|***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
 | XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 | 
 | RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
->>>>>>> master
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
@@ -323,18 +317,12 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
-<<<<<<< HEAD
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 |
 | RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 |
-
-
-=======
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
     
-    
->>>>>>> master
 #### INEWS 互联网情感分析：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
@@ -343,29 +331,11 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-base	| 81.29	| 82.70	| batch_size=16, length=512, epoch=3 |
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
-<<<<<<< HEAD
 | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
 | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 |
 | RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 |
 
 
-#### THUCNEWS 长文本分类：
-
-| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
-| :----:| :----: | :----: | :----: |
-| ALBERT-xlarge |	 | 95.45 |batch_size=32, length=512, epoch=8 |
-| BERT-base	| 95.28	| 95.35	| batch_size=8, length=128, epoch=3 |
-| BERT-wwm-ext-base | 95.38 | 95.57 |	batch_size=8, length=128, epoch=3 |
-| ERNIE-base	| 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
-| RoBERTa-large	| 94.52 | 94.56 |	batch_size=2, length=256, epoch=3 |
-| XLNet-mid	| - | 94.52 |	batch_size=16, length=128, epoch=3 |
-| RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
-| RoBERTa-wwm-ext-large	|  | 95.93 |	batch_size=16, length=256, epoch=3 |
-=======
-| RoBERTa-large	| 81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
-| XLNet-mid	| 82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
-| RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 | 
-| RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
 
 #### DRCD 繁体阅读理解：
     
@@ -423,8 +393,19 @@ https://hfl-rc.github.io/cmrc2018/
 | ALBERT-tiny | - | - |
 | RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
 | RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
->>>>>>> master
 
+#### THUCNEWS 长文本分类：
+
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-xlarge |	 | 95.45 |batch_size=32, length=512, epoch=8 |
+| BERT-base	| 95.28	| 95.35	| batch_size=8, length=128, epoch=3 |
+| BERT-wwm-ext-base | 95.38 | 95.57 |	batch_size=8, length=128, epoch=3 |
+| ERNIE-base	| 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
+| RoBERTa-large	| 94.52 | 94.56 |	batch_size=2, length=256, epoch=3 |
+| XLNet-mid	| - | 94.52 |	batch_size=16, length=128, epoch=3 |
+| RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
+| RoBERTa-wwm-ext-large	|  | 95.93 |	batch_size=16, length=256, epoch=3 |
 
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
