@@ -464,7 +464,7 @@ Contribution 贡献你的力量，从今天开始
 Share your data set with community or make a contribution today! Just send email to chineseGLUE#163.com, 
 
 or join QQ group: 836811304
-##### 中文基准测评成员
+### 中文基准测评成员
 
 #### 顾问：
 张俊林，中国中文信息学会理事，中科院软件所博士，新浪微博机器学习团队AI Lab负责人。技术书籍《这就是搜索引擎：核心技术详解》（该书荣获全国第十二届优秀图书奖）、《大数据日知录：架构与算法》的作者。
