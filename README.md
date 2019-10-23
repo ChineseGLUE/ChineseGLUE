@@ -501,6 +501,9 @@ Danny Lan，CMU博士、google研究员，SOTA语言理解模型AlBERT第一作�
 
 更多自愿者，陆续添加中。。。
 
+#### Research supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
+
+
 Reference:
 ---------------------------------------------------------------------
 1、<a href="https://openreview.net/pdf?id=rJ4km2R5t7">GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding</a>
@@ -516,3 +519,10 @@ Reference:
 6、<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus: 大规模中文自然语言处理语料 Large Scale Chinese Corpus for NLP</a>
 
 7、<a href="https://github.com/InsaneLife/ChineseNLPCorpus">ChineseNLPCorpus</a>
+
+8、<a href="https://arxiv.org/abs/1909.11942">ALBERT: A Lite BERT For Self-Supervised Learning Of Language Representations</a>
+
+9、<a href="https://arxiv.org/pdf/1810.04805.pdf">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>
+
+10、<a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa: A Robustly Optimized BERT Pretraining Approach</a>
+
