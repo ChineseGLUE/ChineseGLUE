@@ -472,7 +472,7 @@ or join QQ group: 836811304
 #### 创始会员（排名不分先后）：
 徐亮，中文任务基准测评chineseGLUE发起人。杭州实在智能算法专家，多个预训练模型中文版开源项目作者（github.com/brightmart）
 
-Danny Lan，CMU博士、google研究员，SOTA语言理解模型AlBERT第一作者。
+Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一作者。
 
 徐国强，MIT博士，平安集团上海Gammalab负责人。
 
