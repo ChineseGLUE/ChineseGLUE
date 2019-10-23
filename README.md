@@ -42,29 +42,29 @@ Language Understanding Evaluation benchmark for Chinese(ChineseGLUE) got ideas f
 resources for training, evaluating, and analyzing natural language understanding systems. ChineseGLUE consists of: 
 
 ##### 1）中文任务的基准测试，覆盖多个不同程度的语言任务 
-  
+
   A benchmark of several sentence or sentence pair language understanding tasks. 
 
  Currently the datasets used in these tasks are come from public. We will include datasets with private test set before
- 
+
  the end of 2019.
 
 ##### 2）公开的排行榜 
-  
+
   A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks,
 
 each task will be evaluated and scored, a final score will also be available.
 
 ##### 3）基线模型，包含开始的代码、预训练模型 
-  
+
   baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
 
 ##### 4）语料库，用于语言建模、预训练或生成型任务 
 
    A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
-   
+
    In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough
-   
+
    raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
 
    You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, 
@@ -92,14 +92,14 @@ each task will be evaluated and scored, a final score will also be available.
 
 
 ##### 3.TNEWS 今日头条中文新闻（短文本）分类
-        
+
         数据量：训练集(266,000)，验证集(57,000)，测试集(57,000)
         例子：
         6552431613437805063_!_102_!_news_entertainment_!_谢娜为李浩菲澄清网络谣言，之后她的两个行为给自己加分_!_佟丽娅,网络谣言,快乐大本营,李浩菲,谢娜,观众们
         每行为一条数据，以_!_分割的个字段，从前往后分别是 新闻ID，分类code，分类名称，新闻字符串（仅含标题），新闻关键词
-       
+
 ##### 4.INEWS 互联网情感分析任务
-        
+
         数据量：训练集(5,356)，验证集(1,000)，测试集(1,000)     
         例子：
         1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
@@ -142,11 +142,11 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
 | RoBERTa-large	|***90.00*** | ***89.91*** |	batch_size=16, length=128, epoch=3 |
-| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
-| RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 | 
+| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 |
+| RoBERTa-wwm-ext |89.75 | 89.64 |	batch_size=32, length=128, epoch=3 |
 
 #### XNLI 自然语言推理：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge |	74.0? |	74.0? |batch_size=64, length=128, epoch=2 |
@@ -154,13 +154,13 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
 | RoBERTa-large	|***80.2*** |***79.9*** |	batch_size=64, length=128, epoch=2 |
-| XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
-| RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 | 
+| XLNet-mid	|79.2 | 78.7 |	batch_size=64, length=128, epoch=2 |
+| RoBERTa-wwm-ext	|78.9 | 78.3 |	batch_size=64, length=128, epoch=2 |
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
 #### LCQMC 口语化描述的语义相似度匹配：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge | 89.00	 | 86.76	|batch_size=64, length=128, epoch=3 |
@@ -168,12 +168,12 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
-| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
-| RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 | 
-    
-    
+| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 |
+| RoBERTa-wwm-ext	| 88.85 | 86.65 |	batch_size=64, length=128, epoch=3 |
+
+
 #### INEWS 互联网情感分析：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge |	81.80 | 82.40	|batch_size=32, length=512, epoch=8 |
@@ -181,34 +181,34 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
 | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
-| XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
-| RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 | 
+| XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 |
+| RoBERTa-wwm-ext	|81.97 | 81.58 |	batch_size=16, length=512, epoch=3 |
 
 
 #### THUCNEWS 长文本分类：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge |	 | 	|batch_size=32, length=512, epoch=8 |
 | BERT-base	| 95.28	| 95.35	| batch_size=8, length=128, epoch=3 |
 | BERT-wwm-ext-base | 95.38 | 95.57 |	batch_size=8, length=128, epoch=3 |
-| ERNIE-base	| 	| | batch_size=16, length=512, epoch=3 |
-| RoBERTa-large	| |  |	batch_size=4, length=512, epoch=3 |
-| XLNet-mid	| |  |	batch_size=8, length=512, epoch=3 | 
-| RoBERTa-wwm-ext	| |  |	batch_size=16, length=512, epoch=3 | 
+| ERNIE-base	| 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
+| RoBERTa-large	| 94.52 | 94.56 |	batch_size=2, length=256, epoch=3 |
+| XLNet-mid	| | 94.52 |	batch_size=16, length=128, epoch=3 |
+| RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
 
 
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
 
 1. 数据集整体下载，解压到glue文件夹里  
-  ```cd glue ```  
-  ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
+    ```cd glue ```  
+    ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
 
    注：lcqmc数据集，请从<a href="http://icrc.hitsz.edu.cn/info/1037/1146.htm">这里</a>申请或搜索网络
 
 2. 训练模型  
-    
+   
     ```a.将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。``` 
          ```以bert和albert为例子：```
             
@@ -216,7 +216,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
          ```https://github.com/brightmart/albert_zh ```  
          ```a1. bert  ``` 
          ```https://github.com/google-research/bert ```    
-        
+    
      ```b.修改run_classifier.sh指定模型路径  ``` 
     
      ```c.运行各个模型文件夹下的run_classifier.sh即可 ```  
@@ -276,7 +276,7 @@ Notice: ERNIE2.0 is not evaluated as it is not available to the public
 3、基线模型baselises在特定任务模型的训练、预测的方法和脚本(支持PyTorch、Keras)；
 
 4、对当前主流模型（如bert/bert_wwm_ext/roberta/albert/ernie/ernie2.0等），结合ChineseGLUE的数据集，做准确率测试。
-   
+
    如： XLNet-mid在LCQMC数据集上做测试
 
 5、是否还有没有参与测评的模型？
