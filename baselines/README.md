@@ -127,7 +127,7 @@
     | BERT-base	| 95.38	| batch_size=16, length=256, epoch=5, lr=2e-5 |
     | BERT-wwm-ext-base	| 95.26	| batch_size=16, length=256, epoch=5, lr=2e-5 |
     | ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
-    | RoBERTa-large | *** 96.07 ***	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+    | RoBERTa-large | ***96.07***	| batch_size=8, length=256, epoch=5, lr=2e-5 |
     | XLNet-mid | - | - |
     | ALBERT-xlarge | - | - |
     | ALBERT-tiny | - | - |
@@ -145,5 +145,5 @@
     | RoBERTa-large | 94.52 | 94.56 |       batch_size=2, length=256, epoch=3 |
     | XLNet-mid     | - | 94.52 |   batch_size=16, length=128, epoch=3 |
     | RoBERTa-wwm-ext       | 95.59 | 95.52 |       batch_size=16, length=256, epoch=3 |
-    | RoBERTa-wwm-ext-large | 96.10 | 95.93 |    batch_size=32, length=512, epoch=8 |
+    | RoBERTa-wwm-large-ext | ***96.10*** | ***95.93*** |    batch_size=32, length=512, epoch=8 |
     
