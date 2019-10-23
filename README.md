@@ -17,7 +17,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.01 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 82.56 | 209M | 86.26 | 85.98  |78.7 |84.0| - | - | 77.85 | - | 
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 85.58 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 81.55 | 1.8M |	87.10 |	85.4 | - |81.4 | 80.67 | 73.95 | 80.76 | - | 
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.57 | 1.8M |	87.10 |	85.4 | 67.7 |81.4 | 80.67 | 73.95 | 80.76 | - | 
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 86.07 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***87.02*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | 
 
