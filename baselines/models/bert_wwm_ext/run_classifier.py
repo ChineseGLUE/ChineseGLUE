@@ -1222,14 +1222,9 @@ def main(_):
         "xnli": XnliProcessor,
         "tnews": TnewsProcessor,
         "inews": InewsProcessor,
-<<<<<<< HEAD
-        "lcqmc":LCQMCProcessor
-        "thucnews":THUCNewsProcessor,
-=======
         "lcqmc": LCQMCProcessor,
         "thucnews": THUCNewsProcessor,
         "bq": BQProcessor
->>>>>>> master
     }
 
     tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
