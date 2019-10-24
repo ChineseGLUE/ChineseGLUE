@@ -5,7 +5,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 我们会选择一系列有一定代表性的任务对应的数据集，做为我们测试基准的数据集。这些数据集会覆盖不同的任务、数据量、任务难度。
 
-中文任务基准测评(chineseGLUE)-排行榜
+中文任务基准测评(ChineseGLUE)-排行榜
 ---------------------------------------------------------------------
 #####  排行榜会定期更新                     数据来源: https://github.com/chineseGLUE/chineseGLUE
 
@@ -36,7 +36,7 @@ Why do we need a benchmark for Chinese lanague understand evaluation?
 
 *** 2019-10-13: 新增评测官网入口; INEWS基线模型 ***
 
-  ~~https://chineseglue.github.io~~<a href="http://106.13.187.75:8003/"> 评测入口</a>
+  <a href="http://106.13.187.75:8003/"> 评测入口</a>
 
 为什么我们需要一个中文任务的基准测试？ 
 ---------------------------------------------------------------------
@@ -250,7 +250,7 @@ https://hfl-rc.github.io/cmrc2018/
 
     wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip
 
-中文任务基准测评(chineseGLUE)-排行榜-各任务对比
+中文任务基准测评(ChineseGLUE)-排行榜-各任务对比
 ---------------------------------------------------------------------
 
 #### TNEWS 短文本分类：
@@ -406,7 +406,7 @@ https://hfl-rc.github.io/cmrc2018/
 
 3. 详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines">基准模型-模型训练</a>
 
-#### 开放测评提交入口（建设中~~https://chineseglue.github.io~~）：<a href="http://106.13.187.75:8003/">我要提交</a>
+#### 开放测评提交入口：<a href="http://106.13.187.75:8003/">我要提交</a>
 
 <img src="https://github.com/chineseGLUE/chineseGLUE/blob/master/resources/img/chineseGLUE_landing.jpeg"  width="80%" height="40%" />
 
@@ -490,7 +490,7 @@ or join QQ group: 836811304
 张俊林，中国中文信息学会理事，中科院软件所博士，新浪微博机器学习团队AI Lab负责人。技术书籍《这就是搜索引擎：核心技术详解》（该书荣获全国第十二届优秀图书奖）、《大数据日知录：架构与算法》的作者。
 
 #### 创始会员（排名不分先后）：
-徐亮，中文任务基准测评chineseGLUE发起人。杭州实在智能算法专家，多个预训练模型中文版开源项目作者（github.com/brightmart）
+徐亮，中文任务基准测评ChineseGLUE发起人。杭州实在智能算法专家，多个预训练模型中文版开源项目作者（https://github.com/brightmart）
 
 Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一作者。
 
@@ -516,6 +516,8 @@ Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一
 
 刘伟棠，大华，albert_pytorch项目作者。
 
+陈哲乾，浙江大学计算机学院博士，一知智能联合创始人，2017年代表一知智能参加斯坦福大学的举办SQuAD机器阅读理解比赛，获得单模型组世界第二、多模型组世界第三的优异成绩。主导设计一知智能大脑项目。
+
 叶琛，浙江大学研究生，一知智能算法实习生。目前在做模型预训练 & 蒸馏、阅读理解方面工作。
 
 更多创始会员，陆续添加中。。。
@@ -529,7 +531,7 @@ Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一
 
 杜则尧，GPT2-Chinese作者。
 
-更多自愿者，陆续添加中。。。
+更多志愿者，陆续添加中。。。
 
 #### Research supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
 
