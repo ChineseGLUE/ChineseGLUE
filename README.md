@@ -5,7 +5,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 我们会选择一系列有一定代表性的任务对应的数据集，做为我们测试基准的数据集。这些数据集会覆盖不同的任务、数据量、任务难度。
 
-中文任务基准测评(ChineseGLUE)-排行榜
+中文任务基准测评(ChineseGLUE)-排行榜 Leaderboard
 ---------------------------------------------------------------------
 #####  排行榜会定期更新                     数据来源: https://github.com/chineseGLUE/chineseGLUE
 
@@ -28,15 +28,15 @@ BQ:智能客服问句匹配；MSRANER:命名实体识别；THUCNEWS:长文本分
 
 
 
-ChineseGLUE的定位
+ChineseGLUE的定位 Vision
 ---------------------------------------------------------------------
-为更好的服务中文语言理解、任务和产业界，做为通用语音模型测评的补充，通过完善中文语言理解基础设施的方式来促进中文语言模型的发展
-
-Why do we need a benchmark for Chinese lanague understand evaluation?
+为更好的服务中文语言理解、任务和产业界，做为通用语言模型测评的补充，通过完善中文语言理解基础设施的方式来促进中文语言模型的发展
 
 *** 2019-10-13: 新增评测官网入口; INEWS基线模型 ***
 
   <a href="http://106.13.187.75:8003/"> 评测入口</a>
+
+Why do we need a benchmark for Chinese lanague understand evaluation?
 
 为什么我们需要一个中文任务的基准测试？ 
 ---------------------------------------------------------------------
@@ -84,9 +84,9 @@ A huge amount of raw corpus for pre-train or language modeling research purpose.
 In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
 You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
-数据集介绍与下载
+数据集介绍与下载 Introduction of datasets 
 --------------------------------------------------------------------
-##### 1. LCQMC 口语化描述的语义相似度任务
+##### 1. LCQMC 口语化描述的语义相似度任务 Semantic Similarity Task
 输入是两个句子，输出是0或1。其中0代表语义不相似，1代表语义相似。
 
         数据量：训练集(238,766)，验证集(8,802)，测试集(12,500)
@@ -94,7 +94,7 @@ You can use it for general purpose or domain adaption, or even for text generati
          1.聊天室都有哪些好的 [分隔符] 聊天室哪个好 [分隔符] 1
          2.飞行员没钱买房怎么办？ [分隔符] 父母没钱买房子 [分隔符] 0
 
-##### 2. XNLI 语言推断任务
+##### 2. XNLI 语言推断任务 Natural Language Inference
 跨语言理解的数据集，给定一个前提和假设，判断这个假设与前提是否具有蕴涵、对立、中性关系。
                 
         数据量：训练集(392,703)，验证集(2,491)，测试集(5,011)
@@ -105,21 +105,21 @@ You can use it for general purpose or domain adaption, or even for text generati
         原始的XNLI覆盖15种语言（含低资源语言）。我们选取其中的中文，并将做格式转换，使得非常容易进入训练和测试阶段。
 
 
-##### 3.TNEWS 今日头条中文新闻（短文本）分类
+##### 3.TNEWS 今日头条中文新闻（短文本）分类 Short Text Classificaiton for News
 	 
         数据量：训练集(266,000)，验证集(57,000)，测试集(57,000)
         例子：
         6552431613437805063_!_102_!_news_entertainment_!_谢娜为李浩菲澄清网络谣言，之后她的两个行为给自己加分_!_佟丽娅,网络谣言,快乐大本营,李浩菲,谢娜,观众们
         每行为一条数据，以_!_分割的个字段，从前往后分别是 新闻ID，分类code，分类名称，新闻字符串（仅含标题），新闻关键词
 
-##### 4.INEWS 互联网情感分析任务
+##### 4.INEWS 互联网情感分析任务 Sentiment Analysis for Internet News
 	 
         数据量：训练集(5,356)，验证集(1,000)，测试集(1,000)     
         例子：
         1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
         每行为一条数据，以_!_分割的个字段，从前往后分别是情感类别，数据id，新闻标题，新闻内容
         
-##### 5.DRCD 繁体阅读理解任务
+##### 5.DRCD 繁体阅读理解任务 Reading Comprehension for Traditional Chinese
 台達閱讀理解資料集 Delta Reading Comprehension Dataset (DRCD)(https://github.com/DRCKnowledgeTeam/DRCD) 屬於通用領域繁體中文機器閱讀理解資料集。 本資料集期望成為適用於遷移學習之標準中文閱讀理解資料集。  
 
 ```
@@ -167,7 +167,7 @@ You can use it for general purpose or domain adaption, or even for text generati
 ```  
 数据格式和squad相同，如果使用简体中文模型进行评测的时候可以将其繁转简(本项目已提供)
         
-##### 6.CMRC2018 简体中文阅读理解任务
+##### 6.CMRC2018 简体中文阅读理解任务 Reading Comprehension for Simplified Chinese
 
 https://hfl-rc.github.io/cmrc2018/
 
@@ -216,7 +216,7 @@ https://hfl-rc.github.io/cmrc2018/
 ```  
 数据格式和squad相同
 
-##### 7. BQ 智能客服问句匹配
+##### 7. BQ 智能客服问句匹配 Question Matching for Customer Service
 该数据集是自动问答系统语料，共有120,000对句子对，并标注了句子对相似度值，取值为0或1（0表示不相似，1表示相似）。数据中存在错别字、语法不规范等问题，但更加贴近工业场景。
 
         数据量：训练集(100,000)，验证集(10,000)，测试集(10,000)
@@ -224,7 +224,7 @@ https://hfl-rc.github.io/cmrc2018/
          1.我存钱还不扣的 [分隔符] 借了每天都要还利息吗 [分隔符] 0
          2.为什么我的还没有额度 [分隔符] 为啥没有额度！！ [分隔符] 1
 
-##### 8. MSRANER 命名实体识别
+##### 8. MSRANER 命名实体识别 Name Entity Recognition
 该数据集共有5万多条中文命名实体识别标注数据（包括人名、地名、组织名），分别用nr、ns、nt表示，其他实体用o表示。
 
         数据量：训练集(46,364)，测试集(4,365)
@@ -232,7 +232,7 @@ https://hfl-rc.github.io/cmrc2018/
          1.据说/o 应/o 老友/o 之/o 邀/o ，/o 梁实秋/nr 还/o 坐/o 着/o 滑竿/o 来/o 此/o 品/o 过/o 玉峰/ns 茶/o 。/o
          2.他/o 每年/o 还/o 为/o 河北农业大学/nt 扶助/o 多/o 名/o 贫困/o 学生/o 。/o
 
-##### 9. THUCNEWS 长文本分类
+##### 9. THUCNEWS 长文本分类 Long Text classification
 该数据集共有4万多条中文新闻长文本标注数据，共14个类别: "体育":0, "娱乐":1, "家居":2, "彩票":3, "房产":4, "教育":5, "时尚":6, "时政":7, "星座":8, "游戏":9, "社会":10, "科技":11, "股票":12, "财经":13。
 
         数据量：训练集(33,437)，验证集(4,180)，测试集(4,180)
@@ -250,10 +250,10 @@ https://hfl-rc.github.io/cmrc2018/
 
     wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip
 
-中文任务基准测评(ChineseGLUE)-排行榜-各任务对比
+中文任务基准测评(ChineseGLUE)-排行榜-各任务对比 Evaluation of Dataset for Different Models
 ---------------------------------------------------------------------
 
-#### TNEWS 短文本分类：
+#### TNEWS 短文本分类 Short Text Classificaiton for News：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -266,7 +266,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
 
-#### XNLI 自然语言推理：
+#### XNLI 自然语言推理  Natural Language Inference：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -281,7 +281,7 @@ https://hfl-rc.github.io/cmrc2018/
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
-#### LCQMC 口语化描述的语义相似度匹配：
+#### LCQMC 口语化描述的语义相似度匹配 Semantic Similarity Task：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -294,7 +294,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
     
-#### INEWS 互联网情感分析：
+#### INEWS 互联网情感分析 Sentiment Analysis for Internet News：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -307,7 +307,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 | 
 | RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
 
-#### DRCD 繁体阅读理解：
+#### DRCD 繁体阅读理解 Reading Comprehension for Traditional Chinese：
     
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -322,7 +322,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 | 
 | xlnet-mid	|F1:F1:92.081(92.175) EM:84.404(84.563) | F1:91.439 EM:83.281 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |  
 
-#### CMRC2018 阅读理解(暂时只有开发集结果)：
+#### CMRC2018 阅读理解 Reading Comprehension for Simplified Chinese (暂时只有开发集结果)：
     
 | 模型 | 开发集（dev) | 训练参数 |
 | :----:| :----: | :----: |
@@ -338,7 +338,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
 | xlnet-mid	|F1:85.625(86.076) EM:65.312(66.076) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
 
-#### BQ 智能客服问句匹配：
+#### BQ 智能客服问句匹配 Question Matching for Customer Service：
 
 | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -352,7 +352,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext | 85.31 | 84.02 | batch_size=64, length=128, epoch=3 |
 | RoBERTa-wwm-large-ext | ***86.34*** | 84.90 | batch_size=16, length=128, epoch=3 |
 
-#### MSRANER 命名实体识别:
+#### MSRANER 命名实体识别 Name Entity Recognition:
 
 | 模型 | 测试集（test） | 训练参数 |
 | :----: | :----: | :----: |
@@ -366,7 +366,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
 | RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
 
-#### THUCNEWS 长文本分类：
+#### THUCNEWS 长文本分类 Long Text Classification：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -380,7 +380,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
 | RoBERTa-wwm-large-ext	| ***96.10*** | ***95.93*** |	batch_size=32, length=512, epoch=8 |
 
-基线模型-代码 start codes for baselines 
+基线模型-代码 Start Codes for Baselines 
 ---------------------------------------------------------------------
 
 1. 数据集整体下载，解压到glue文件夹里  
@@ -411,7 +411,7 @@ https://hfl-rc.github.io/cmrc2018/
 <img src="https://github.com/chineseGLUE/chineseGLUE/blob/master/resources/img/chineseGLUE_landing.jpeg"  width="80%" height="40%" />
 
 
-语料库：语言建模、预训练或生成型任务
+语料库：语言建模、预训练或生成型任务 Corpus for Langauge Modelling, Pre-training, Generating tasks
 ---------------------------------------------------------------------
 可用于语言建模、预训练或生成型任务等，数据量超过10G，主要部分来自于<a href="https://github.com/brightmart/nlp_chinese_corpus">nlp_chinese_corpus项目</a>
 
@@ -433,9 +433,9 @@ https://hfl-rc.github.io/cmrc2018/
 
 如需获得ChineseGLUE项目下的所有语料，需成为ChineseGLUE组织成员，并完成一个（小）任务。
 
-成为ChineseGLUE组织的创始成员
+成为ChineseGLUE组织的创始成员 Members
 ---------------------------------------------------------------------
-##### 你将可以：
+##### 你将可以 Benefits：
 
 1、成功中国第一个中文任务基准测评的创始会员
 
@@ -445,7 +445,7 @@ https://hfl-rc.github.io/cmrc2018/
 
 4、优先使用state of the art的中文预训练模型，包括各种体验版或未公开版本
 
-##### 如何参与：
+##### 如何参与 How to join with us：
 
 发送邮件 chineseGLUE#163.com，简要介绍你自己、背景、工作或研究方向、你的组织、在哪方面可以为社区贡献力量，我们评估后会与你取得联系你。
 
@@ -484,12 +484,13 @@ Contribution 贡献你的力量，从今天开始
 Share your data set with community or make a contribution today! Just send email to chineseGLUE#163.com, 
 
 or join QQ group: 836811304
-### 中文基准测评成员
 
-#### 顾问：
+中文基准测评成员 Members
+---------------------------------------------------------------------
+#### 顾问 Adviser：
 张俊林，中国中文信息学会理事，中科院软件所博士，新浪微博机器学习团队AI Lab负责人。技术书籍《这就是搜索引擎：核心技术详解》（该书荣获全国第十二届优秀图书奖）、《大数据日知录：架构与算法》的作者。
 
-#### 创始会员（排名不分先后）：
+#### 创始会员 Charter Members（排名不分先后）：
 徐亮，<a href='https://github.com/brightmart'>brightmart</a>，中文任务基准测评ChineseGLUE发起人。杭州实在智能算法专家，多个预训练模型中文版、文本分类开源项目作者。
 
 Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一作者。
@@ -522,7 +523,7 @@ Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一
 
 更多创始会员，陆续添加中。。。
 
-#### 志愿者：
+#### 志愿者 Volunteers ：
 许皓天，清华电子系毕业，目前在阿里cro线，负责模型蒸馏、领域自适应、相似检索、多语言迁移、弱监督学习等相关工作。
 
 胡锦毅，清华大学计算机系，大三，在清华大学自然语言处理与社会人文计算实验室研究学习，导师是孙茂松教授；“九歌”人工智能诗歌创作系统2.0，获CCL2019最佳系统展示奖。
