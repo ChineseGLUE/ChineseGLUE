@@ -15,7 +15,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 87.42  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 95.57 |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 87.43 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 |
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 | 
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| - | - | 77.85 | - | 94.54 |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| 91.44 | 85.63 | 77.85 | - | 94.54 |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 95.45 |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 93.54 |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 87.25 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 95.52 |
@@ -319,7 +319,8 @@ https://hfl-rc.github.io/cmrc2018/
 | ALBERT-tiny	|F1:81.507(81.818) EM:71.606(72.247) | F1:80.672 EM:70.083 |	batch=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
 | RoBERTa-large	|F1:94.93(95.06) EM:90.11(90.24) | F1:94.25 EM:89.35 |	batch=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
 | RoBERTa-wwm-ext	|F1:94.26(94.48) EM:89.29(89.64) | F1:93.53 EM:88.12 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1|
-| RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |  
+| RoBERTa-wwm-large-ext	|***F1:95.3228(95.54) EM:90.539(90.692)*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 | 
+| xlnet-mid	|F1:F1:92.081(92.175) EM:84.404(84.563) | F1:91.439 EM:83.281 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |  
 
 #### CMRC2018 阅读理解(暂时只有开发集结果)：
     
@@ -335,6 +336,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-large	| F1:88.608(89.431) EM:69.935(72.538) | epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
 | RoBERTa-wwm-ext	|F1:87.277(88.052) EM:67.891(69.369) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
 | RoBERTa-wwm-large-ext	|***F1:89.415(89.724) EM:70.593(71.358)*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+| xlnet-mid	|F1:85.625(86.076) EM:65.312(66.076) | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
 
 #### BQ 智能客服问句匹配：
 
