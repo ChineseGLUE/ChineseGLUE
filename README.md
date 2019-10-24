@@ -374,7 +374,7 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base | 95.38 | 95.57 |	batch_size=8, length=128, epoch=3 |
 | ERNIE-base	| 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
 | RoBERTa-large	| 94.52 | 94.56 |	batch_size=2, length=256, epoch=3 |
-| XLNet-mid	| - | 94.52 |	batch_size=16, length=128, epoch=3 |
+| XLNet-mid	| 94.04 | 94.54 |	batch_size=16, length=128, epoch=3 |
 | RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
 | RoBERTa-wwm-large-ext	| ***96.10*** | ***95.93*** |	batch_size=32, length=512, epoch=8 |
 
@@ -504,7 +504,7 @@ Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一
 
 谢恩宁，大搜车，围绕汽车领域语对话机器人，负责NLU部分。
 
-李露，来自华中师范大学计算机学院,曾参与某项目筹备中文自然语言推理的数据集，包括对SNLI、MNLI、STS-B等英文数据集的中文翻译；暑期在平安科技实习，主要负责利用自然语言处理最新模型进行序列标注和情感分类，现已使用过的模型有BERT、BERT-WWM-ext、RoBERTa、XLNet-base及XLNet-mid
+李露，来自华中师范大学计算机学院，曾参与某项目筹备中文自然语言推理的数据集；暑期在平安科技实习，主要负责利用自然语言处理最新模型进行序列标注和情感分类任务。
 
 董倩倩，来自中科院自动化所，phd第四年在读，研究方向是口语语言处理，做过一段时间的机器翻译和语音翻译，目前致力于中英文口语语言建模，获得过AI Challenger-英中机器同声传译赛道冠军团队成员。目前有一篇AAAI，一篇工作在投，有一年的互联网公司（字节跳动）算法实习经历。熟悉中文自然语言处理技术，掌握主流的深度学习模型和训练框架。
 
