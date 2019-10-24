@@ -490,7 +490,7 @@ or join QQ group: 836811304
 张俊林，中国中文信息学会理事，中科院软件所博士，新浪微博机器学习团队AI Lab负责人。技术书籍《这就是搜索引擎：核心技术详解》（该书荣获全国第十二届优秀图书奖）、《大数据日知录：架构与算法》的作者。
 
 #### 创始会员（排名不分先后）：
-徐亮，<a href='https://github.com/brightmart'>brightmart</a>,中文任务基准测评ChineseGLUE发起人。杭州实在智能算法专家，多个预训练模型中文版开源项目作者 
+徐亮，<a href='https://github.com/brightmart'>brightmart</a>，中文任务基准测评ChineseGLUE发起人。杭州实在智能算法专家，多个预训练模型中文版、文本分类开源项目作者。
 
 Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一作者。
 
