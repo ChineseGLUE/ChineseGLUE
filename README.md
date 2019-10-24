@@ -9,22 +9,22 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 ---------------------------------------------------------------------
 #####  排行榜会定期更新                     数据来源: https://github.com/chineseGLUE/chineseGLUE
 
-| 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | BQ | MSRANER
-| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 85.60 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 86.26  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	|86.36  | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.01 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 82.56 | 209M | 86.26 | 85.98  |78.7 |84.0| - | - | 77.85 | - | 
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 85.58 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 86.07 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***87.02*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | 
+| 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | BQ | MSRANER | THUCNEWS |
+| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 86.82 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 | 95.35 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 87.42  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 95.57 |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 87.43 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 |
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 | 
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| - | - | 77.85 | 94.04 | 94.54 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 95.45 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 93.54 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 87.25 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 95.52 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***88.13*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | ***95.93*** |
 
 
 注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；
 
-BQ:智能客服问句匹配；MSRANER:命名实体识别；cmrc2018仅开发集结果；Score是计算平均值获得；
+BQ:智能客服问句匹配；MSRANER:命名实体识别；THUCNEWS:长文本分类；cmrc2018仅开发集结果；Score是计算平均值获得；
 
 
 
@@ -65,9 +65,8 @@ Language Understanding Evaluation benchmark for Chinese(ChineseGLUE) got ideas f
 resources for training, evaluating, and analyzing natural language understanding systems. ChineseGLUE consists of: 
 
 ##### 1）中文任务的基准测试，覆盖多个不同程度的语言任务 
-  
-A benchmark of several sentence or sentence pair language understanding tasks. 
 
+A benchmark of several sentence or sentence pair language understanding tasks. 
 Currently the datasets used in these tasks are come from public. We will include datasets with private test set before the end of 2019.
 
 ##### 2）公开的排行榜 
@@ -81,9 +80,8 @@ baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTor
 ##### 4）语料库，用于语言建模、预训练或生成型任务 
 
 A huge amount of raw corpus for pre-train or language modeling research purpose. It will contains around 10G raw corpus in 2019; 
-   
-In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
 
+In the first half year of 2020, it will include at least 30G raw corpus; By the end of 2020, we will include enough raw corpus, such as 100G, so big enough that you will need no more raw corpus for general purpose language modeling.
 You can use it for general purpose or domain adaption, or even for text generating. when you use for domain adaption, you will able to select corpus you are interested in.
 
 数据集介绍与下载
@@ -108,14 +106,14 @@ You can use it for general purpose or domain adaption, or even for text generati
 
 
 ##### 3.TNEWS 今日头条中文新闻（短文本）分类
-        
+	 
         数据量：训练集(266,000)，验证集(57,000)，测试集(57,000)
         例子：
         6552431613437805063_!_102_!_news_entertainment_!_谢娜为李浩菲澄清网络谣言，之后她的两个行为给自己加分_!_佟丽娅,网络谣言,快乐大本营,李浩菲,谢娜,观众们
         每行为一条数据，以_!_分割的个字段，从前往后分别是 新闻ID，分类code，分类名称，新闻字符串（仅含标题），新闻关键词
-       
+
 ##### 4.INEWS 互联网情感分析任务
-        
+	 
         数据量：训练集(5,356)，验证集(1,000)，测试集(1,000)     
         例子：
         1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
@@ -234,7 +232,15 @@ https://hfl-rc.github.io/cmrc2018/
          1.据说/o 应/o 老友/o 之/o 邀/o ，/o 梁实秋/nr 还/o 坐/o 着/o 滑竿/o 来/o 此/o 品/o 过/o 玉峰/ns 茶/o 。/o
          2.他/o 每年/o 还/o 为/o 河北农业大学/nt 扶助/o 多/o 名/o 贫困/o 学生/o 。/o
 
-##### 9. 更多数据集添加中，Comming soon!
+##### 9. THUCNEWS 长文本分类
+该数据集共有4万多条中文新闻长文本标注数据，共14个类别: "体育":0, "娱乐":1, "家居":2, "彩票":3, "房产":4, "教育":5, "时尚":6, "时政":7, "星座":8, "游戏":9, "社会":10, "科技":11, "股票":12, "财经":13。
+
+        数据量：训练集(33,437)，验证集(4,180)，测试集(4,180)
+        例子： 
+	 11_!_科技_!_493337.txt_!_爱国者A-Touch MK3533高清播放器试用　　爱国者MP5简介:　　"爱国者"北京华旗资讯，作为国内知名数码产品制>造商。1993年创立于北京中关村，是一家致力于......
+	 每行为一条数据，以_!_分割的个字段，从前往后分别是 类别ID，类别名称，文本ID，文本内容。
+
+##### 10. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，如果你有定义良好的数据集，请与我们取得联系。
 
@@ -287,7 +293,6 @@ https://hfl-rc.github.io/cmrc2018/
 | XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
-    
     
 #### INEWS 互联网情感分析：
     
@@ -359,6 +364,19 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
 | RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
 
+#### THUCNEWS 长文本分类：
+
+| 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+| :----:| :----: | :----: | :----: |
+| ALBERT-xlarge | 95.74	 | 95.45 |batch_size=32, length=512, epoch=8 |
+| ALBERT-tiny | 92.63 | 93.54 | batch_size=64, length=128, epoch=5 |
+| BERT-base	| 95.28	| 95.35	| batch_size=8, length=128, epoch=3 |
+| BERT-wwm-ext-base | 95.38 | 95.57 |	batch_size=8, length=128, epoch=3 |
+| ERNIE-base	| 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
+| RoBERTa-large	| 94.52 | 94.56 |	batch_size=2, length=256, epoch=3 |
+| XLNet-mid	| - | 94.52 |	batch_size=16, length=128, epoch=3 |
+| RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
+| RoBERTa-wwm-large-ext	| ***96.10*** | ***95.93*** |	batch_size=32, length=512, epoch=8 |
 
 基线模型-代码 start codes for baselines 
 ---------------------------------------------------------------------
@@ -370,7 +388,7 @@ https://hfl-rc.github.io/cmrc2018/
    注：lcqmc数据集，请从<a href="http://icrc.hitsz.edu.cn/info/1037/1146.htm">这里</a>申请或搜索网络
 
 2. 训练模型  
-    
+   
     ```a.将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。``` 
          ```以bert和albert为例子：```
             
@@ -378,7 +396,7 @@ https://hfl-rc.github.io/cmrc2018/
          ```https://github.com/brightmart/albert_zh ```  
          ```a1. bert  ``` 
          ```https://github.com/google-research/bert ```    
-        
+    
      ```b.修改run_classifier.sh指定模型路径  ``` 
     
      ```c.运行各个模型文件夹下的run_classifier.sh即可 ```  
@@ -438,7 +456,7 @@ https://hfl-rc.github.io/cmrc2018/
 3、基线模型baselises在特定任务模型的训练、预测的方法和脚本(支持PyTorch、Keras)；
 
 4、对当前主流模型（如bert/bert_wwm_ext/roberta/albert/ernie/ernie2.0等），结合ChineseGLUE的数据集，做准确率测试。
-   
+
    如： XLNet-mid在LCQMC数据集上做测试
 
 5、是否还有没有参与测评的模型？

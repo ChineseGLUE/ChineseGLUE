@@ -326,6 +326,45 @@ class TnewsProcessor(DataProcessor):
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
+class THUCNewsProcessor(DataProcessor):
+    """Processor for the THUCNews data set (GLUE version)."""
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "train.txt")), "train")
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "dev.txt")), "dev")
+
+    def get_test_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_txt(os.path.join(data_dir, "test.txt")), "test")
+
+    def get_labels(self):
+        """See base class."""
+        labels = []
+        for i in range(14):
+            labels.append(str(i))
+        return labels
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0 or len(line) < 3:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            text_a = line[3]
+            text_b = None
+            label = line[0]
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples
+
 class LCQMCProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
 
@@ -974,7 +1013,8 @@ def main(_):
         "inews": InewsProcessor,
         "lcqmc_pair": LCQMCProcessor,
         "lcqmc": LCQMCProcessor,
-        "bq": BQProcessor
+        "bq": BQProcessor,
+        "thucnews":THUCNewsProcessor,
     }
 
     if not FLAGS.do_train and not FLAGS.do_eval and not FLAGS.do_predict:

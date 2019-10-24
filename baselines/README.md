@@ -76,8 +76,8 @@
     | RoBERTa-large	|81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
     | XLNet-mid	|82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
     | RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 | 
-    | RoBERTa-wwm-large-ext	|83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
-    
+    | RoBERTa-wwm-large-ext	|83.73 | 82.78 |	batch_size=4, length=512, epoch=3 |
+
     5. DRCD 繁体阅读理解
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
@@ -128,11 +128,24 @@
     | BERT-base	| 95.38	| batch_size=16, length=256, epoch=5, lr=2e-5 |
     | BERT-wwm-ext-base	| 95.26	| batch_size=16, length=256, epoch=5, lr=2e-5 |
     | ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
-    | RoBERTa-large | *** 96.07 ***	| batch_size=8, length=256, epoch=5, lr=2e-5 |
+    | RoBERTa-large | ***96.07***	| batch_size=8, length=256, epoch=5, lr=2e-5 |
     | XLNet-mid | - | - |
     | ALBERT-xlarge | - | - |
     | ALBERT-tiny | - | - |
     | RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
     | RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
 
+    9. THUCNEWS 长文本分类
 
+    | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
+    | :----:| :----: | :----: | :----: |
+    | ALBERT-xlarge | 95.74 | 95.45 |batch_size=32, length=512, epoch=8 |
+    | ALBERT-tiny | 92.63 | 93.54 | batch_size=32, length=512, epoch=8 |
+    | BERT-base     | 95.28 | 95.35 | batch_size=8, length=128, epoch=3 |
+    | BERT-wwm-ext-base | 95.38 | 95.57 |   batch_size=8, length=128, epoch=3 |
+    | ERNIE-base    | 94.35 | 94.90 | batch_size=16, length=256, epoch=3 |
+    | RoBERTa-large | 94.52 | 94.56 |       batch_size=2, length=256, epoch=3 |
+    | XLNet-mid     | - | 94.52 |   batch_size=16, length=128, epoch=3 |
+    | RoBERTa-wwm-ext       | 95.59 | 95.52 |       batch_size=16, length=256, epoch=3 |
+    | RoBERTa-wwm-large-ext | ***96.10*** | ***95.93*** |    batch_size=32, length=512, epoch=8 |
+    
