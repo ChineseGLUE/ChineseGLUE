@@ -14,7 +14,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 86.82 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 | 95.35 |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 87.42  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 95.57 |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 87.43 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 |
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 | 
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| 91.44 | 85.63 | 77.85 | - | 94.54 |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 95.45 |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 93.54 |
@@ -70,11 +70,11 @@ A benchmark of several sentence or sentence pair language understanding tasks.
 Currently the datasets used in these tasks are come from public. We will include datasets with private test set before the end of 2019.
 
 ##### 2）公开的排行榜 
-  
+
 A public leaderboard for tracking performance. You will able to submit your prediction files on these tasks, each task will be evaluated and scored, a final score will also be available.
 
 ##### 3）基线模型，包含开始的代码、预训练模型 
-  
+
 baselines for ChineseGLUE tasks. baselines will be available in TensorFlow,PyTorch,Keras and PaddlePaddle.
 
 ##### 4）语料库，用于语言建模、预训练或生成型任务 
@@ -106,19 +106,19 @@ You can use it for general purpose or domain adaption, or even for text generati
 
 
 ##### 3.TNEWS 今日头条中文新闻（短文本）分类 Short Text Classificaiton for News
-	 
+
         数据量：训练集(266,000)，验证集(57,000)，测试集(57,000)
         例子：
         6552431613437805063_!_102_!_news_entertainment_!_谢娜为李浩菲澄清网络谣言，之后她的两个行为给自己加分_!_佟丽娅,网络谣言,快乐大本营,李浩菲,谢娜,观众们
         每行为一条数据，以_!_分割的个字段，从前往后分别是 新闻ID，分类code，分类名称，新闻字符串（仅含标题），新闻关键词
 
 ##### 4.INEWS 互联网情感分析任务 Sentiment Analysis for Internet News
-	 
+
         数据量：训练集(5,356)，验证集(1,000)，测试集(1,000)     
         例子：
         1_!_00005a3efe934a19adc0b69b05faeae7_!_九江办好人民满意教育_!_近3年来，九江市紧紧围绕“人本教育、公平教育、优质教育、幸福教育”的目标，努力办好人民满意教育，促进了义务教育均衡发展，农村贫困地区办学条件改善。目前，该市特色教育学校有70所 ......
         每行为一条数据，以_!_分割的个字段，从前往后分别是情感类别，数据id，新闻标题，新闻内容
-        
+
 ##### 5.DRCD 繁体阅读理解任务 Reading Comprehension for Traditional Chinese
 台達閱讀理解資料集 Delta Reading Comprehension Dataset (DRCD)(https://github.com/DRCKnowledgeTeam/DRCD) 屬於通用領域繁體中文機器閱讀理解資料集。 本資料集期望成為適用於遷移學習之標準中文閱讀理解資料集。  
 
@@ -164,7 +164,7 @@ You can use it for general purpose or domain adaption, or even for text generati
     }
   ]
 }
-```  
+```
 数据格式和squad相同，如果使用简体中文模型进行评测的时候可以将其繁转简(本项目已提供)
         
 ##### 6.CMRC2018 简体中文阅读理解任务 Reading Comprehension for Simplified Chinese
@@ -213,7 +213,7 @@ https://hfl-rc.github.io/cmrc2018/
         }
     ]
 }
-```  
+```
 数据格式和squad相同
 
 ##### 7. BQ 智能客服问句匹配 Question Matching for Customer Service
@@ -237,8 +237,8 @@ https://hfl-rc.github.io/cmrc2018/
 
         数据量：训练集(33,437)，验证集(4,180)，测试集(4,180)
         例子： 
-	 11_!_科技_!_493337.txt_!_爱国者A-Touch MK3533高清播放器试用　　爱国者MP5简介:　　"爱国者"北京华旗资讯，作为国内知名数码产品制>造商。1993年创立于北京中关村，是一家致力于......
-	 每行为一条数据，以_!_分割的个字段，从前往后分别是 类别ID，类别名称，文本ID，文本内容。
+     11_!_科技_!_493337.txt_!_爱国者A-Touch MK3533高清播放器试用　　爱国者MP5简介:　　"爱国者"北京华旗资讯，作为国内知名数码产品制>造商。1993年创立于北京中关村，是一家致力于......
+     每行为一条数据，以_!_分割的个字段，从前往后分别是 类别ID，类别名称，文本ID，文本内容。
 
 ##### 10. 更多数据集添加中，Comming soon!
 
@@ -262,12 +262,12 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base | 89.88 | 89.81 |	batch_size=32, length=128, epoch=3 |
 | ERNIE-base	| 89.77	|89.83 | batch_size=32, length=128, epoch=3 |
 | RoBERTa-large	| 90.00 | 89.91 |	batch_size=16, length=128, epoch=3 |
-| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 | 
-| RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 | 
-| RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 | 
+| XLNet-mid	|86.14 | 86.26 |	batch_size=32, length=128, epoch=3 |
+| RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 |
+| RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 |
 
 #### XNLI 自然语言推理  Natural Language Inference：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge |	74.0? |	74.0? |batch_size=64, length=128, epoch=2 |
@@ -275,14 +275,14 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base | 79.4 | 78.7 |	batch_size=64, length=128, epoch=2 |
 | ERNIE-base	| 79.7	|78.6 | batch_size=64, length=128, epoch=2 |
 | RoBERTa-large	|***80.2*** |79.9 |	batch_size=64, length=128, epoch=2 |
-| XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 | 
-| RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 | 
-| RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 | 
+| XLNet-mid	| 79.2 | 78.7 |	batch_size=64, length=128, epoch=2 |
+| RoBERTa-wwm-ext	| 79.56 | 79.28 |	batch_size=64, length=128, epoch=2 |
+| RoBERTa-wwm-large-ext	| ***80.20*** | ***80.04*** |	batch_size=16, length=128, epoch=2 |
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
 #### LCQMC 口语化描述的语义相似度匹配 Semantic Similarity Task：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge | 89.00	 | 86.76	|batch_size=64, length=128, epoch=3 |
@@ -290,12 +290,12 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base |89.1   | ***87.3*** |	batch_size=64, length=128, epoch=3 |
 | ERNIE-base	| 89.8 	| 87.2 | batch_size=64, length=128, epoch=3|
 | RoBERTa-large	|***89.9***  | 87.2|	batch_size=64, length=128, epoch=3 |
-| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 | 
-| RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 | 
-| RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 | 
-    
+| XLNet-mid	| 86.14 | 85.98 |	batch_size=64, length=128, epoch=3 |
+| RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 |
+| RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 |
+
 #### INEWS 互联网情感分析 Sentiment Analysis for Internet News：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | ALBERT-xlarge |	81.80 | 82.40	|batch_size=32, length=512, epoch=8 |
@@ -303,12 +303,12 @@ https://hfl-rc.github.io/cmrc2018/
 | BERT-wwm-ext-base | 81.93 | 83.46 |	batch_size=16, length=512, epoch=3 |
 | ERNIE-base	| ***84.50***	|***85.14*** | batch_size=16, length=512, epoch=3 |
 | RoBERTa-large	| 81.90 | 84.00 |	batch_size=4, length=512, epoch=3 |
-| XLNet-mid	| 82.00 | 84.00 |	batch_size=8, length=512, epoch=3 | 
-| RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 | 
-| RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 | 
+| XLNet-mid	| 82.00 | 84.00 |	batch_size=8, length=512, epoch=3 |
+| RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 |
+| RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 |
 
 #### DRCD 繁体阅读理解 Reading Comprehension for Traditional Chinese：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
 | BERT-base	|F1:92.30 EM:86.60 | F1:91.46 EM:85.49 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
@@ -318,13 +318,13 @@ https://hfl-rc.github.io/cmrc2018/
 | ALBERT-xlarge	|F1:94.63 EM:89.68 | F1:94.70 EM:89.78 |	batch_size=32, length=512, epoch=3 lr=2.5e-5 warmup=0.06 |
 | ALBERT-tiny	|F1:81.51 EM:71.61 | F1:80.67 EM:70.08 |	batch=32, length=512, epoch=3 lr=2e-4 warmup=0.1 |
 | RoBERTa-large	|F1:94.93 EM:90.11 | F1:94.25 EM:89.35 |	batch=32, length=256, epoch=2 lr=3e-5 warmup=0.1|
-| xlnet-mid	|F1:92.08 EM:84.40 | F1:91.44 EM:83.28 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |  
+| xlnet-mid	|F1:92.08 EM:84.40 | F1:91.44 EM:83.28 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
 | RoBERTa-wwm-ext	|F1:94.26 EM:89.29 | F1:93.53 EM:88.12 |	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1|
-| RoBERTa-wwm-large-ext	|***F1:95.32 EM:90.54*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |  
+| RoBERTa-wwm-large-ext	|***F1:95.32 EM:90.54*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |
 
 
 #### CMRC2018 阅读理解 Reading Comprehension for Simplified Chinese：
-    
+
 | 模型 | 开发集（dev) | 测试集（test) |  训练参数 |
 | :----:| :----: | :----: | :----: |
 | BERT-base	|F1:85.48 EM:64.77 | - | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
@@ -335,9 +335,9 @@ https://hfl-rc.github.io/cmrc2018/
 | ALBERT-tiny	| F1:73.95 EM:48.31 |-| epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
 | RoBERTa-middle	| F1:86.84 EM:67.19 |-| epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
 | RoBERTa-large	| F1:88.61 EM:69.94 |-| epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
-| xlnet-mid	|F1:85.63 EM:65.31 | F1:89.20 EM:69.30 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
-| RoBERTa-wwm-ext	|F1:87.28 EM:67.89 | F1:89.40 EM:72.60 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
-| RoBERTa-wwm-large-ext	|***F1:89.42 EM:70.59*** | ***F1:90.60 EM:74.20*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+| xlnet-mid	|F1:85.63 EM:65.31 | F1:89.20 EM:69.30 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
+| RoBERTa-wwm-ext	|F1:87.28 EM:67.89 | F1:89.40 EM:72.60 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
+| RoBERTa-wwm-large-ext	|***F1:89.42 EM:70.59*** | ***F1:90.60 EM:74.20*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 |
 
 
 #### BQ 智能客服问句匹配 Question Matching for Customer Service：
@@ -382,6 +382,20 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
 | RoBERTa-wwm-large-ext	| ***96.10*** | ***95.93*** |	batch_size=32, length=512, epoch=8 |
 
+#### iFLYTEKData 长文本分类 Long Text Classification：
+
+|         模型          | 开发集（dev) | 测试集（test) |              训练参数              |
+| :-------------------: | :----------: | :-----------: | :--------------------------------: |
+|     ALBERT-xlarge     |              |               | batch_size=32, length=512, epoch=8 |
+|      ALBERT-tiny      |              |               | batch_size=64, length=128, epoch=5 |
+|       BERT-base       |              |               | batch_size=8, length=128, epoch=3  |
+|   BERT-wwm-ext-base   |              |               | batch_size=8, length=128, epoch=3  |
+|      ERNIE-base       |              |               | batch_size=16, length=256, epoch=3 |
+|     RoBERTa-large     |              |               | batch_size=2, length=256, epoch=3  |
+|       XLNet-mid       |              |               | batch_size=16, length=128, epoch=3 |
+|    RoBERTa-wwm-ext    |              |               | batch_size=16, length=256, epoch=3 |
+| RoBERTa-wwm-large-ext |              |               | batch_size=32, length=512, epoch=8 |
+
 基线模型-代码 Start Codes for Baselines 
 ---------------------------------------------------------------------
 
@@ -392,7 +406,7 @@ https://hfl-rc.github.io/cmrc2018/
    注：lcqmc数据集，请从<a href="http://icrc.hitsz.edu.cn/info/1037/1146.htm">这里</a>申请或搜索网络
 
 2. 训练模型  
-   
+  
     ```a.将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。``` 
          ```以bert和albert为例子：```
             
