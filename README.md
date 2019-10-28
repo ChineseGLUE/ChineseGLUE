@@ -16,8 +16,8 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 87.43 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 |
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 | 
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| 91.44 | 85.63 | 77.85 | - | 94.54 |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 95.45 |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 93.54 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | 89.51 | 95.45 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | 84.77 | 93.54 |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 87.25 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 95.52 |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***88.13*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | ***95.93*** |
 
@@ -363,8 +363,9 @@ https://hfl-rc.github.io/cmrc2018/
 | ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
 | RoBERTa-large | ***96.07***	| batch_size=8, length=256, epoch=5, lr=2e-5 |
 | XLNet-mid | - | - |
-| ALBERT-xlarge | - | - |
-| ALBERT-tiny | - | - |
+| ALBERT-xlarge | 89.51 | batch_size=16, length=256, epoch=8, lr=7e-5 |
+| ALBERT-base | 92.47 | batch_size=32, length=256, epoch=8, lr=5e-5 |
+| ALBERT-tiny | 84.77 | batch_size=32, length=256, epoch=8, lr=5e-5 |
 | RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
 | RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
 
