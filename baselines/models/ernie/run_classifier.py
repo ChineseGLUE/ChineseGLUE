@@ -291,7 +291,6 @@ class iFLYTEKDataProcessor(DataProcessor):
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
-
 class InewsProcessor(DataProcessor):
   """Processor for the MRPC data set (GLUE version)."""
 
@@ -1265,7 +1264,7 @@ def main(_):
 	      "thucnews":THUCNewsProcessor,
         "lcqmc": LCQMCProcessor,
         "bq": BQProcessor,
-        "iflydata":iFLYTEKDataProcessor,
+        "iflydata":iFLYTEKDataProcessor
     }
 
     tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,

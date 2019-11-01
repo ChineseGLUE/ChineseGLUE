@@ -485,7 +485,6 @@ class THUCNewsProcessor(DataProcessor):
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
-
 class iFLYTEKDataProcessor(DataProcessor):
     """Processor for the iFLYTEKData data set (GLUE version)."""
 
@@ -524,7 +523,6 @@ class iFLYTEKDataProcessor(DataProcessor):
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
-
 
 class LCQMCProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
