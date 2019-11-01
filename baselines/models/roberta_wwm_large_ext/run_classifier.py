@@ -290,7 +290,6 @@ class iFLYTEKDataProcessor(DataProcessor):
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
-
 class InewsProcessor(DataProcessor):
   """Processor for the MRPC data set (GLUE version)."""
 
