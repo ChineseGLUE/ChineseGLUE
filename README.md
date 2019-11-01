@@ -248,7 +248,7 @@ https://hfl-rc.github.io/cmrc2018/
     数据量：训练集(24,649)，验证集(3,081)，测试集(3,082)
     例子： 
 0_!_首汽集团开发的互联网约租车平台，为客户提供安全、便捷、舒适的高品质出行服务。主要服务全面覆盖专车、出租车、国际用车、巴士、深港通、无障碍、短租自驾、包车、接送机等出行业务，满足您的各项出行需求......
- 每行为一条数据，以_!_分割字段，从前往后分别是 类别ID，文本内容。
+每行为一条数据，以_!_分割字段，从前往后分别是 类别ID，文本内容。
 ```
 
 ##### 11. 更多数据集添加中，Comming soon!
@@ -400,9 +400,9 @@ https://hfl-rc.github.io/cmrc2018/
 |     ALBERT-xlarge     |    61.94     |     61.34     | batch_size=32, length=128, epoch=3 |
 |      ALBERT-tiny      |    44.83     |     44.62     | batch_size=32, length=256, epoch=3 |
 |       BERT-base       |    63.57     |     63.48     | batch_size=32, length=128, epoch=3 |
-|   BERT-wwm-ext-base   |    63.83     |               | batch_size=32, length=128, epoch=3 |
+|   BERT-wwm-ext-base   |    63.83     |     63.75     | batch_size=32, length=128, epoch=3 |
 |      ERNIE-base       |    61.75     |     61.80     | batch_size=24, length=256, epoch=3 |
-|     RoBERTa-large     |              |               | batch_size=2, length=256, epoch=3  |
+|     RoBERTa-large     |    63.80     |     63.91     | batch_size=16, length=128, epoch=3 |
 |       XLNet-mid       |    60.16     |     60.04     | batch_size=16, length=128, epoch=3 |
 |    RoBERTa-wwm-ext    |    64.18     |       -       | batch_size=16, length=128, epoch=3 |
 | RoBERTa-wwm-large-ext |  **65.19**   |   **65.10**   | batch_size=32, length=128, epoch=3 |
