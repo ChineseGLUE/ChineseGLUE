@@ -487,7 +487,7 @@ class THUCNewsProcessor(DataProcessor):
         return examples
 
 class iFLYTEKDataProcessor(DataProcessor):
-    """Processor for the iFLYTEK data set (GLUE version)."""
+    """Processor for the iFLYTEKData data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -520,10 +520,7 @@ class iFLYTEKDataProcessor(DataProcessor):
             guid = "%s-%s" % (set_type, i)
             text_a = tokenization.convert_to_unicode(line[1])
             text_b = None
-            if set_type == "test":
-                label = "0"
-            else:
-                label = tokenization.convert_to_unicode(line[0])
+            label = tokenization.convert_to_unicode(line[0])
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples

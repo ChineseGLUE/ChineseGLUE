@@ -213,8 +213,8 @@ class DataProcessor(object):
                 lines.append(line.strip().split("_!_"))
             return lines
 
-class THUCNewsProcessor(DataProcessor):
-    """Processor for the THUCNews data set (GLUE version)."""
+class iFLYTEKDataProcessor(DataProcessor):
+    """Processor for the iFLYTEKData data set (GLUE version)."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -234,7 +234,7 @@ class THUCNewsProcessor(DataProcessor):
     def get_labels(self):
         """See base class."""
         labels = []
-        for i in range(14):
+        for i in range(119):
             labels.append(str(i))
         return labels
 
@@ -245,12 +245,13 @@ class THUCNewsProcessor(DataProcessor):
             if i == 0 or len(line) < 3:
                 continue
             guid = "%s-%s" % (set_type, i)
-            text_a = tokenization.convert_to_unicode(line[3])
+            text_a = tokenization.convert_to_unicode(line[1])
             text_b = None
             label = tokenization.convert_to_unicode(line[0])
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
+
 class InewsProcessor(DataProcessor):
   """Processor for the MRPC data set (GLUE version)."""
 
@@ -1224,7 +1225,8 @@ def main(_):
         "inews": InewsProcessor,
         "lcqmc": LCQMCProcessor,
         "thucnews": THUCNewsProcessor,
-        "bq": BQProcessor
+        "bq": BQProcessor,
+        "iflydata": iFLYTEKDataProcessor
     }
 
     tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,

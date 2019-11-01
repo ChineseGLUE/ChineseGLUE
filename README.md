@@ -9,22 +9,22 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 ---------------------------------------------------------------------
 #####  排行榜会定期更新                     数据来源: https://github.com/chineseGLUE/chineseGLUE
 
-| 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | BQ | MSRANER | THUCNEWS |
-| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 86.82 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 | 95.35 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 87.42  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 95.57 |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 87.43 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 |
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| 91.44 | 85.63 | 77.85 | - | 94.54 |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 95.45 |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 93.54 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 87.25 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 95.52 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***88.13*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | ***95.93*** |
+| 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | BQ | MSRANER | THUCNEWS | iFLYTEKData |
+| :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: | ------|
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 86.82 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 | 95.35 | 63.57 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 87.42  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 95.57 | 63.83 |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 87.43 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 | 61.75 |
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 |  |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| 91.44 | 85.63 | 77.85 | - | 94.54 | 60.16 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | - | 95.45 | 61.94 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | - | 93.54 | 44.83 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 87.25 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 95.52 | 64.18 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***88.13*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | ***95.93*** | **65.19** |
 
 
 注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；
 
-BQ:智能客服问句匹配；MSRANER:命名实体识别；THUCNEWS:长文本分类；cmrc2018仅开发集结果；Score是计算平均值获得；
+BQ:智能客服问句匹配；MSRANER:命名实体识别；THUCNEWS/iFLYTEKData:长文本分类；cmrc2018仅开发集结果；Score是计算平均值获得；
 
 
 
@@ -240,7 +240,18 @@ https://hfl-rc.github.io/cmrc2018/
      11_!_科技_!_493337.txt_!_爱国者A-Touch MK3533高清播放器试用　　爱国者MP5简介:　　"爱国者"北京华旗资讯，作为国内知名数码产品制>造商。1993年创立于北京中关村，是一家致力于......
      每行为一条数据，以_!_分割的个字段，从前往后分别是 类别ID，类别名称，文本ID，文本内容。
 
-##### 10. 更多数据集添加中，Comming soon!
+##### 10.iFLYTEK 长文本分类 Long Text classification
+
+该数据集共有3万多条关于app应用描述的长文本标注数据，包含和日常生活相关的各类应用主题，共119个类别："打车":0,"地图导航":1,"免费WIFI":2,"租车":3,….,"女性":115,"经营":116,"收款":117,"其他":118(分别用0-118表示)。
+
+```
+    数据量：训练集(24,649)，验证集(3,081)，测试集(3,082)
+    例子： 
+0_!_首汽集团开发的互联网约租车平台，为客户提供安全、便捷、舒适的高品质出行服务。主要服务全面覆盖专车、出租车、国际用车、巴士、深港通、无障碍、短租自驾、包车、接送机等出行业务，满足您的各项出行需求......
+ 每行为一条数据，以_!_分割字段，从前往后分别是 类别ID，文本内容。
+```
+
+##### 11. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，如果你有定义良好的数据集，请与我们取得联系。
 
@@ -386,15 +397,15 @@ https://hfl-rc.github.io/cmrc2018/
 
 |         模型          | 开发集（dev) | 测试集（test) |              训练参数              |
 | :-------------------: | :----------: | :-----------: | :--------------------------------: |
-|     ALBERT-xlarge     |              |               | batch_size=32, length=512, epoch=8 |
-|      ALBERT-tiny      |              |               | batch_size=64, length=128, epoch=5 |
-|       BERT-base       |              |               | batch_size=8, length=128, epoch=3  |
-|   BERT-wwm-ext-base   |              |               | batch_size=8, length=128, epoch=3  |
-|      ERNIE-base       |              |               | batch_size=16, length=256, epoch=3 |
+|     ALBERT-xlarge     |    61.94     |     61.34     | batch_size=32, length=128, epoch=3 |
+|      ALBERT-tiny      |    44.83     |     44.62     | batch_size=32, length=256, epoch=3 |
+|       BERT-base       |    63.57     |     63.48     | batch_size=32, length=128, epoch=3 |
+|   BERT-wwm-ext-base   |    63.83     |               | batch_size=32, length=128, epoch=3 |
+|      ERNIE-base       |    61.75     |     61.80     | batch_size=24, length=256, epoch=3 |
 |     RoBERTa-large     |              |               | batch_size=2, length=256, epoch=3  |
-|       XLNet-mid       |              |               | batch_size=16, length=128, epoch=3 |
-|    RoBERTa-wwm-ext    |              |               | batch_size=16, length=256, epoch=3 |
-| RoBERTa-wwm-large-ext |              |               | batch_size=32, length=512, epoch=8 |
+|       XLNet-mid       |    60.16     |     60.04     | batch_size=16, length=128, epoch=3 |
+|    RoBERTa-wwm-ext    |    64.18     |       -       | batch_size=16, length=128, epoch=3 |
+| RoBERTa-wwm-large-ext |  **65.19**   |   **65.10**   | batch_size=32, length=128, epoch=3 |
 
 基线模型-代码 Start Codes for Baselines 
 ---------------------------------------------------------------------
