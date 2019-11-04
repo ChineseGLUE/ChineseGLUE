@@ -11,19 +11,19 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 | 模型 | Score | 参数 | TNEWS | LCQMC | XNLI | INEWS | DRCD | CMRC2018 | BQ | MSRANER | THUCNEWS | iFLYTEKData |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 86.82 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 | 95.35 | 63.57 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 87.42  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 95.57 | 63.83 |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 87.43 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 | 61.75 |
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 87.95 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 | 63.80 |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 84.55 | 209M | 86.26 | 85.98  |78.7 |84.0| 91.44 | 85.63 | 77.85 | - | 94.54 | 60.16 |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 86.81 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | 89.51 | 95.45 | 61.94 |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 79.61 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | 84.77 | 93.54 | 44.83 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 87.25 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 95.52 | 64.18 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***88.13*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | ***95.93*** | **65.19** |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 87.77 | 108M | 89.78 	| 86.9 	|77.8 | 82.7 | 91.46 | 85.48 | 85.08 | 95.38 | 95.35 | 63.57 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 88.29  | 108M |89.81   | ***87.3***  | 78.7	| 83.46 | 92.63 | 86.68 | ***85.21*** | 95.26 | 95.57 | 63.83 |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 88.29 | 108M |89.83  	|87.2 | 78.6| ***85.14*** | 92.01 | 87.30 | 84.47 | 95.17 | 94.90 | 61.75 |
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 88.85 | 334M 	|89.91  | 87.2  | 79.9 | 84.0 | 94.25 | 88.60 | 85.20 | ***96.07*** | 94.56 | 63.80 |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 76.04 | 209M | 86.26 | 85.98  |78.7 |84.0| 91.44 | 85.63 | 77.85 | - | 94.54 | 60.16 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 87.11 | 59M |	88.3 |	86.76 | 74.0? |82.4 | 94.70 | 88.66 | 84.21 | 89.51 | 95.45 | 61.94 |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 81.73 | 1.8M |	87.10 |	85.4 | 68.0 |81.4 | 80.67 | 73.95 | 80.76 | 84.77 | 93.54 | 44.83 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 88.12 | 108M  |	89.79 |	86.33 | 79.28 | 82.28 | 93.53 | 87.28 | 84.02 | 95.06 | 95.52 | 64.18 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***88.93*** | 330M |	***90.11*** |	86.82 | ***80.04*** | 82.78 | ***95.06*** | ***89.42*** | 84.90 | 95.32 | ***95.93*** | **65.19** |
 
 注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:阅读理解；
 
-BQ:智能客服问句匹配；MSRANER:命名实体识别；THUCNEWS/iFLYTEKData:长文本分类；cmrc2018仅开发集结果；Score是计算平均值获得；
+BQ:智能客服问句匹配；MSRANER:命名实体识别；THUCNEWS/iFLYTEKData:长文本分类；cmrc2018仅开发集结果；Score是1-9数据集计算平均值获得；
 
 ChineseGLUE的定位 Vision
 ---------------------------------------------------------------------
