@@ -2,9 +2,9 @@
 # @Author: bo.shi
 # @Date:   2019-11-04 09:56:36
 # @Last Modified by:   bo.shi
-# @Last Modified time: 2019-11-05 22:31:52
+# @Last Modified time: 2019-11-05 20:24:16
 
-TASK_NAME="bq"
+TASK_NAME="thucnews"
 MODEL_NAME="albert_xlarge_zh"
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="0"
@@ -26,9 +26,9 @@ fi
 cd $TASK_NAME
 if [ ! -f "train.txt" ] || [ ! -f "dev.txt" ] || [ ! -f "test.txt" ]; then
   rm *
-  wget https://storage.googleapis.com/chineseglue/tasks/bq.zip
-  unzip bq.zip
-  rm bq.zip
+  wget https://storage.googleapis.com/chineseglue/tasks/thucnews.zip
+  unzip thucnews.zip
+  rm thucnews.zip
 else
   echo "data exists"
 fi
