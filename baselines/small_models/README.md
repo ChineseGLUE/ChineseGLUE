@@ -3,7 +3,8 @@ Small Model is very important in many scenarios, such as mobile phones and autop
 
 | Model/Compression Method   | Score  | 参数 | TNEWS  | LCQMC  | XNLI   | INEWS  | BQ     | MSRANER | THUCNEWS | iFLYTEKData |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
-| KD for <a href="https://github.com/google-research/bert">BERT-base</a>        | -- | -- | -- | -- | -- | -- | -- | -- | -- | --  |
+| BAM for <a href="https://github.com/google-research/bert">BERT-base</a>        | -- | -- | -- | -- | -- | -- | -- | -- | -- | --  |
+| TinyBERT for <a href="https://github.com/google-research/bert">BERT-base</a>        | -- | -- | -- | -- | -- | -- | -- | -- | -- | --  |
 ### Small Model Trained Directly
 
 ### Model Compression
