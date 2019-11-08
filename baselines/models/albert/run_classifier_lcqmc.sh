@@ -2,7 +2,7 @@
 # @Author: bo.shi
 # @Date:   2019-11-04 09:56:36
 # @Last Modified by:   bo.shi
-# @Last Modified time: 2019-11-05 23:12:35
+# @Last Modified time: 2019-11-08 12:34:38
 
 TASK_NAME="lcqmc"
 MODEL_NAME="albert_xlarge_zh"
@@ -24,15 +24,10 @@ if [ ! -d $TASK_NAME ]; then
   echo "makedir $GLUE_DATA_DIR/$TASK_NAME"
 fi
 cd $TASK_NAME
-if [ ! -f "train.txt" ]; then
-  wget https://raw.githubusercontent.com/pengming617/text_matching/master/data/train.txt
-fi
-if [ ! -f "dev.txt" ]; then
-  wget https://github.com/pengming617/text_matching/blob/master/data/dev.txt
-fi
-if [ ! -f "test.txt" ]; then
-  wget https://github.com/pengming617/text_matching/blob/master/data/test.txt
-fi
+echo "Please try again if the data is not downloaded successfully."
+wget -c https://raw.githubusercontent.com/pengming617/text_matching/master/data/train.txt
+wget -c https://raw.githubusercontent.com/pengming617/text_matching/master/data/dev.txt
+wget -c https://raw.githubusercontent.com/pengming617/text_matching/master/data/test.txt
 echo "Finish download dataset."
 
 # download model
