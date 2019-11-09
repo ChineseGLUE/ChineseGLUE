@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# @Author: bo.shi
+# @Date:   2019-11-04 09:56:36
+# @Last Modified by:   bo.shi
+# @Last Modified time: 2019-11-09 23:37:20
 # coding=utf-8
 # Copyright 2018 The Google AI Language Team Authors.
 #
@@ -487,17 +492,17 @@ class TnewsProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_train.txt")), "train")
+            self._read_txt(os.path.join(data_dir, "train.txt")), "train")
 
     def get_dev_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_dev.txt")), "dev")
+            self._read_txt(os.path.join(data_dir, "dev.txt")), "dev")
 
     def get_test_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_test.txt")), "test")
+            self._read_txt(os.path.join(data_dir, "test.txt")), "test")
 
     def get_labels(self):
         """See base class."""

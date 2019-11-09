@@ -4,7 +4,7 @@
 # @Last Modified by:   bo.shi
 # @Last Modified time: 2019-11-09 23:36:59
 
-TASK_NAME="xnli"
+TASK_NAME="thucnews"
 MODEL_NAME="chinese_roberta_wwm_large_ext_L-24_H-1024_A-16"
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="0"
@@ -23,11 +23,11 @@ if [ ! -d $TASK_NAME ]; then
   echo "makedir $GLUE_DATA_DIR/$TASK_NAME"
 fi
 cd $TASK_NAME
-if [ ! -f "train.tsv" ] || [ ! -f "dev.tsv" ] || [ ! -f "test.tsv" ]; then
+if [ ! -f "train.txt" ] || [ ! -f "dev.txt" ] || [ ! -f "test.txt" ]; then
   rm *
-  wget https://storage.googleapis.com/chineseglue/tasks/xnli.zip
-  unzip xnli.zip
-  rm xnli.zip
+  wget https://storage.googleapis.com/chineseglue/tasks/thucnews.zip
+  unzip thucnews.zip
+  rm thucnews.zip
 else
   echo "data exists"
 fi
