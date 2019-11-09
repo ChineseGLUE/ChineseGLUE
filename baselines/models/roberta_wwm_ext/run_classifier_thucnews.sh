@@ -2,9 +2,9 @@
 # @Author: bo.shi
 # @Date:   2019-11-04 09:56:36
 # @Last Modified by:   bo.shi
-# @Last Modified time: 2019-11-09 22:59:37
+# @Last Modified time: 2019-11-09 23:00:45
 
-TASK_NAME="lcqmc"
+TASK_NAME="thucnews"
 MODEL_NAME="chinese_roberta_wwm_ext_L-12_H-768_A-12"
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="0"
@@ -23,10 +23,14 @@ if [ ! -d $TASK_NAME ]; then
   echo "makedir $GLUE_DATA_DIR/$TASK_NAME"
 fi
 cd $TASK_NAME
-echo "Please try again if the data is not downloaded successfully."
-wget -c https://raw.githubusercontent.com/pengming617/text_matching/master/data/train.txt
-wget -c https://raw.githubusercontent.com/pengming617/text_matching/master/data/dev.txt
-wget -c https://raw.githubusercontent.com/pengming617/text_matching/master/data/test.txt
+if [ ! -f "train.txt" ] || [ ! -f "dev.txt" ] || [ ! -f "test.txt" ]; then
+  rm *
+  wget https://storage.googleapis.com/chineseglue/tasks/thucnews.zip
+  unzip thucnews.zip
+  rm thucnews.zip
+else
+  echo "data exists"
+fi
 echo "Finish download dataset."
 
 # download model
