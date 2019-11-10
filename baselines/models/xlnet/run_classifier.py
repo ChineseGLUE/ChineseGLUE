@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# @Author: bo.shi
+# @Date:   2019-11-04 09:56:36
+# @Last Modified by:   bo.shi
+# @Last Modified time: 2019-11-10 13:46:50
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -288,17 +293,17 @@ class TnewsProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_train.txt")), "train")
+            self._read_txt(os.path.join(data_dir, "train.txt")), "train")
 
     def get_devtest_examples(self, data_dir, set_type="dev"):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_dev.txt")), set_type)
+            self._read_txt(os.path.join(data_dir, "dev.txt")), set_type)
 
     def get_test_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "toutiao_category_test.txt")), "test")
+            self._read_txt(os.path.join(data_dir, "test.txt")), "test")
 
     def get_labels(self):
         """See base class."""
