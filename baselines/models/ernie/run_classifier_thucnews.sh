@@ -2,10 +2,10 @@
 # @Author: bo.shi
 # @Date:   2019-11-04 09:56:36
 # @Last Modified by:   bo.shi
-# @Last Modified time: 2019-11-09 21:51:19
+# @Last Modified time: 2019-11-10 15:48:22
 
 TASK_NAME="thucnews"
-MODEL_NAME="chinese_wwm_ext_L-12_H-768_A-12"
+MODEL_NAME="baidu_ernie"
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 export CUDA_VISIBLE_DEVICES="0"
 export PRETRAINED_MODELS_DIR=$CURRENT_DIR/prev_trained_model
@@ -41,9 +41,9 @@ fi
 cd $ERNIE_DIR
 if [ ! -f "bert_config.json" ] || [ ! -f "vocab.txt" ] || [ ! -f "bert_model.ckpt.index" ] || [ ! -f "bert_model.ckpt.meta" ] || [ ! -f "bert_model.ckpt.data-00000-of-00001" ]; then
   rm *
-  wget --header="Host: doc-08-c4-docs.googleusercontent.com" --header="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" --header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3" --header="Accept-Language: zh-CN,zh;q=0.9" --header="Referer: https://drive.google.com/uc?id=1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi&export=download" "https://doc-08-c4-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/9d35m9vsmme32tvu8cbi3spp8kreicvs/1573300800000/05961793937965181111/*/1buMLEjdtrXE2c4G1rpsNGWEx7lUQ0RHi?e=download" -O "chinese_wwm_ext_L-12_H-768_A-12.zip" -c
-  unzip chinese_wwm_ext_L-12_H-768_A-12.zip
-  rm chinese_wwm_ext_L-12_H-768_A-12.zip
+  wget https://storage.googleapis.com/chineseglue/pretrain_models/baidu_ernie.zip
+  unzip baidu_ernie.zip
+  rm baidu_ernie.zip
 else
   echo "model exists"
 fi
