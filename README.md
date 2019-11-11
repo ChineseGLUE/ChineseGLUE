@@ -38,9 +38,9 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***93.31*** | 330M |	***95.06*** |	***91.56*** | 
 
 
-注：TNEWS:文本分类；LCQMC:语义相似度；XNLI:自然语言推理；INEWS:情感分析；DRCD & CMRC2018:抽取式阅读理解；
+注：TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI:自然语言推理(Acc)；INEWS:情感分析(Acc)；DRCD & CMRC2018:抽取式阅读理解(F1, EM)；BQ:智能客服问句匹配(Acc)；MSRANER:命名实体识别(F1)；THUCNEWS/iFLYTEKData:长文本分类(Acc)；
 
-BQ:智能客服问句匹配；MSRANER:命名实体识别；THUCNEWS/iFLYTEKData:长文本分类；Score是1-9数据集计算平均值获得；
+Score是通过计算1-9数据集得分平均值获得；
 
 ChineseGLUE的定位 Vision
 ---------------------------------------------------------------------
@@ -278,7 +278,7 @@ https://hfl-rc.github.io/cmrc2018/
 中文任务基准测评(ChineseGLUE)-排行榜-各任务对比 Evaluation of Dataset for Different Models
 ---------------------------------------------------------------------
 
-#### TNEWS 短文本分类 Short Text Classificaiton for News：
+#### TNEWS 短文本分类 Short Text Classificaiton for News (Accuracy)：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -291,7 +291,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext | 89.82 | 89.79 |	batch_size=32, length=128, epoch=3 |
 | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |	batch_size=16, length=128, epoch=3 |
 
-#### XNLI 自然语言推理  Natural Language Inference：
+#### XNLI 自然语言推理  Natural Language Inference (Accuracy)：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -306,7 +306,7 @@ https://hfl-rc.github.io/cmrc2018/
 
 注：ALBERT-xlarge，在XNLI任务上训练暂时还存在有问题
 
-#### LCQMC 口语化描述的语义相似度匹配 Semantic Similarity Task：
+#### LCQMC 口语化描述的语义相似度匹配 Semantic Similarity Task (Accuracy)：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -319,7 +319,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext	| 89.08 | 86.33 |	batch_size=64, length=128, epoch=3 |
 | RoBERTa-wwm-large-ext	| 89.79 | 86.82 |	batch_size=16, length=128, epoch=3 |
 
-#### INEWS 互联网情感分析 Sentiment Analysis for Internet News：
+#### INEWS 互联网情感分析 Sentiment Analysis for Internet News (Accuracy)：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -332,7 +332,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext	| 82.98 | 82.28 |	batch_size=16, length=512, epoch=3 |
 | RoBERTa-wwm-large-ext	| 83.73 | 82.78 |	batch_size=4, length=512, epoch=3 |
 
-#### DRCD 繁体阅读理解 Reading Comprehension for Traditional Chinese：
+#### DRCD 繁体阅读理解 Reading Comprehension for Traditional Chinese (F1, EM)：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -348,7 +348,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-large-ext	|***F1:95.32 EM:90.54*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 |
 
 
-#### CMRC2018 阅读理解 Reading Comprehension for Simplified Chinese：
+#### CMRC2018 阅读理解 Reading Comprehension for Simplified Chinese (F1, EM)：
 
 | 模型 | 开发集（dev) | 测试集（test) |  训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -364,7 +364,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-large-ext	|***F1:89.42 EM:70.59*** | ***F1:91.56 EM:76.58*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 |
 
 
-#### BQ 智能客服问句匹配 Question Matching for Customer Service：
+#### BQ 智能客服问句匹配 Question Matching for Customer Service (Accuracy)：
 
 | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -378,7 +378,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext | 85.31 | 84.02 | batch_size=64, length=128, epoch=3 |
 | RoBERTa-wwm-large-ext | ***86.34*** | 84.90 | batch_size=16, length=128, epoch=3 |
 
-#### MSRANER 命名实体识别 Name Entity Recognition:
+#### MSRANER 命名实体识别 Name Entity Recognition (F1):
 
 | 模型 | 测试集（test） | 训练参数 |
 | :----: | :----: | :----: |
@@ -393,7 +393,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext | 95.06	| batch_size=16, length=256, epoch=5, lr=2e-5 |
 | RoBERTa-wwm-large-ext | 95.32	| batch_size=8, length=256, epoch=5, lr=2e-5 |
 
-#### THUCNEWS 长文本分类 Long Text Classification：
+#### THUCNEWS 长文本分类 Long Text Classification (Accuracy)：
 
 | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
 | :----:| :----: | :----: | :----: |
@@ -407,7 +407,7 @@ https://hfl-rc.github.io/cmrc2018/
 | RoBERTa-wwm-ext	| 95.59 | 95.52 |	batch_size=16, length=256, epoch=3 |
 | RoBERTa-wwm-large-ext	| ***96.10*** | ***95.93*** |	batch_size=32, length=512, epoch=8 |
 
-#### iFLYTEKData 长文本分类 Long Text Classification：
+#### iFLYTEKData 长文本分类 Long Text Classification (Accuracy)：
 
 |         模型          | 开发集（dev) | 测试集（test) |              训练参数              |
 | :-------------------: | :----------: | :-----------: | :--------------------------------: |
