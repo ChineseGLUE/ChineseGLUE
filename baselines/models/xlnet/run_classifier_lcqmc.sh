@@ -2,7 +2,7 @@
 # @Author: bo.shi
 # @Date:   2019-11-04 09:56:36
 # @Last Modified by:   bo.shi
-# @Last Modified time: 2019-11-10 13:39:53
+# @Last Modified time: 2019-11-11 09:59:17
 
 TASK_NAME="lcqmc"
 MODEL_NAME="chinese_xlnet_mid_L-24_H-768_A-12"
@@ -40,7 +40,7 @@ fi
 cd $XLNET_DIR
 if [ ! -f "xlnet_config.json" ] || [ ! -f "spiece.model" ] || [ ! -f "xlnet_model.ckpt.index" ] || [ ! -f "xlnet_model.ckpt.meta" ] || [ ! -f "xlnet_model.ckpt.data-00000-of-00001" ]; then
   rm *
-  wget --header="Host: doc-0o-c4-docs.googleusercontent.com" --header="User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" --header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3" --header="Accept-Language: zh-CN,zh;q=0.9" --header="Referer: https://drive.google.com/uc?id=1342uBc7ZmQwV6Hm6eUIN_OnBSz1LcvfA&export=download" "https://doc-0o-c4-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/v6cf02qggu69e2tquf493h65atrh5a1b/1573358400000/05961793937965181111/*/1342uBc7ZmQwV6Hm6eUIN_OnBSz1LcvfA?e=download" -O "chinese_xlnet_mid_L-24_H-768_A-12.zip" -c
+  wget -c https://storage.googleapis.com/chineseglue/pretrain_models/chinese_xlnet_mid_L-24_H-768_A-12.zip
   unzip chinese_xlnet_mid_L-24_H-768_A-12.zip
   rm chinese_xlnet_mid_L-24_H-768_A-12.zip
 else
