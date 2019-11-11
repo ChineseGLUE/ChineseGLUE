@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# @Author: bo.shi
+# @Date:   2019-11-06 17:40:44
+# @Last Modified by:   bo.shi
+# @Last Modified time: 2019-11-07 10:28:29
 # coding=utf-8
 # Copyright 2018 The Google AI Language Team Authors.
 #
@@ -62,7 +67,7 @@ flags.DEFINE_string(
     "The output directory where the model checkpoints will be written."
 )
 
-## Other parameters
+# Other parameters
 flags.DEFINE_string(
     "init_checkpoint", None,
     "Initial checkpoint (usually from a pre-trained BERT model)."
@@ -86,7 +91,8 @@ flags.DEFINE_bool("use_tpu", False, "Whether to use TPU or GPU/CPU.")
 
 flags.DEFINE_bool("do_eval", False, "Whether to run eval on the dev set.")
 
-flags.DEFINE_bool("do_predict", False, "Whether to run the model in inference mode on the test set.")
+flags.DEFINE_bool("do_predict", False,
+                  "Whether to run the model in inference mode on the test set.")
 
 flags.DEFINE_integer("train_batch_size", 32, "Total batch size for training.")
 
@@ -217,6 +223,7 @@ class NerProcessor(DataProcessor):
             examples.append(InputExample(guid=guid, text=text, label=label))
         return examples
 
+
 class WeiboNERProcessor(DataProcessor):
     def __init_(self):
         self.labels = set()
@@ -231,10 +238,9 @@ class WeiboNERProcessor(DataProcessor):
             self._read_raw(os.path.join(data_dir, "weiboNER.conll.dev")), "dev"
         )
 
-    def get_test_examples(self,data_dir):
+    def get_test_examples(self, data_dir):
         return self._create_example(
             self._read_raw(os.path.join(data_dir, "weiboNER.conll.test")), "test")
-
 
     def get_labels(self):
         return ['I-PER.NOM', 'I-PER.NAM', 'I-GPE.NAM', 'I-ORG.NAM', 'I-ORG.NOM', 'I-LOC.NAM', 'I-LOC.NOM', "O", "X", "[CLS]", "[SEP]"]
@@ -281,6 +287,7 @@ class WeiboNERProcessor(DataProcessor):
 
             return lines
 
+
 class MsraNERProcessor(DataProcessor):
     def __init_(self):
         self.labels = set()
@@ -295,7 +302,7 @@ class MsraNERProcessor(DataProcessor):
             self._read_raw(os.path.join(data_dir, "testright1.txt")), "dev"
         )
 
-    def get_test_examples(self,data_dir):
+    def get_test_examples(self, data_dir):
         return self._create_example(
             self._read_raw(os.path.join(data_dir, "testright1.txt")), "test")
 
@@ -325,13 +332,13 @@ class MsraNERProcessor(DataProcessor):
 
                     if label == "nr":
                         chars = chars + list(word)
-                        labels = labels + ['B-PERSON'] + ['I-PERSON']*(len(word)-1)
+                        labels = labels + ['B-PERSON'] + ['I-PERSON'] * (len(word) - 1)
                     elif label == "ns":
                         chars = chars + list(word)
-                        labels = labels + ['B-LOCATION'] + ['I-LOCATION']*(len(word)-1)
+                        labels = labels + ['B-LOCATION'] + ['I-LOCATION'] * (len(word) - 1)
                     elif label == "nt":
                         chars = chars + list(word)
-                        labels = labels + ['B-ORGANIZATION'] + ['I-ORGANIZATION']*(len(word)-1)
+                        labels = labels + ['B-ORGANIZATION'] + ['I-ORGANIZATION'] * (len(word) - 1)
                     else:
                         assert label == "o"
                         chars = chars + list(word)
@@ -375,7 +382,7 @@ def convert_single_example(ex_index, example, label_list, max_seq_length, tokeni
                 labels.append(label_1)
             else:
                 labels.append("X")
-    
+
     # tokens = tokenizer.tokenize(example.text)
     if len(tokens) >= max_seq_length - 1:
         tokens = tokens[0:(max_seq_length - 2)]
@@ -387,7 +394,7 @@ def convert_single_example(ex_index, example, label_list, max_seq_length, tokeni
     segment_ids.append(0)
     # append("O") or append("[CLS]") not sure!
     label_ids.append(label_map["[CLS]"])
-    label_mask.append(0) # not to predict and train
+    label_mask.append(0)  # not to predict and train
     for i, token in enumerate(tokens):
         ntokens.append(token)
         segment_ids.append(0)
@@ -436,20 +443,20 @@ def convert_single_example(ex_index, example, label_list, max_seq_length, tokeni
         input_mask=input_mask,
         segment_ids=segment_ids,
         label_ids=label_ids,
-        label_mask = label_mask
+        label_mask=label_mask
     )
     write_tokens(ntokens, mode)
     return feature
 
 
 def file_based_convert_examples_to_features(
-        examples, label_list, max_seq_length, tokenizer, output_file, output_dir, mode=None
-):
+        examples, label_list, max_seq_length, tokenizer, output_file, output_dir, mode=None):
     writer = tf.python_io.TFRecordWriter(output_file)
     for (ex_index, example) in enumerate(examples):
         if ex_index % 5000 == 0:
             tf.logging.info("Writing example %d of %d" % (ex_index, len(examples)))
-        feature = convert_single_example(ex_index, example, label_list, max_seq_length, tokenizer, output_dir, mode)
+        feature = convert_single_example(
+            ex_index, example, label_list, max_seq_length, tokenizer, output_dir, mode)
 
         def create_int_feature(values):
             f = tf.train.Feature(int64_list=tf.train.Int64List(value=list(values)))
@@ -613,7 +620,8 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
                 # recall = tf_metrics.recall(label_ids, predictions, num_labels, predict_labels, average="macro")
                 # f = tf_metrics.f1(label_ids, predictions, num_labels, predict_labels, average="macro")
 
-                precision = tf_metrics.precision(label_ids, predictions, num_labels, average="macro")
+                precision = tf_metrics.precision(
+                    label_ids, predictions, num_labels, average="macro")
                 recall = tf_metrics.recall(label_ids, predictions, num_labels, average="macro")
                 f = tf_metrics.f1(label_ids, predictions, num_labels, average="macro")
 
@@ -756,7 +764,6 @@ def main(_):
                 tf.logging.info("  %s = %s", key, str(result[key]))
                 writer.write("%s = %s\n" % (key, str(result[key])))
 
-
     if FLAGS.do_predict:
 
         pred_tags = []
@@ -774,7 +781,8 @@ def main(_):
         ground_truth_file = os.path.join(FLAGS.output_dir, "ground_truth.txt")
         with open(ground_truth_file, 'w') as writer:
             for ex_index, example in enumerate(predict_examples):
-                feature = convert_single_example(ex_index, example, label_list, FLAGS.max_seq_length, tokenizer, FLAGS.output_dir, "test")
+                feature = convert_single_example(
+                    ex_index, example, label_list, FLAGS.max_seq_length, tokenizer, FLAGS.output_dir, "test")
                 line = []
                 for i, id in enumerate(feature.label_ids):
                     if feature.label_mask[i] == 1:
@@ -786,8 +794,8 @@ def main(_):
                 label_masks.append(feature.label_mask)
         predict_file = os.path.join(FLAGS.output_dir, "predict.tf_record")
         file_based_convert_examples_to_features(predict_examples, label_list,
-                                                 FLAGS.max_seq_length, tokenizer,
-                                                 predict_file, FLAGS.output_dir, mode="test")
+                                                FLAGS.max_seq_length, tokenizer,
+                                                predict_file, FLAGS.output_dir, mode="test")
 
         tf.logging.info("***** Running prediction*****")
         tf.logging.info("  Num examples = %d", len(predict_examples))
@@ -829,9 +837,9 @@ def main(_):
                     print('\t'.join([" ", tl, tg]), file=tmp)
         tmp.close()
         cmd = "python %s -d '\t' < %s > %s" % \
-                (os.path.join(os.getcwd(), "conlleval.py"), \
-                os.path.join(FLAGS.output_dir, "tmp"), \
-                os.path.join(FLAGS.data_dir, "test_results_bert.txt"))
+            (os.path.join(os.getcwd(), "conlleval.py"),
+             os.path.join(FLAGS.output_dir, "tmp"),
+             os.path.join(FLAGS.data_dir, "test_results_bert.txt"))
         os.system(cmd)
 
 
