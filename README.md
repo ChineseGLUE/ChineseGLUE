@@ -352,7 +352,6 @@ https://hfl-rc.github.io/cmrc2018/
 
 | 模型 | 开发集（dev) | 测试集（test) |  训练参数 |
 | :----:| :----: | :----: | :----: |
-
 | BERT-base	|F1:85.48 EM:64.77 | F1:87.17 EM:69.72 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
 | BERT-wwm-ext-base	|F1:86.68 EM:66.96 |F1:88.78 EM:73.23|	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
 | ERNIE-base	|F1:87.30 EM:66.89 | F1:89.62 EM:73.32 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
