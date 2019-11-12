@@ -1,14 +1,14 @@
-1. 数据集整体下载，解压到glue文件夹里  
-  ```cd glue ```  
+1. 数据集整体下载，解压到glue文件夹里
+  ```cd glue ```
   ```wget https://storage.googleapis.com/chineseglue/chineseGLUEdatasets.v0.0.1.zip```
 
     注：lcqmc数据集，请从<a href="http://icrc.hitsz.edu.cn/info/1037/1146.htm">这里</a>申请或搜索网络
 
 2. 训练模型
-  将预训练模型下载解压到对应的模型中prev_trained_model文件夹里  
-  a. albert_xlarge  
-  https://github.com/brightmart/albert_zh  
-  b. bert  
+  将预训练模型下载解压到对应的模型中prev_trained_model文件夹里
+  a. albert_xlarge
+  https://github.com/brightmart/albert_zh
+  b. bert
   https://github.com/google-research/bert  
   c. bert-wwm-ext  
   https://github.com/ymcui/Chinese-BERT-wwm  
