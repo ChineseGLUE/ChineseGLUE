@@ -39,7 +39,7 @@
     
 2. 测试效果
 
-    1. TNEWS 文本分类
+    1. TNEWS 文本分类 (Accuracy)
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -52,7 +52,7 @@
     | RoBERTa-wwm-ext | 89.82 | 89.79 | batch_size=32, length=128, epoch=3 | 
     | RoBERTa-wwm-large-ext | ***90.05*** | ***90.11*** |   batch_size=16, length=128, epoch=3 | 
 
-    2. XNLI 自然语言推理
+    2. XNLI 自然语言推理 (Accuracy)
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -67,7 +67,7 @@
     | RoBERTa-wwm-ext   | 79.56 | 79.28 |   batch_size=64, length=128, epoch=2 | 
     | RoBERTa-wwm-large-ext | ***80.20*** | ***80.04*** |   batch_size=16, length=128, epoch=2 | 
     
-    3. LCQMC  语义相似度匹配
+    3. LCQMC  语义相似度匹配 (Accuracy)
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -80,7 +80,7 @@
     | RoBERTa-wwm-ext   | 89.08 | 86.33 |   batch_size=64, length=128, epoch=3 | 
     | RoBERTa-wwm-large-ext | 89.79 | 86.82 |   batch_size=16, length=128, epoch=3 | 
 
-    4. INEWS 互联网情感分析
+    4. INEWS 互联网情感分析 (Accuracy)
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -93,7 +93,7 @@
     | RoBERTa-wwm-ext   | 82.98 | 82.28 |   batch_size=16, length=512, epoch=3 | 
     | RoBERTa-wwm-large-ext |83.73 | 82.78 |    batch_size=4, length=512, epoch=3 |
 
-    5. DRCD 繁体阅读理解
+    5. DRCD 繁体阅读理解 (F1, EM)
     
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -108,23 +108,22 @@
     | RoBERTa-wwm-ext   |F1:94.26 EM:89.29 | F1:93.53 EM:88.12 |    batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1|
     | RoBERTa-wwm-large-ext |***F1:95.32 EM:90.54*** | ***F1:95.06 EM:90.70*** | batch=32, length=512, epoch=2 lr=2.5e-5 warmup=0.1 | 
     
-    6. CMRC2018 阅读理解
+    6. CMRC2018 阅读理解 (F1, EM)
     
     | 模型 | 开发集（dev) | 测试集（test) |  训练参数 |
     | :----:| :----: | :----: | :----: |
-    | BERT-base |F1:85.48 EM:64.77 | - | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
-    | BERT-wwm-ext-base |F1:86.68 EM:66.96 |F1:87.70 EM:71.40|  batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
-    | ERNIE-base    |F1:87.30 EM:66.89 | - | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
-    | ALBERT-large  | F1:87.86 EM:67.75 |-| epoch3, batch=32, length=512, lr=2e-5, warmup=0.05 |
-    | ALBERT-xlarge | F1:88.66 EM:68.90 |-| epoch3, batch=32, length=512, lr=2e-5, warmup=0.1 |
-    | ALBERT-tiny   | F1:73.95 EM:48.31 |-| epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
-    | RoBERTa-middle    | F1:86.84 EM:67.19 |-| epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
-    | RoBERTa-large | F1:88.61 EM:69.94 |-| epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
-    | xlnet-mid |F1:85.63 EM:65.31 | F1:89.20 EM:69.30 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
-    | RoBERTa-wwm-ext   |F1:87.28 EM:67.89 | F1:89.40 EM:72.60 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 | 
-    | RoBERTa-wwm-large-ext |***F1:89.42 EM:70.59*** | ***F1:90.60 EM:74.20*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 | 
+    | BERT-base	|F1:85.48 EM:64.77 | F1:87.17 EM:69.72 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | BERT-wwm-ext-base	|F1:86.68 EM:66.96 |F1:88.78 EM:73.23|	batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | ERNIE-base	|F1:87.30 EM:66.89 | F1:89.62 EM:73.32 | batch=32, length=512, epoch=2 lr=3e-5 warmup=0.1 |
+    | ALBERT-large	| F1:87.86 EM:67.75 |F1:90.17 EM:73.66| epoch3, batch=32, length=512, lr=2e-5, warmup=0.05 |
+    | ALBERT-xlarge	| F1:88.66 EM:68.90 |F1:90.92 EM:75.22| epoch3, batch=32, length=512, lr=2e-5, warmup=0.1 |
+    | ALBERT-tiny	| F1:73.95 EM:48.31 |F1:75.73 EM:53.68| epoch3, batch=32, length=512, lr=2e-4, warmup=0.1 |
+    | RoBERTa-large	| F1:88.61 EM:69.94 |F1:90.94 EM:76.11| epoch2, batch=32, length=256, lr=3e-5, warmup=0.1 |
+    | xlnet-mid	|F1:85.63 EM:65.31 | F1:86.09 EM:66.51 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
+    | RoBERTa-wwm-ext	|F1:87.28 EM:67.89 | F1:89.74 EM:73.89 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
+    | RoBERTa-wwm-large-ext	|***F1:89.42 EM:70.59*** | ***F1:91.56 EM:76.58*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 |
 
-    7. BQ 智能客服问句匹配
+    7. BQ 智能客服问句匹配 (Accuracy)
 
     | 模型 | 开发集（dev） | 测试集（test） | 训练参数 |
     | :----:| :----: | :----: | :----: |
@@ -138,7 +137,7 @@
     | RoBERTa-wwm-ext | 85.31 | 84.02 | batch_size=64, length=128, epoch=3 |
     | RoBERTa-wwm-large-ext | ***86.34*** | 84.90 | batch_size=16, length=128, epoch=3 |
 
-    8. MSRANER 命名实体识别
+    8. MSRANER 命名实体识别 (F1)
 
     | 模型 | 测试集（test） | 训练参数 |
     | :----: | :----: | :----: |
@@ -152,7 +151,7 @@
     | RoBERTa-wwm-ext | 95.06   | batch_size=16, length=256, epoch=5, lr=2e-5 |
     | RoBERTa-wwm-large-ext | 95.32 | batch_size=8, length=256, epoch=5, lr=2e-5 |
 
-    9. THUCNEWS 长文本分类
+    9. THUCNEWS 长文本分类 (Accuracy)
 
     | 模型 | 开发集（dev) | 测试集（test) | 训练参数 |
     | :----:| :----: | :----: | :----: |
