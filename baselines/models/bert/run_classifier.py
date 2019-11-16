@@ -414,17 +414,17 @@ class TnewsProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "train.txt")), "train")
+            self._read_txt(os.path.join(data_dir, "toutiao_category_train.txt")), "train")
 
     def get_dev_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "dev.txt")), "dev")
+            self._read_txt(os.path.join(data_dir, "toutiao_category_dev.txt")), "dev")
 
     def get_test_examples(self, data_dir):
         """See base class."""
         return self._create_examples(
-            self._read_txt(os.path.join(data_dir, "test.txt")), "test")
+            self._read_txt(os.path.join(data_dir, "toutiao_category_test.txt")), "test")
 
     def get_labels(self):
         """See base class."""
@@ -445,7 +445,7 @@ class TnewsProcessor(DataProcessor):
             text_a = tokenization.convert_to_unicode(line[3])
             text_b = None
             if set_type == "test":
-                label = "0"
+                label = tokenization.convert_to_unicode(line[1])
             else:
                 label = tokenization.convert_to_unicode(line[1])
             examples.append(
@@ -1280,6 +1280,7 @@ def main(_):
     num_train_steps = None
     num_warmup_steps = None
     if FLAGS.do_train:
+        print("data_dir:", FLAGS.data_dir)
         train_examples = processor.get_train_examples(FLAGS.data_dir)
         num_train_steps = int(
             len(train_examples) / FLAGS.train_batch_size * FLAGS.num_train_epochs)
