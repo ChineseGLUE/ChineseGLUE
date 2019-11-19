@@ -15,7 +15,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | 模型   | Score  | 参数    | LCQMC'  | TNEWS'  | IFYTEK'   | MNLI-m  | MNLI-mm  | XNLI     | COPA | WSC | -  |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | 74.69% | 55.58%  | -  | -  | - | -  | - | -  | -      |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | - | 56.45%  | -  | - | -| -  | -   | -  | -      |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | 76.72% | 56.84%  | -  | - | -| -  | -   | -  | -      |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>         | - | 108M  |- | - | - | - | - | -  | -  | -  | -      |
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>      | - | 334M  | - | -  | -  | -  | -   | -  | -  | -   | -       |
 | <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>  | - | 200M | - | - | -  | -  | -   | - | \-      | -   | -     |
