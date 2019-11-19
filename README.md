@@ -24,7 +24,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>   | - | 108M  | - | - | - | - | - | -  | -  | - | -      |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M  | - | - | - | - | -  | - | - | -  | -      |
 
-注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),MNLI-m:MNLI-matched,MNLI-mm:MNLI-mismatched；
+注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),MNLI-m:MNLI-matched，MNLI-mm:MNLI-mismatched；
 
 DRCD & CMRC2018:抽取式阅读理解(F1, EM)；CHID:成语阅读理解；BQ:智能客服问句匹配(Acc)；MSRANER:命名实体识别(F1)；iFLYTEK:长文本分类(Acc)；
 
