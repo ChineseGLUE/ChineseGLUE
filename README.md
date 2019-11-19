@@ -14,7 +14,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 | 模型   | Score  | 参数    | LCQMC'  | TNEWS'  | IFYTEK'   | MNLI-m  | MNLI-mm  | XNLI     | COPA | WSC | -  |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | 74.69% | 55.58%  | -  | -  | - | -  | - | -  | -      |
+| <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | 74.69% | 55.58%  | 60.29% | -  | - | -  | - | -  | -      |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | 76.72% | 56.84%  | -  | - | -| -  | -   | -  | -      |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>         | - | 108M  | 77.35% | 58.23% | - | - | - | -  | -  | -  | -      |
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>      | - | 334M  | - | -  | -  | -  | -   | -  | -  | -   | -       |
@@ -22,7 +22,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xxlarge</a>      | - | 59M   | -  | - | - | - | - | - | -  | -  | -     |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a>        | - | 4M |- | - | -  | -   | -  | - | -  | -   | -     |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>   | - | 108M  | - | - | - | - | - | -  | -  | - | -      |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M  | 77.89% | 58.61% | - | - | -  | - | - | -  | -      |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M  | 77.89% | 58.61% | 62.98% | - | -  | - | - | -  | -      |
 
 注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),MNLI-m:MNLI-matched，MNLI-mm:MNLI-mismatched；
 
@@ -33,7 +33,7 @@ Score是通过计算1-9数据集得分平均值获得；
 
 #### 阅读理解任务
 
-| 模型 | Score | 参数 | DRCD | CMRC2018 | CHID | 
+| 模型 | Score | 参数 | DRCD | CMRC2018 | CHID |
 | :----:| :----: | :----: | :----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.31 | 108M | 91.46 	| 87.17 	||
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 90.70  | 108M |92.63   | 88.78 | |
@@ -454,7 +454,7 @@ https://hfl-rc.github.io/cmrc2018/
   sh run_classifier_bq.sh
   ```
 
-  
+
 该脚本将会自动下载“BQ 智能客服问句匹配”数据集（保存在chineseGLUE/baselines/glue/chineseGLUEdatasets/**bq**/ 文件夹下）和Bert模型（保存在 chineseGLUE/baselines/models/bert/prev_trained_model/ 下）。
 
 <!--1. 数据集整体下载，解压到glue文件夹里  -->
@@ -463,7 +463,7 @@ https://hfl-rc.github.io/cmrc2018/
 <!--   注：lcqmc数据集，请从<a href="http://icrc.hitsz.edu.cn/info/1037/1146.htm">这里</a>申请或搜索网络-->
 
 <!--2. 训练模型  -->
-  
+
 <!--    ```a.将预训练模型下载解压到对应的模型中prev_trained_model文件夹里。``` -->
 <!--         ```以bert和albert为例子：```-->
             
