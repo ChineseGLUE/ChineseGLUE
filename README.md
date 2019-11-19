@@ -12,7 +12,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 #### 分类任务(v1版本,正式版)
 
-| 模型   | Score  | 参数    | LCQMC-S  | TNEWS-S  | IFYTEK-S   | MNLI  | XNLI     | COPA | WSC |  |
+| 模型   | Score  | 参数    | LCQMC-S  | TNEWS-S  | IFYTEK-S   | MNLI  | XNLI     | COPA | WSC | -  |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | - | -  | -  | -  | - | -  | -   | -      |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | - | -  | -  | - | -| -  | -   | -      |
