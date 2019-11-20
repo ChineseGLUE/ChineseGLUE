@@ -16,12 +16,13 @@
 
 from __future__ import print_function
 
+import argparse
 import os
 import re
-import argparse
+
+import numpy as np
 import tensorflow as tf
 import torch
-import numpy as np
 
 from .pytorch_modeling import BertConfig, BertForPreTraining, ALBertConfig, ALBertForPreTraining
 

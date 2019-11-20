@@ -1,20 +1,19 @@
-import random
-import os
 import argparse
-import numpy as np
-import json
-import torch
-import utils
-from .pytorch_modeling import BertConfig, BertForQuestionAnswering, ALBertConfig, ALBertForQA
-from .pytorch_optimization import get_optimization, warmup_linear
-from .DRCD_output import write_predictions
-from .cmrc2018_evaluate import get_eval
 import collections
+import json
+import os
+import random
+
+import numpy as np
+import torch
 from torch import nn
 from torch.utils.data import TensorDataset, DataLoader
 from tqdm import tqdm
-import offical_tokenization as tokenization
-from .DRCD_preprocess import json2features
+
+from .preprocess.cmrc2018_evaluate import get_eval
+from .pytorch_modeling import BertConfig, BertForQuestionAnswering, ALBertConfig, ALBertForQA
+from .tools import offical_tokenization as tokenization, utils
+from .tools.pytorch_optimization import get_optimization, warmup_linear
 
 
 def evaluate(model, args, eval_examples, eval_features, device, global_steps, best_f1, best_em, best_f1_em):
@@ -102,29 +101,31 @@ if __name__ == '__main__':
     parser.add_argument('--max_seq_length', type=int, default=256)
 
     # data dir
-    parser.add_argument('--train_dir', type=str,
-                        default='dataset/DRCD/train_features.json')
-    parser.add_argument('--dev_dir1', type=str,
-                        default='dataset/DRCD/dev_examples.json')
-    parser.add_argument('--dev_dir2', type=str,
-                        default='dataset/DRCD/dev_features.json')
-    parser.add_argument('--train_file', type=str,
-                        default='origin_data/DRCD/DRCD_training.json')
-    parser.add_argument('--dev_file', type=str,
-                        default='origin_data/DRCD/DRCD_dev.json')
-    parser.add_argument('--bert_config_file', type=str,
-                        default='check_points/pretrain_models/albert_large_zh/albert_config_large.json')
-    parser.add_argument('--vocab_file', type=str,
-                        default='check_points/pretrain_models/albert_large_zh/vocab.txt')
-    parser.add_argument('--init_restore_dir', type=str,
-                        default='check_points/pretrain_models/albert_large_zh/pytorch_albert_model.pth')
-    parser.add_argument('--checkpoint_dir', type=str,
-                        default='check_points/DRCD/albert_large_zh/')
+    parser.add_argument('--train_dir', type=str, required=True)
+    parser.add_argument('--dev_dir1', type=str, required=True)
+    parser.add_argument('--dev_dir2', type=str, required=True)
+    parser.add_argument('--train_file', type=str, required=True)
+    parser.add_argument('--dev_file', type=str, required=True)
+    parser.add_argument('--bert_config_file', type=str, required=True)
+    parser.add_argument('--vocab_file', type=str, required=True)
+    parser.add_argument('--init_restore_dir', type=str, required=True)
+    parser.add_argument('--checkpoint_dir', type=str, required=True)
+    parser.add_argument('--task_name', type=str, required=True)
     parser.add_argument('--setting_file', type=str, default='setting.txt')
     parser.add_argument('--log_file', type=str, default='log.txt')
 
     # use some global vars for convenience
     args = parser.parse_args()
+
+    if args.task_name.lower() == 'drcd':
+        from baselines.models_pytorch.mrc_pytorch.preprocess.DRCD_output import write_predictions
+        from baselines.models_pytorch.mrc_pytorch.preprocess.DRCD_preprocess import json2features
+    elif args.task_name.lower() == 'cmrc2018':
+        from baselines.models_pytorch.mrc_pytorch.preprocess.cmrc2018_output import write_predictions
+        from baselines.models_pytorch.mrc_pytorch.preprocess.cmrc2018_preprocess import json2features
+    else:
+        raise NotImplementedError
+
     args.checkpoint_dir += ('/epoch{}_batch{}_lr{}_warmup{}_anslen{}/'
                             .format(args.train_epochs, args.n_batch, args.lr, args.warmup_rate, args.max_ans_length))
     args.train_dir = args.train_dir.replace('features.json', 'features_' + str(args.max_seq_length) + '.json')

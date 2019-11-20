@@ -19,9 +19,9 @@ from __future__ import division
 from __future__ import print_function
 
 import collections
-import unicodedata
-import os
 import logging
+import os
+import unicodedata
 
 from .file_utils import cached_path
 

@@ -1,19 +1,12 @@
-import json
-from tqdm import tqdm
 import collections
-from .langconv import Converter
+import json
 import os
-import copy
+
+from tqdm import tqdm
+
+from ..tools import offical_tokenization as tokenization
 
 SPIECE_UNDERLINE = '▁'
-
-def whitespace_tokenize(text):
-    """Runs basic whitespace cleaning and splitting on a peice of text."""
-    text = text.strip()
-    if not text:
-        return []
-    tokens = text.split()
-    return tokens
 
 
 def _improve_answer_span(doc_tokens, input_start, input_end, tokenizer,
@@ -90,17 +83,7 @@ def _check_is_max_context(doc_spans, cur_span_index, position):
     return cur_span_index == best_span_index
 
 
-def Traditional2Simplified(sentence):
-    '''
-    将sentence中的繁体字转为简体字
-    :param sentence: 待转换的句子
-    :return: 将句子中繁体字转换为简体字之后的句子
-    '''
-    sentence = Converter('zh-hans').convert(sentence)
-    return sentence
-
-
-def json2features(input_file, output_files, tokenizer, is_training=False, max_query_length=64,
+def json2features(input_file, output_files, tokenizer, is_training=False, repeat_limit=3, max_query_length=64,
                   max_seq_length=512, doc_stride=128):
     with open(input_file, 'r') as f:
         train_data = json.load(f)
@@ -123,7 +106,7 @@ def json2features(input_file, output_files, tokenizer, is_training=False, max_qu
         if c == '。' or c == '，' or c == '！' or c == '？' or c == '；' or c == '、' or c == '：' or c == '（' or c == '）' \
                 or c == '－' or c == '~' or c == '「' or c == '《' or c == '》' or c == ',' or c == '」' or c == '"' or c == '“' or c == '”' \
                 or c == '$' or c == '『' or c == '』' or c == '—' or c == ';' or c == '。' or c == '(' or c == ')' or c == '-' or c == '～' or c == '。' \
-                or c == '‘' or c == '’' or c == '─' or c == ':':
+                or c == '‘' or c == '’':
             return True
         return False
 
@@ -151,43 +134,39 @@ def json2features(input_file, output_files, tokenizer, is_training=False, max_qu
     mis_match = 0
     for article in tqdm(train_data):
         for para in article['paragraphs']:
-            context = copy.deepcopy(para['context'])
-            # 转简体
-            context = Traditional2Simplified(context)
-            # context中的中文前后加入空格
+            context = para['context']
             context_chs = _tokenize_chinese_chars(context)
-            context_fhs = _tokenize_chinese_chars(para['context'])
-
             doc_tokens = []
-            ori_doc_tokens = []
             char_to_word_offset = []
             prev_is_whitespace = True
-
-            for ic, c in enumerate(context_chs):
+            for c in context_chs:
                 if is_whitespace(c):
                     prev_is_whitespace = True
                 else:
                     if prev_is_whitespace:
                         doc_tokens.append(c)
-                        ori_doc_tokens.append(context_fhs[ic])
                     else:
                         doc_tokens[-1] += c
-                        ori_doc_tokens[-1] += context_fhs[ic]
                     prev_is_whitespace = False
                 if c != SPIECE_UNDERLINE:
                     char_to_word_offset.append(len(doc_tokens) - 1)
 
-            assert len(context_chs) == len(context_fhs)
             for qas in para['qas']:
                 qid = qas['id']
-                ques_text = Traditional2Simplified(qas['question'])
-                ans_text = Traditional2Simplified(qas['answers'][0]['text'])
+                ques_text = qas['question']
+                ans_text = qas['answers'][0]['text']
+
                 start_position_final = None
                 end_position_final = None
-
                 if is_training:
+                    count_i = 0
                     start_position = qas['answers'][0]['answer_start']
+
                     end_position = start_position + len(ans_text) - 1
+                    while context[start_position:end_position + 1] != ans_text and count_i < repeat_limit:
+                        start_position -= 1
+                        end_position -= 1
+                        count_i += 1
 
                     while context[start_position] == " " or context[start_position] == "\t" or \
                             context[start_position] == "\r" or context[start_position] == "\n":
@@ -198,15 +177,16 @@ def json2features(input_file, output_files, tokenizer, is_training=False, max_qu
 
                     if doc_tokens[start_position_final] in {"。", "，", "：", ":", ".", ","}:
                         start_position_final += 1
+
                     actual_text = "".join(doc_tokens[start_position_final:(end_position_final + 1)])
-                    cleaned_answer_text = "".join(whitespace_tokenize(ans_text))
+                    cleaned_answer_text = "".join(tokenization.whitespace_tokenize(ans_text))
 
                     if actual_text != cleaned_answer_text:
                         print(actual_text, 'V.S', cleaned_answer_text)
                         mis_match += 1
+                        # ipdb.set_trace()
 
                 examples.append({'doc_tokens': doc_tokens,
-                                 'ori_doc_tokens': ori_doc_tokens,
                                  'orig_answer_text': context,
                                  'qid': qid,
                                  'question': ques_text,
@@ -215,7 +195,7 @@ def json2features(input_file, output_files, tokenizer, is_training=False, max_qu
                                  'end_position': end_position_final})
 
     print('examples num:', len(examples))
-    print('mis match:', mis_match)
+    print('mis_match:', mis_match)
     os.makedirs('/'.join(output_files[0].split('/')[0:-1]), exist_ok=True)
     json.dump(examples, open(output_files[0], 'w'))
 
@@ -341,3 +321,42 @@ def json2features(input_file, output_files, tokenizer, is_training=False, max_qu
 
     print('features num:', len(features))
     json.dump(features, open(output_files[1], 'w'))
+
+
+def _convert_index(index, pos, M=None, is_start=True):
+    if pos >= len(index):
+        pos = len(index) - 1
+    if index[pos] is not None:
+        return index[pos]
+    N = len(index)
+    rear = pos
+    while rear < N - 1 and index[rear] is None:
+        rear += 1
+    front = pos
+    while front > 0 and index[front] is None:
+        front -= 1
+    assert index[front] is not None or index[rear] is not None
+    if index[front] is None:
+        if index[rear] >= 1:
+            if is_start:
+                return 0
+            else:
+                return index[rear] - 1
+        return index[rear]
+    if index[rear] is None:
+        if M is not None and index[front] < M - 1:
+            if is_start:
+                return index[front] + 1
+            else:
+                return M - 1
+        return index[front]
+    if is_start:
+        if index[rear] > index[front] + 1:
+            return index[front] + 1
+        else:
+            return index[rear]
+    else:
+        if index[rear] > index[front] + 1:
+            return index[rear] - 1
+        else:
+            return index[front]

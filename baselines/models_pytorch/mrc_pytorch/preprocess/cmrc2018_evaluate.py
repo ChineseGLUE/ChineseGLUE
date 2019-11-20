@@ -8,9 +8,11 @@ v5: formatted output, add usage description
 v4: fixed segmentation issues
 '''
 from __future__ import print_function
-from collections import OrderedDict
-import re
+
 import json
+import re
+from collections import OrderedDict
+
 import nltk
 
 
