@@ -289,7 +289,8 @@ https://hfl-rc.github.io/cmrc2018/
 
 ##### 11.CHID 成语阅读理解填空 Chinese IDiom Dataset for Cloze Test
 
-https://arxiv.org/abs/1906.01265，成语完形填空，候选项中包含了近义的成语。
+https://arxiv.org/abs/1906.01265  
+成语完形填空，文中多处成语被mask，候选项中包含了近义的成语。
 
 ```
     数据量：训练集(84,709)，验证集(3,218)，测试集(3,231)
