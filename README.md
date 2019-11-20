@@ -14,7 +14,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 | 模型   | Score  | 参数    | LCQMC'  | TNEWS'  | IFYTEK'   | MNLI-m  | MNLI-mm  | XNLI     | COPA | WSC | -  |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | 74.69% | 55.58%  | 60.29% | -  | - | -  | - | -  | -      |
+| <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | 74.69% | 55.58%  | 60.29% | 79.39%  | 79.76% | -  | - | -  | -      |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | 76.72% | 56.84%  | -  | - | -| -  | -   | -  | -      |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>         | - | 108M  | 77.94% | 58.23% | - | - | - | -  | -  | -  | -      |
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>      | - | 334M  | 77.57% | 57.05%  | -  | -  | -   | -  | -  | -   | -       |
@@ -22,7 +22,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xxlarge</a>      | - | 59M   | -  | - | - | - | - | - | -  | -  | -     |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a>        | - | 4M |- | - | -  | -   | -  | - | -  | -   | -     |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>   | - | 108M  | - | - | - | - | - | -  | -  | - | -      |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M | 77.89% | 58.61% | 62.98% | - | - | - | - | - | - |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M | 77.89% | 58.61% | 62.98% | 83.4% | 83.42% | - | - | - | - |
 
 
 注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),MNLI-m:MNLI-matched，MNLI-mm:MNLI-mismatched；
