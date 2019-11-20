@@ -27,7 +27,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),MNLI-m:MNLI-matched，MNLI-mm:MNLI-mismatched；
 
-DRCD & CMRC2018:抽取式阅读理解(F1, EM)；CHID:成语阅读理解；BQ:智能客服问句匹配(Acc)；MSRANER:命名实体识别(F1)；iFLYTEK:长文本分类(Acc)；
+DRCD & CMRC2018:抽取式阅读理解(F1, EM)；CHID:成语多分类阅读理解；BQ:智能客服问句匹配(Acc)；MSRANER:命名实体识别(F1)；iFLYTEK:长文本分类(Acc)；
 
 Score是通过计算1-9数据集得分平均值获得；
 
@@ -36,16 +36,16 @@ Score是通过计算1-9数据集得分平均值获得；
 
 | 模型 | Score | 参数 | DRCD | CMRC2018 | CHID |
 | :----:| :----: | :----: | :----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.31 | 108M | 91.46 	| 87.17 	||
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 90.70  | 108M |92.63   | 88.78 | |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 90.81 | 108M |92.01  	|89.62 | |
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 92.59 | 334M 	|94.25  | 90.94  | |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 88.76 | 209M | 91.44 | 86.09  ||
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 92.81 | 59M |	94.70 |	90.92 | |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xxlarge</a> |  |  |	 |	 | |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 78.20 | 1.8M |	80.67 |	75.73 | |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 91.63 | 108M  |	93.53 |	89.74 | |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***93.31*** | 330M |	***95.06*** |	***91.56*** | |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.31 | 108M | 91.46 	| 87.17 | 82.04 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 90.70  | 108M |92.63   | 88.78 | - |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 90.81 | 108M |92.01  	|89.62 | - |
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 92.59 | 334M 	|94.25  | 90.94  | 84.5 |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 88.76 | 209M | 91.44 | 86.09  | - |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 92.81 | 59M |	94.70 |	90.92 | - |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xxlarge</a> | - | - | - | - | - |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 78.20 | 1.8M |	80.67 |	75.73 | - |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 91.63 | 108M  |	93.53 |	89.74 | 83.62 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***93.31*** | 330M |	***95.06*** |	***91.56*** | ***85.37*** |
 
 
 
@@ -287,7 +287,44 @@ https://hfl-rc.github.io/cmrc2018/
 每行为一条数据，以_!_分割字段，从前往后分别是 类别ID，文本内容。
 ```
 
-##### 11. 更多数据集添加中，Comming soon!
+##### 11.CHID 成语阅读理解填空 Chinese IDiom Dataset for Cloze Test
+
+https://arxiv.org/abs/1906.01265，成语完形填空，候选项中包含了近义的成语。
+
+```
+    数据量：训练集(84,709)，验证集(3,218)，测试集(3,231)
+    例子：
+    {
+      "content": [
+        # 文段0
+        "……在热火22年的历史中，他们已经100次让对手得分在80以下，他们在这100次中都取得了胜利，今天他们希望能#idiom000378#再进一步。", 
+        # 文段1
+        "在轻舟发展过程之中，是和业内众多企业那样走相似的发展模式，去#idiom000379#？还是迎难而上，另走一条与众不同之路。诚然，#idiom000380#远比随大流更辛苦，更磨难，更充满风险。但是有一条道理却是显而易见的：那就是水往低处流，随波逐流，永远都只会越走越低。只有创新，只有发展科技，才能强大自己。", 
+        # 文段2
+        "最近十年间，虚拟货币的发展可谓#idiom000381#。美国著名经济学家林顿·拉鲁什曾预言：到2050年，基于网络的虚拟货币将在某种程度上得到官方承认，成为能够流通的货币。现在看来，这一断言似乎还嫌过于保守……", 
+        # 文段3
+        "“平时很少能看到这么多老照片，这次图片展把新旧照片对比展示，令人印象深刻。”现场一位参观者对笔者表示，大多数生活在北京的人都能感受到这个城市#idiom000382#的变化，但很少有人能具体说出这些变化，这次的图片展按照区域发展划分，展示了丰富的信息，让人形象感受到了60年来北京的变化和发展。", 
+        # 文段4
+        "从今天大盘的走势看，市场的热点在反复的炒作之中，概念股的炒作#idiom000383#，权重股走势较为稳健，大盘今日早盘的震荡可以看作是多头关前的蓄势行为。对于后市，大盘今日蓄势震荡后，明日将会在权重和题材股的带领下亮剑冲关。再创反弹新高无悬念。", 
+        # 文段5
+        "……其中，更有某纸媒借尤小刚之口指出“根据广电总局的这项要求，2009年的荧屏将很难出现#idiom000384#的情况，很多已经制作好的非主旋律题材电视剧想在卫视的黄金时段播出，只能等到2010年了……"],
+      "candidates": [
+        "百尺竿头", 
+        "随波逐流", 
+        "方兴未艾", 
+        "身体力行", 
+        "一日千里", 
+        "三十而立", 
+        "逆水行舟", 
+        "日新月异", 
+        "百花齐放", 
+        "沧海一粟"
+      ]
+    }
+```
+
+
+##### 12. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，如果你有定义良好的数据集，请与我们取得联系。
 
@@ -384,6 +421,21 @@ https://hfl-rc.github.io/cmrc2018/
 | xlnet-mid	|F1:85.63 EM:65.31 | F1:86.09 EM:66.51 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
 | RoBERTa-wwm-ext	|F1:87.28 EM:67.89 | F1:89.74 EM:73.89 | epoch2, batch=32, length=512, lr=3e-5, warmup=0.1 |
 | RoBERTa-wwm-large-ext	|***F1:89.42 EM:70.59*** | ***F1:91.56 EM:76.58*** | epoch2, batch=32, length=512, lr=2.5e-5, warmup=0.1 |
+
+#### CHID 成语阅读理解填空 Chinese IDiom Dataset for Cloze Test (Accuracy)：
+
+| 模型 | 开发集（dev) | 测试集（test) |  训练参数 |
+| :----:| :----: | :----: | :----: |
+| BERT-base	| 82.2 | 82.04 | batch=24, length=64, epoch=3 lr=2e-5 |
+| BERT-wwm-ext-base	|- |-|	- |
+| ERNIE-base	|- | - | - |
+| ALBERT-large	|- | - | - |
+| ALBERT-xlarge	|- | - | - |
+| ALBERT-tiny	|- | - | - |
+| RoBERTa-large	| 85.31 | 84.5 | batch=24, length=64, epoch=3 lr=2e-5  |
+| xlnet-mid	|- | - | - |
+| RoBERTa-wwm-ext	|83.78 | 83.62 | batch=24, length=64, epoch=3 lr=2e-5  |
+| RoBERTa-wwm-large-ext	|***85.81*** | ***85.37*** | batch=24, length=64, epoch=3 lr=2e-5  |
 
 
 #### BQ 智能客服问句匹配 Question Matching for Customer Service (Accuracy)：
@@ -576,7 +628,7 @@ Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一
 
 谢炜坚，百度大数据部，算法工程师，从事NLP相关工作，包括任务驱动型对话、检索式问答、语义匹配、文本分类、情感分析等工作。
 
-曹辰捷，平安金融壹账通，算法工程师，做阅读理解和预训练相关的，CMRC2019阅读理解冠军团队成员。
+曹辰捷，平安金融壹账通，算法工程师，负责阅读理解和预训练相关业务，CMRC2019阅读理解冠军团队成员。
 
 喻聪，来自杭州实在智能，主要研究多轮对话，意图识别，实体抽取，知识问答相关任务。
 
