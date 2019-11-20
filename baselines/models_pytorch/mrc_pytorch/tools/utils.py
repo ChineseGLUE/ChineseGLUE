@@ -1,10 +1,11 @@
+import collections
 import os
+import re
+from glob import glob
+
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
-import collections
-import re
 import torch
-from glob import glob
 
 
 def check_args(args):

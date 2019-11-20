@@ -1,9 +1,10 @@
 import collections
-import sys
-from .offical_tokenization import BasicTokenizer
-import math
 import json
+import math
+
 from tqdm import tqdm
+
+from ..tools.offical_tokenization import BasicTokenizer
 
 
 def write_predictions_topk(config, all_examples, all_features, all_results, n_best_size,

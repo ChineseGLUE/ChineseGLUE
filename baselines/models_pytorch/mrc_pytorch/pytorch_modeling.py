@@ -16,20 +16,20 @@
 """PyTorch BERT model."""
 from __future__ import print_function
 
-import os
 import copy
 import json
-import math
 import logging
+import math
+import os
+import shutil
 import tarfile
 import tempfile
-import shutil
 
 import torch
 from torch import nn
 from torch.nn import CrossEntropyLoss
 
-from .file_utils import cached_path
+from .tools.file_utils import cached_path
 
 logger = logging.getLogger(__name__)
 
@@ -249,7 +249,7 @@ except ImportError:
     print("Better speed can be achieved with apex installed from https://www.github.com/nvidia/apex.")
 
     class BertLayerNorm(nn.Module):
-        def __init__(self, hidden_size, eps=1e-12):
+        def __init__(self, hidden_size, eps=1e-5):
             """Construct a layernorm module in the TF style (epsilon inside the square root).
             """
             super(BertLayerNorm, self).__init__()
@@ -277,7 +277,7 @@ class BertEmbeddings(nn.Module):
 
         # self.LayerNorm is not snake-cased to stick with TensorFlow model variable name and be able to load
         # any TensorFlow checkpoint file
-        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
+        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-5)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
     def forward(self, input_ids, token_type_ids=None):
@@ -315,7 +315,7 @@ class ALBertEmbeddings(nn.Module):
         self.token_type_embeddings = nn.Embedding(config.type_vocab_size, config.hidden_size)
         # self.LayerNorm is not snake-cased to stick with TensorFlow model variable name and be able to load
         # any TensorFlow checkpoint file
-        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
+        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-5)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
     def forward(self, input_ids, token_type_ids=None, position_ids=None):
@@ -392,7 +392,7 @@ class BertSelfOutput(nn.Module):
     def __init__(self, config):
         super(BertSelfOutput, self).__init__()
         self.dense = nn.Linear(config.hidden_size, config.hidden_size)
-        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
+        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-5)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.ln_type = 'postln'
         if 'ln_type' in config.__dict__:
@@ -444,7 +444,7 @@ class BertOutput(nn.Module):
     def __init__(self, config):
         super(BertOutput, self).__init__()
         self.dense = nn.Linear(config.intermediate_size, config.hidden_size)
-        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
+        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-5)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.ln_type = 'postln'
         if 'ln_type' in config.__dict__:
@@ -536,7 +536,7 @@ class BertPredictionHeadTransform(nn.Module):
         self.dense = nn.Linear(config.hidden_size, config.hidden_size)
         self.transform_act_fn = ACT2FN[config.hidden_act] \
             if isinstance(config.hidden_act, str) else config.hidden_act
-        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
+        self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-5)
 
     def forward(self, hidden_states):
         hidden_states = self.dense(hidden_states)
@@ -1111,7 +1111,7 @@ class ALBertForQA(PreTrainedBertModel):
         self.bert = ALBertModel(config)
         self.ln_type = config.ln_type
         if self.ln_type == 'ln_pre':
-            self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-12)
+            self.LayerNorm = BertLayerNorm(config.hidden_size, eps=1e-5)
         else:
             self.LayerNorm = None
         self.dropout = nn.Dropout(dropout_rate)
@@ -1154,8 +1154,8 @@ class ALBertForQA_CLS(PreTrainedBertModel):
         self.bert = ALBertModel(config)
         self.ln_type = config.ln_type
         if self.ln_type == 'ln_pre':
-            self.LayerNorm_qa = BertLayerNorm(config.hidden_size, eps=1e-12)
-            self.LayerNorm_cls = BertLayerNorm(config.hidden_size, eps=1e-12)
+            self.LayerNorm_qa = BertLayerNorm(config.hidden_size, eps=1e-5)
+            self.LayerNorm_cls = BertLayerNorm(config.hidden_size, eps=1e-5)
         else:
             self.LayerNorm_qa = None
             self.LayerNorm_cls = None

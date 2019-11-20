@@ -15,9 +15,10 @@
 """PyTorch optimization for BERT model."""
 
 import math
+
 import torch
-from torch.optim.optimizer import Optimizer
 from torch.nn.utils import clip_grad_norm_
+from torch.optim.optimizer import Optimizer
 
 
 def warmup_cosine(x, warmup=0.002):
