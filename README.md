@@ -27,7 +27,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),MNLI-m:MNLI-matched，MNLI-mm:MNLI-mismatched；
 
-DRCD & CMRC2018:抽取式阅读理解(F1, EM)；CHID:成语多分类阅读理解；BQ:智能客服问句匹配(Acc)；MSRANER:命名实体识别(F1)；iFLYTEK:长文本分类(Acc)；
+DRCD & CMRC2018:抽取式阅读理解(F1, EM)；CHID:成语多分类阅读理解(Acc)；BQ:智能客服问句匹配(Acc)；MSRANER:命名实体识别(F1)；iFLYTEK:长文本分类(Acc)；
 
 Score是通过计算1-9数据集得分平均值获得；
 
@@ -36,17 +36,18 @@ Score是通过计算1-9数据集得分平均值获得；
 
 | 模型 | Score | 参数 | DRCD | CMRC2018 | CHID |
 | :----:| :----: | :----: | :----: |:----: |:----: |
-| <a href="https://github.com/google-research/bert">BERT-base</a>	| 89.31 | 108M | 91.46 	| 87.17 | 82.04 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | 90.70  | 108M |92.63   | 88.78 | - |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| 90.81 | 108M |92.01  	|89.62 | - |
-| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 92.59 | 334M 	|94.25  | 90.94  | 84.5 |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| 88.76 | 209M | 91.44 | 86.09  | - |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | 92.81 | 59M |	94.70 |	90.92 | - |
+| <a href="https://github.com/google-research/bert">BERT-base</a>	| 79.08 | 108M | 85.49 	| 69.72 | 82.04 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a> | - | 108M | 87.15 | 73.23 | - |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>	| - | 108M | 86.03 | 73.32 | - |
+| <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a> | 83.32 | 334M 	| 89.35 | 76.11 | 84.5 |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>	| - | 209M | 83.28 | 66.51  | - |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a> | - | 59M | 89.78 | 75.22 | - |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xxlarge</a> | - | - | - | - | - |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | 78.20 | 1.8M |	80.67 |	75.73 | - |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 91.63 | 108M  |	93.53 |	89.74 | 83.62 |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***93.31*** | 330M |	***95.06*** |	***91.56*** | ***85.37*** |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a> | - | 1.8M | 70.08 | 53.68 | - |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>  | 81.88 | 108M  | 88.12 | 73.89 | 83.62 |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | ***84.22*** | 330M |	***90.70*** |	***76.58*** | ***85.37*** |
 
+注：阅读理解上述指标中F1和EM共存的情况下，取EM为最终指标
 
 
 #### 分类任务(vO版本，初版)
