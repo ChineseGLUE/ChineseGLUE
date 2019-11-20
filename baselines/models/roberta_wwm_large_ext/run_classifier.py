@@ -199,10 +199,10 @@ class DataProcessor(object):
         raise NotImplementedError()
 
     @classmethod
-    def _read_tsv(cls, input_file, quotechar=None):
+    def _read_tsv(cls, input_file,delimiter="\t", quotechar=None):
         """Reads a tab separated value file."""
         with tf.gfile.Open(input_file, "r") as f:
-            reader = csv.reader(f, delimiter="\t", quotechar=quotechar)
+            reader = csv.reader(f, delimiter=delimiter, quotechar=quotechar)
             lines = []
             for line in reader:
                 lines.append(line)
@@ -642,6 +642,51 @@ class LCQMCProcessor(DataProcessor):
                 print('###error.i:', i, line)
         return examples
 
+class JDCOMMENTProcessor(DataProcessor):
+    """Processor for the internal data set. sentence pair classification"""
+
+    def __init__(self):
+        self.language = "zh"
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "jd_train.csv"),",", "\""), "train")
+        # dev_0827.tsv
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "jd_dev.csv"),",", "\""), "dev")
+
+    def get_test_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            self._read_tsv(os.path.join(data_dir, "jd_test.csv"),",", "\""), "test")
+
+    def get_labels(self):
+        """See base class."""
+        return ["1", "2", "3", "4", "5"]
+        # return ["-1","0", "1"]
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        print("length of lines:", len(lines))
+        for (i, line) in enumerate(lines):
+            #print('#i:',i,line)
+            if i == 0:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            try:
+                label = tokenization.convert_to_unicode(line[0])
+                text_a = tokenization.convert_to_unicode(line[1])
+                text_b = tokenization.convert_to_unicode(line[2])
+                examples.append(
+                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+            except Exception:
+                print('###error.i:', i, line)
+        return examples
 
 class BQProcessor(DataProcessor):
     """Processor for the internal data set. sentence pair classification"""
@@ -1226,6 +1271,7 @@ def main(_):
         "mrpc": MrpcProcessor,
         "xnli": XnliProcessor,
         "tnews": TnewsProcessor,
+        "jdcomment": JDCOMMENTProcessor,
         "inews": InewsProcessor,
 	      "thucnews":THUCNewsProcessor,
         "lcqmc": LCQMCProcessor,

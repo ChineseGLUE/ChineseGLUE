@@ -2,7 +2,7 @@ CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 CURRENT_TIME=$(date "+%Y%m%d-%H%M%S")
 TASK_NAME="lcqmc"
 export PREV_TRAINED_MODEL_DIR=gs://models_zxw/prev_trained_models/nlp/albert-xlarge/albert_xlarge_zh_183k
-export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/$TASK_NAME
+export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/hard_$TASK_NAME
 export OUTPUT_DIR=gs://models_zxw/fine_tuning_models/nlp/albert-xlarge/albert_xlarge_zh_183k/tpu/${TASK_NAME}/$CURRENT_TIME
 
 python $CURRENT_DIR/../run_classifier.py \
