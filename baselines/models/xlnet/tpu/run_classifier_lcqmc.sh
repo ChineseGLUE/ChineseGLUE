@@ -2,7 +2,7 @@ CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 CURRENT_TIME=$(date "+%Y%m%d-%H%M%S")
 TASK_NAME="lcqmc"
 export XLNET_DIR=gs://models_zxw/prev_trained_models/nlp/xlnet-base/chinese_xlnet_base_L-12_H-768_A-12
-export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/$TASK_NAME
+export DATA_DIR=gs://data_zxw/nlp/chineseGLUEdatasets.v0.0.1/hard_${TASK_NAME}
 export OUTPUT_DIR=gs://models_zxw/fine_tuning_models/nlp/xlnet-base/chinese_xlnet_base_L-12_H-768_A-12/tpu/$TASK_NAME/$CURRENT_TIME
 
 python $CURRENT_DIR/../run_classifier.py \
@@ -25,4 +25,4 @@ python $CURRENT_DIR/../run_classifier.py \
     --max_seq_length=128 \
     --learning_rate=2e-5 \
     --save_steps=1000 \
-    --use_tpu=True
+    --use_tpu=True --tpu=grpc://192.168.0.2:8470
