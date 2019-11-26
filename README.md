@@ -21,14 +21,14 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | 模型   | Score  | 参数    | LCQMC'  | TNEWS'  | IFYTEK'   | CMNLI-m  | CMNLI-mm  | XNLI     | COPA | WSC | -  |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | 74.89% | 55.58%  | 60.29% | 79.39%  | 79.76% | 77.8%  | - | -  | -      |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | 76.72% | 56.84%  | -  | - | -| 78.7%  | -   | -  | -      |
-| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>         | - | 108M  | 77.94% | 58.23% | - | - | - | 78.6%  | -  | -  | -      |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | 76.72% | 56.84%  | -  | 81.41% | 80.67%| 78.7%  | -   | -  | -      |
+| <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>         | - | 108M  | 77.94% | 58.23% | - | 79.65% | 80.70% | 78.6%  | -  | -  | -      |
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>      | - | 334M  | 77.57% | 57.05%  | -  | -  |  - | 79.9%   | -  | -   | -       |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>  | - | 200M | - | - | -  | -  | -   | 78.7% | -      | -   | -     |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>  | - | 200M | - | - | -  | 78.15%  | 76.93%   | 78.7% | -      | -   | -     |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xxlarge</a>      | - | 59M   | -  | - | - | - | - | - | -  | -  | -     |
-| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a>        | - | 4M |76.57% | 53.35% | -  | -   | -  | - | -  | -   | -     |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>   | - | 108M  | 77.43% | 56.86% | - | - | - | 79.3%  | -  | - | -      |
-| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M | **78.02%** | **58.61%** | 62.98% | 83.4% | 83.42% | **80.0%** | - | - | - |
+| <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a>        | - | 4M |76.57% | 53.35% | -  | 72.71%   | 72.72%  | - | -  | -   | -     |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>   | - | 108M  | 77.43% | 56.86% | - | 81.09% | 81.38% | 79.3%  | -  | - | -      |
+| <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M | **78.02%** | **58.61%** | 62.98% | **83.4%** | **83.42%** | **80.0%** | - | - | - |
 
 
 注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),CMNLI-m:chinese-MNLI-matched，CMNLI-mm:chinese-MNLI-mismatched；
