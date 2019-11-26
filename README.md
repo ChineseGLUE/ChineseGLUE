@@ -18,7 +18,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 #### 分类任务(v1版本,正式版)
 
-| 模型   | Score  | 参数    | LCQMC'  | TNEWS'  | IFYTEK'   | MNLI-m  | MNLI-mm  | XNLI     | COPA | WSC | -  |
+| 模型   | Score  | 参数    | LCQMC'  | TNEWS'  | IFYTEK'   | CMNLI-m  | CMNLI-mm  | XNLI     | COPA | WSC | -  |
 | :----:| :----: | :----: | :----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |:----: |
 | <a href="https://github.com/google-research/bert">BERT-base</a>        | - | 108M | 74.89% | 55.58%  | 60.29% | 79.39%  | 79.76% | 77.8%  | - | -  | -      |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | - | 108M  | 76.72% | 56.84%  | -  | - | -| 78.7%  | -   | -  | -      |
@@ -31,7 +31,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-large</a> | - | 330M | **78.02%** | **58.61%** | 62.98% | 83.4% | 83.42% | **80.0%** | - | - | - |
 
 
-注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),MNLI-m:MNLI-matched，MNLI-mm:MNLI-mismatched；
+注：' 代表对原数据集筛选后获得，数据集与原数据集不同；TNEWS:文本分类(Acc)；LCQMC:语义相似度(Acc)；XNLI/MNLI:自然语言推理(Acc),CMNLI-m:chinese-MNLI-matched，CMNLI-mm:chinese-MNLI-mismatched；
 
 DRCD & CMRC2018:抽取式阅读理解(F1, EM)；CHID:成语多分类阅读理解(Acc)；BQ:智能客服问句匹配(Acc)；MSRANER:命名实体识别(F1)；iFLYTEK:长文本分类(Acc)；
 
@@ -331,8 +331,17 @@ https://arxiv.org/abs/1906.01265
     }
 ```
 
+##### 12.CMNLI 语言推理任务 Chinese Multi-Genre NLI
 
-##### 12. 更多数据集添加中，Comming soon!
+ChineseMNLI数据对原始MNLI数据进行中英文转化，数据来自于fiction , telephone ,travel ,government ,slate等,用于判断给定的两个句子之间属于蕴涵、中立、矛盾关系。
+
+```
+    数据量：train(391,783)，matched(9336)，mismatched(8,870)
+    例子：
+    {"sentence1": "新的权利已经足够好了", "sentence2": "每个人都很喜欢最新的福利", "gold_label": "neutral"}
+```
+
+##### 13. 更多数据集添加中，Comming soon!
 
 更多数据集添加中，如果你有定义良好的数据集，请与我们取得联系。
 
@@ -642,7 +651,7 @@ Danny Lan，CMU博士、google AI 研究员，SOTA语言理解模型AlBERT第一
 
 谢恩宁，大搜车，围绕汽车领域语对话机器人，负责NLU部分。
 
-李露，来自华中师范大学计算机学院，曾参与某项目筹备中文自然语言推理的数据集；暑期在平安科技实习，主要负责利用自然语言处理最新模型进行序列标注和情感分类任务。
+李露，华中师范大学研究生，曾参与筹备中文自然语言推理的数据集；暑期在平安科技实习，主要负责利用自然语言处理模型进行序列标注和情感分类任务。
 
 董倩倩，来自中科院自动化所，phd在读，主要研究语音翻译，曾参与多个中文NLP项目。
 
