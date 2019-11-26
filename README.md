@@ -460,7 +460,7 @@ ChineseMNLI数据对原始MNLI数据进行中英文转化，数据来自于ficti
 | BERT-wwm-ext-base | 95.26 | batch_size=16, length=256, epoch=5, lr=2e-5 |
 | ERNIE-base | 95.17 | batch_size=16, length=256, epoch=5, lr=2e-5 |
 | RoBERTa-large | ***96.07*** | batch_size=8, length=256, epoch=5, lr=2e-5 |
-| XLNet-mid | - | - |
+| XLNet-mid | 92.11 | batch_size=8, length=256, epoch=5, lr=2e-5  |
 | ALBERT-xlarge | 89.51 | batch_size=16, length=256, epoch=8, lr=7e-5 |
 | ALBERT-base | 92.47 | batch_size=32, length=256, epoch=8, lr=5e-5 |
 | ALBERT-tiny | 84.77 | batch_size=32, length=256, epoch=8, lr=5e-5 |
