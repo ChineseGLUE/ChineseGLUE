@@ -23,7 +23,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">BERT-wwm-ext</a>      | 84\.89 | 108M  | 89\.81 | ***87\.3***  | 78\.7  | 83\.46 | ***85\.21*** | 95\.26  | 95\.57   | 63\.83      |
 | <a href="https://github.com/PaddlePaddle/ERNIE">ERNIE-base</a>         | 84\.63 | 108M  | 89\.83 | 87\.2  | 78\.6  | ***85\.14*** | 84\.47 | 95\.17  | 94\.9    | 61\.75      |
 | <a href="https://github.com/brightmart/roberta_zh">RoBERTa-large</a>      | 85\.08 | 334M  | 89\.91 | 87\.2  | 79\.9  | 84     | 85\.2  | ***96\.07***  | 94\.56   | 63\.8       |
-| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>          | 81\.07 | 209M  | 86\.26 | 85\.98 | 78\.7  | 84     | 77\.85 | \-      | 94\.54   | 60\.16      |
+| <a href="https://github.com/ymcui/Chinese-PreTrained-XLNet">XLNet-mid</a>          | 81\.07 | 209M  | 86\.26 | 85\.98 | 78\.7  | 84     | 77\.85 | 92\.11      | 94\.54   | 60\.16      |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-xlarge</a>      | 84\.08 | 59M   | 88\.3  | 86\.76 | 74\.0? | 82\.4  | 84\.21 | 89\.51  | 95\.45   | 61\.94      |
 | <a href="https://github.com/brightmart/albert_zh">ALBERT-tiny</a>        | 78\.22 | 1\.8M | 87\.1  | 85\.4  | 68     | 81\.4  | 80\.76 | 84\.77  | 93\.54   | 44\.83      |
 | <a href="https://github.com/ymcui/Chinese-BERT-wwm">RoBERTa-wwm-ext</a>   | 84\.55 | 108M  | 89\.79 | 86\.33 | 79\.28 | 82\.28 | 84\.02 | 95\.06  | 95\.52   | 64\.18      |
