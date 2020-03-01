@@ -60,7 +60,7 @@ ChineseGLUE的定位 Vision
 
 *** 2019-10-13: 新增评测官网入口; INEWS基线模型 ***
 
-  <a href="http://106.13.187.75:8003/"> 评测入口</a>
+  <a href="https://www.CLUEbenchmarks.com"> 评测入口</a>
 
 Why do we need a benchmark for Chinese lanague understand evaluation?
 
