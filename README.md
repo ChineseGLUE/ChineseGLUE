@@ -544,7 +544,7 @@ ChineseMNLI数据对原始MNLI数据进行中英文转化，数据来自于ficti
 <!--       ```sh run_classifier.sh```-->
 具体内容详见：<a href="https://github.com/chineseGLUE/chineseGLUE/tree/master/baselines">基准模型-模型训练</a>
 
-#### 开放测评提交入口：<a href="http://106.13.187.75:8003/">我要提交</a>
+#### 开放测评提交入口：<a href="https://www.CLUEbenchmarks.com">我要提交</a>
 
 <img src="https://github.com/chineseGLUE/chineseGLUE/blob/master/resources/img/chineseGLUE_landing.jpeg"  width="80%" height="40%" />
 
