@@ -5,7 +5,7 @@ Language Understanding Evaluation benchmark for Chinese: datasets, baselines, pr
 
 「更新，2019年11月22日」
 
-1）【推荐】新版，更加系统全面、更好的技术支持，迁移新的地址：https://github.com/CLUEbenchmark/CLUE
+1）【推荐】新版，更加系统全面、更好的技术支持，***迁移新地址***：https://github.com/CLUEbenchmark/CLUE
 
 2）原有经典版，以实用任务如分类或句子对任务为主，将继续保留并在此项目更新
 
