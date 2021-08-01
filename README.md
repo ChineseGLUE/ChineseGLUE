@@ -585,7 +585,7 @@ ChineseMNLI数据对原始MNLI数据进行中英文转化，数据来自于ficti
 
 ##### 如何参与 How to join with us：
 
-发送邮件 chineseGLUE#163.com，简要介绍你自己、背景、工作或研究方向、你的组织、在哪方面可以为社区贡献力量，我们评估后会与你取得联系你。
+发送邮件 CLUEbenchmark#163.com，简要介绍你自己、背景、工作或研究方向、你的组织、在哪方面可以为社区贡献力量，我们评估后会与你取得联系你。
 
 任务清单 TODO LIST
 ---------------------------------------------------------------------
@@ -627,6 +627,10 @@ or join QQ group: 836811304
 更多志愿者，陆续添加中。。。
 
 #### Research supported with Cloud TPUs from Google's TensorFlow Research Cloud (TFRC)
+
+#### 如何引用我们？
+
+见：https://aclanthology.org/2020.coling-main.419.bib
 
 
 Reference:
