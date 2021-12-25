@@ -593,7 +593,7 @@ ChineseMNLI数据对原始MNLI数据进行中英文转化，数据来自于ficti
 
 2、阅读理解任务转化成句子对任务（如线索与问题或答案），并做测评，数据应拆分成训练、验证和测试集。
 
-3、基线模型baselises在特定任务模型的训练、预测的方法和脚本(支持PyTorch、Keras)；
+3、基线模型baselines在特定任务模型的训练、预测的方法和脚本(支持PyTorch、Keras)；
 
 4、对当前主流模型（如bert/bert_wwm_ext/roberta/albert/ernie/ernie2.0等），结合ChineseGLUE的数据集，做准确率测试。
 
